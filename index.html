@@ -739,25 +739,25 @@
         "hasMorePages": true,
         "green": {
           "sizes": {
-            "S": "$5.99",
-            "M": "$5.99",
+            "S": "20 W",
+            "M": "60 W",
             "L": "unavailable"
           },
           "defaultSize": "S"
         },
         "golden": {
           "sizes": {
-            "S": "$9.99",
-            "M": "unavailable",
-            "L": "$9.99"
+            "S": "100 W",
+            "M": "900 W",
+            "L": "1200 W"
           },
           "defaultSize": "L"
         },
         "red": {
           "sizes": {
-            "S": "$7.99",
-            "M": "$7.99",
-            "L": "$7.99"
+            "S": "2000 W",
+            "M": "3000 W",
+            "L": "4000 W"
           },
           "defaultSize": "M"
         }
@@ -768,7 +768,7 @@
       
 
       
-        <p class="price-description">Price:
+        <p class="price-description">Potencia:
     <span [text]="product[product.selectedColor].sizes[product.selectedSize]">$5.99</span>
   </p>
 
@@ -784,7 +784,7 @@
     target="_top"
     class="flex flex-wrap m1">
     <div class="items-center flex">
-      <label for="color">Color:</label>
+      <label for="color">Consumo:</label>
       <amp-selector name="color"
         layout="container"
         [selected]="product.selectedColor"
@@ -815,7 +815,7 @@
       </amp-selector>
     </div>
     <div class="items-center flex">
-      <label for="quantity">Quantity:</label>
+      <label for="quantity">Cantidad:</label>
       <amp-selector name="quantity"
         layout="container">
         <ul class="p0 m1">
@@ -872,7 +872,7 @@
       data-amp-replace="CLIENT_ID">
     <div submit-error>
       <template type="amp-mustache">
-        Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
+        Error! Ocurrió un error con su carro de circuitos. Tal vez se solucione reintentándolo {{error}}
       </template>
     </div>
   </form>
@@ -889,8 +889,7 @@
       selected
       option="a">ABOUT</div>
     <div role="tabpanel"
-      class="tabContent p1 p">Fruit is rich in vitamins and minerals. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat.</div>
+      class="tabContent p1 p">Los electrodomésticos verdes consumen menos que el resto. Puede agregar más de uno por circuito. Los electrodomésticos dorados pueden ser usados en conjunto con otros electrodomésticos pero por su gran consumo solo puede agregar uno a cada circuito. Los electrodomésticos rojos solo pueden estar instalados con un circuito exclusivo. En consecuencia, a ese circuito se le denomina circuito exclusivo.</div>
     <div role="tab"
       class="tabButton h4 ampstart-nav-item"
       option="b">SPECS</div>
