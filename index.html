@@ -741,7 +741,9 @@
           "sizes": {
             "S": "20 W",
             "M": "60 W",
-            "L": "unavailable"
+            "L": "unavailable",
+            "XL": "unavailable"
+
           },
           "defaultSize": "S"
         },
@@ -749,7 +751,9 @@
           "sizes": {
             "S": "100 W",
             "M": "900 W",
-            "L": "1200 W"
+            "L": "1200 W",
+            "XL": "unavailable"
+
           },
           "defaultSize": "L"
         },
@@ -757,7 +761,9 @@
           "sizes": {
             "S": "2000 W",
             "M": "3000 W",
-            "L": "4000 W"
+            "L": "4000 W",
+            "XL": "8000 W"
+
           },
           "defaultSize": "M"
         }
@@ -770,14 +776,8 @@
       
         <p class="price-description">Potencia:
     <span [text]="product[product.selectedColor].sizes[product.selectedSize]">$5.99</span>
-  </p>
-
-      
-
-      
-      
-
-      
+  
+</p>
   <form id="order"
     method="POST"
     action-xhr="/samples_templates/product_page/add_to_cart"
@@ -851,6 +851,14 @@
             [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
                       ? ''
                       : 'unavailable'">L</li>
+
+          <li option="L"
+            class="unavailable"
+            [class]="(product[product.selectedColor].sizes['XL'] != 'unavailable')
+                      ? ''
+                      : 'unavailable'">XL</li>
+
+
         </ul>
       </amp-selector>
     </div>
@@ -889,18 +897,17 @@
       selected
       option="a">ENERGÍA</div>
     <div role="tabpanel"
-      class="tabContent p1 p">Los electrodomésticos verdes consumen menos que el resto. Puede agregar más de uno por circuito. Los electrodomésticos dorados pueden ser usados en conjunto con otros electrodomésticos pero por su gran consumo solo puede agregar uno a cada circuito. Los electrodomésticos rojos solo pueden estar instalados con un circuito exclusivo. En consecuencia, a ese circuito se le denomina circuito exclusivo.</div>
+      class="tabContent p1 p">Los electrodomésticos verdes consumen menos que el resto. Los electrodomésticos dorados consumen más y solo puede agregar uno a cada circuito. Los electrodomésticos rojos solo pueden estar instalados con un circuito exclusivo. En consecuencia, a ese circuito se le denomina circuito exclusivo.</div>
     <div role="tab"
       class="tabButton h4 ampstart-nav-item"
-      option="b">SPECS</div>
+      option="b">CANTIDAD</div>
     <div role="tabpanel"
-      class="tabContent p1 p">Always wash fruit before eating. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+      class="tabContent p1 p">Puede agregar más de un electrodoméstico verde en un circuito. Puede agregar un solo electrodoméstico dorado a cada circuito. Solo puede agregar un electrodoméstico rojo a su circuito exclusivo.</div>
     <div role="tab"
       class="tabButton h4 ampstart-nav-item"
-      option="c">SIZE</div>
+      option="c">POTENCIA</div>
     <div role="tabpanel"
-      class="tabContent p1 p">Size may vary. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      class="tabContent p1 p">La potencia activa se mide en Watts o kilo Watts. Cada electrodoméstico debe portar una chapa en algún lado que indique la potencia que consume en unidades W o kW. En algunos pocos casos no se indican las unidades en Watts de Potencia sino el consumo de corriente en Amperes. En esos casos multiplique ese valor por 220 y obtendrá un valor aproximado en Watts, el que puede usar como potencia activa.</div>
   </amp-selector>
 
       
