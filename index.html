@@ -609,9 +609,10 @@
 
     <ul hidden
       [hidden]="product.selectedColor != 'red'">
+
       <li>
         <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
-          src="/img/red_apple_1_60x40.jpg"
+          src="/img/lede_1_60x40.jpg"
           width="60"
           height="40"
           class="selected fadeIn"
@@ -622,11 +623,22 @@
       </li>
       <li>
         <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
+          src="/img/red_apple_1_60x40.jpg"
+          width="60"
+          height="40"
+          class="selected fadeIn"
+          [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
+          tabindex="1"
+          role="button">
+        </amp-img>
+      </li>
+      <li>
+        <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 2}})"
           src="/img/red_apple_2_60x46.jpg"
           width="60"
           height="40"
           [class]="product.selectedSlideForRed == 1 ? 'selected' : '' "
-          tabindex="1"
+          tabindex="2"
           role="button">
         </amp-img>
       </li>
@@ -644,7 +656,7 @@
       on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})"
       class="fadeIn"
       [hidden]="product.selectedColor != 'green'">
-      <amp-img src="/img/juguera.png"
+      <amp-img src="/img/led.png"
         width="1024"
         height="682"
         layout="responsive"
@@ -652,13 +664,21 @@
         role="button"
         tabindex="0">
       </amp-img>
+      <amp-img src="/img/juguera.png"
+        width="1024"
+        height="682"
+        layout="responsive"
+        on="tap:gallery-lightbox"
+        role="button"
+        tabindex="1">
+      </amp-img>
       <amp-img src="/img/secadora_de_ropa.png"
         width="1024"
         height="682"
         layout="responsive"
         on="tap:gallery-lightbox"
         role="button"
-        tabindex="0">
+        tabindex="2">
       </amp-img>
     </amp-carousel>
 
@@ -698,7 +718,7 @@
         layout="responsive"
         on="tap:gallery-lightbox"
         role="button"
-        tabindex="0">
+        tabindex="1">
       </amp-img>
       <amp-img src="/img/lavaplatos.png"
         width="1024"
@@ -706,7 +726,7 @@
         layout="responsive"
         on="tap:gallery-lightbox"
         role="button"
-        tabindex="0">
+        tabindex="2">
       </amp-img>
     </amp-carousel>
 
@@ -897,7 +917,7 @@
       selected
       option="a">ENERGÍA</div>
     <div role="tabpanel"
-      class="tabContent p1 p">Los electrodomésticos verdes consumen menos que el resto. Los electrodomésticos dorados consumen más y solo puede agregar uno a cada circuito. Los electrodomésticos rojos no pueden estar acompañados de otros electrodomésticos en su mismo circuito. En consecuencia, a ese tipo de circuito se le denomina circuito exclusivo. No confundir con los circuitos en los que solo se permite un tipo de artefacto como los de iluminación. En estos hay más de una carga eléctrica. Estos circuitos se denominan de iluminación. Los electrodomésticos no deben estar en circuitos de iluminación. En general usan circuitos de enchufes, aunque haya casos en los que los electrodomésticos vayan soldados directamente a los conductores. Estos casos se conocen como arranques.</div>
+      class="tabContent p1 p">Los electrodomésticos están diseñados para convertir la energía eléctrica en algún tipo de trabajo útil para las personas. Los electrodomésticos menos consumidores están en el grupo amarillo y los más consumidores en el grupo rojo. Aunque las ampolletas no son consideradas electrodomésticos, por simplicidad también las encontrará en algún grupo de electrodoméstico.</div>
     <div role="tab"
       class="tabButton h4 ampstart-nav-item"
       option="b">CANTIDAD</div>
