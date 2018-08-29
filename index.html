@@ -570,25 +570,35 @@
     <div class="product-gallery">
       <ul [hidden]="product.selectedColor != 'green'">
         <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
-		src="/img/green_apple_1_60x40.jpg"
-		width="60"
-		height="40"
-		class="selected"
-		[class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
+	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
+	    src="/img/led_60x40.png"
+	    width="60"
+	    height="40"
+	    class="selected"
+	    [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
+	    tabindex="0"
+	    role="button">
+	  </amp-img>
         </li>
         <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
-		src="/img/green_apple_2_60x40.jpg"
-		width="60"
-		height="40"
-		[class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
-		tabindex="1"
-		role="button">
-	      </amp-img>
+	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
+	    src="/img/juguera_60x40.png"
+	    width="60"
+	    height="40"
+	    [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
+	    tabindex="1"
+	    role="button">
+	  </amp-img>
+       </li>
+       <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
+            src="/img/secadora_de_ropa_60x40.png"
+            width="60"
+            height="40"
+            [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
+            tabindex="2"
+            role="button">
+          </amp-img>
        </li>
      </ul>
 
