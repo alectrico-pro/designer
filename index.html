@@ -785,7 +785,7 @@
 	      "XL": "8000 W"
 
 	    },
-	    "defaultSize": "M"
+	    "defaultSize": "S"
 	  }
 	}
       </script>
@@ -856,12 +856,12 @@
 	  <ul class="p0 m1">
 	    <li option="S"
 	      class=""
+              selected
 	      [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
 			? ''
 			: 'unavailable'">S</li>
 	    <li option="M"
 	      class=""
-	      selected
 	      [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
 			? ''
 			: 'unavailable'">M</li>
