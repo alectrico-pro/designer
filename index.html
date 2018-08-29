@@ -928,5 +928,34 @@
       <div role="tabpanel"
 	class="tabContent p1 p">La potencia activa se mide en Watts o kilo Watts. Cada electrodoméstico debe portar una chapa en algún lado que indique la potencia que consume en unidades W o kW. En algunos pocos casos no se indican las unidades en Watts de Potencia sino el consumo de corriente en Amperes. En esos casos multiplique ese valor por 220 y obtendrá un valor aproximado en Watts, el que puede usar como potencia activa.</div>
     </amp-selector>
+
+    <div class="items-center flex">
+      <h2 id="related-products"
+	class="m1 inline-block">Related products
+	<amp-lightbox id="my-lightbox"
+	  layout="nodisplay">
+	  <div class="lightbox"
+	    on="tap:my-lightbox.close"
+	    role="button"
+	    tabindex="0">
+	    <div class="info">
+	      <h4 class="p2">Products that have been bought together</h4>
+	      <button class="ampstart-btn caps mx2 mb2"
+		on="tap:my-lightbox.close"
+		role="button"
+		tabindex="0">
+		Close
+	      </button>
+	    </div>
+	  </div>
+	</amp-lightbox>
+      </h2>
+      <button class="info-button border-none mr1"
+	on="tap:my-lightbox"
+	role="button"
+	tabindex="0">
+      </button>
+    </div>
+
   </body>
 </html>
