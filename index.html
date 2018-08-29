@@ -591,7 +591,7 @@
 	  </amp-img>
        </li>
        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 2}})"
             src="/img/secadora_de_ropa_60_40.png"
             width="60"
             height="40"
@@ -639,16 +639,6 @@
 		class="selected fadeIn"
 		[class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
 		tabindex="1"
-		role="button">
-	      </amp-img>
-	    </li>
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 2}})"
-		src="/img/red_apple_2_60x46.png"
-		width="60"
-		height="40"
-		[class]="product.selectedSlideForRed == 1 ? 'selected' : '' "
-		tabindex="2"
 		role="button">
 	      </amp-img>
 	    </li>
