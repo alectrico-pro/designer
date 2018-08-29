@@ -797,7 +797,7 @@
 
     <form id="order"
       method="POST"
-      action-xhr="/samples_templates/product_page/add_to_cart"
+      action-xhr="#{Rails.configuration.domain['api']}/api/v1/comercio/circuitos/1/addToCircuito"
       target="_top"
       class="flex flex-wrap m1">
       <div class="items-center flex">
@@ -903,7 +903,6 @@
 	</template>
       </div>
     </form>
-
       
 
       
