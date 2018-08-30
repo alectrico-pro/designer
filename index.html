@@ -903,7 +903,6 @@
 	data-amp-replace="CLIENT_ID">
       <div submit-success>
 	<template type="amp-mustache">
-	  Exito {{cantidad}}
 	</template>
       </div>
       <div submit-error>
@@ -913,6 +912,30 @@
       </div>
     </form>
       
+
+    <amp-list class="items m1"
+      width="auto"
+      height="145"
+      layout="fixed-height"
+      src="https://api-staging.alectrico.cl/api/v1/electrico/presupuestos.json"
+      [src]="myState.items"
+      id="show-more-list">
+      <template type="amp-mustache">
+	<a class="text-decoration-none p1"
+	  href="/samples_templates/product_page/preview/">
+	  <amp-img width="70.31"
+	    height="46.8"
+	    layout="fixed"
+	    alt="{{name}}"
+	    src="{{img}}"></amp-img>
+	  <p class="name">{{name}}</p>
+	  <p class="star">{{{stars}}}</p>
+	  <p class="price">${{price}}</p>
+	</a>
+      </template>
+    </amp-list>
+
+
 
       
     <amp-selector role="tablist"
