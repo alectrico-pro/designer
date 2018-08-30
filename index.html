@@ -807,6 +807,7 @@
 	  [selected]="product.selectedColor"
 	  on="select:AMP.setState({
 		      product: {
+		        carga_id: 37,
 			selectedColor: event.targetOption,
 			selectedSlideForRed: 0,
 			selectedSlideForGreen: 0,
@@ -890,6 +891,9 @@
       <input type="hidden"
 	name="name"
 	value="Apple">
+      <input type="hidden"
+        name="carga_id"
+	value="37">
       <input type="hidden"
 	name="price"
 	value="$1.99">
