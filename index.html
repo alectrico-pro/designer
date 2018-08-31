@@ -931,7 +931,7 @@
 	    src="{{img}}"></amp-img>
 	</a>
         <form method   = "POST"
-          action-xhr = "api-staging.alectric.cl/api/v1/electrico/ciruitos/{{id}}/dropFromCircuito"
+          action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/ciruitos/{{id}}/dropFromCircuito"
           target    = "_top"
           on = "submit-success:show-more-list.refresh">
           <input name = "clientId" 
@@ -940,9 +940,6 @@
              data-amp-replace = "CLIENT_ID">
           <button  type = "submit"  
              disabled = false > X
-          <div overflow = ""        
-             class    = "list-overflow">             
-          </div>
         </form>
       </template>
     </amp-list>
