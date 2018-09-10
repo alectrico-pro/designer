@@ -757,6 +757,14 @@
 	  "selectedSlideForGreen": 0,
 	  "moreItemsPageIndex": 0,
 	  "hasMorePages": false,
+          "0":  {
+            "id": "35",
+            "nombre" : "led"
+           },
+          "1":  {
+            "id": "36",
+            "nombre" : "juguera"
+          },
 	  "green": {
 	    "sizes": {
 	      "S": "20 W",
@@ -903,7 +911,7 @@
       <input type="text"
         name="red"
         value = 0
-        [value] ="product.selectedSlideForRed">
+        [value] ="product[product.selectedSlideForRed].nombre">
       <input name="clientId"
 	type="hidden"
 	value="CLIENT_ID(cart)"
