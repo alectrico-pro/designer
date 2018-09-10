@@ -653,7 +653,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGreen"
-	on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}}), AMP.setSate({ product: { selectedSlide: event.index }})"
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'green'">
 	<amp-img src="/img/led.png"
@@ -688,7 +688,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGolden"
-	on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}}), AMP.setState({ product:  { selectedSlide: event.index }} )"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'golden'">
@@ -708,7 +708,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForRed"
-	on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}}), AMP.setState({ product: { selectedSlide: event.index} } )"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'red'">
@@ -752,6 +752,7 @@
 	{
 	  "selectedColor": "green",
 	  "selectedSize": "S",
+	  "selectedSlide": 0;
 	  "selectedSlideForRed": 0,
 	  "selectedSlideForGolden": 0,
 	  "selectedSlideForGreen": 0,
@@ -918,7 +919,7 @@
       <input type="text"
 	name="carga_id"
 	value = 0
-	[value] ="product[product.selectedColor].ids['0']">
+	[value] ="product[product.selectedColor].ids[product.selectedSlide]">
       <input name="clientId"
 	type="hidden"
 	value="CLIENT_ID(cart)"
