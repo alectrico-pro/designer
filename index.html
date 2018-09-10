@@ -688,7 +688,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGolden"
-	on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'golden'">
@@ -708,7 +708,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForRed"
-	on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'red'">
@@ -752,7 +752,7 @@
 	{
 	  "selectedColor": "green",
 	  "selectedSize": "S",
-	  "selectedSlide": 100,
+	  "selectedSlide": 0,
 	  "selectedSlideForRed": 0,
 	  "selectedSlideForGolden": 0,
 	  "selectedSlideForGreen": 0,
@@ -768,10 +768,10 @@
 	      "1": "Jugera"
 	    },
 	    "sizes": {
-	      "DORMITORIO": "20 W",
-	      "COCINA": "60 W",
-	      "LOGIA": "unavailable",
-	      "LIVING": "unavailable"
+	      "S": "20 W",
+	      "M": "60 W",
+	      "L": "unavailable",
+	      "XL": "unavailable"
 
 	    },
 	    "defaultSize": "S"
@@ -785,10 +785,10 @@
 	      "0": "microondas"
 	    },
 	    "sizes": {
-	      "COCINA": "100 W",
-	      "MESON": "900 W",
-	      "LOGGIA": "1200 W",
-	      "LIVING": "unavailable"
+	      "S": "100 W",
+	      "M": "900 W",
+	      "L": "1200 W",
+	      "XL": "unavailable"
 
 	    },
 	    "defaultSize": "L"
@@ -802,10 +802,10 @@
 	      "0": "lavaropas"
 	    },
 	    "sizes": {
-	      "COCINA": "2000 W",
-	      "MESON": "3000 W",
-	      "DORMITORIO": "4000 W",
-	      "LOGIA": "8000 W"
+	      "S": "2000 W",
+	      "M": "3000 W",
+	      "L": "4000 W",
+	      "XL": "8000 W"
 
 	    },
 	    "defaultSize": "S"
@@ -945,6 +945,7 @@
       height="145"
       layout="fixed-height"
       src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
+      [src]="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
 
       id="show-more-list">
       <template type="amp-mustache">
