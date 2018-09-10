@@ -833,6 +833,7 @@
 		      product: {
 		        carga_id: 37,
 			selectedColor: event.targetOption,
+			selectedSlide: 100,
 			selectedSlideForRed: 0,
 			selectedSlideForGreen: 0,
 			selectedSlideForYellow: 0,
@@ -914,8 +915,10 @@
       </div>
       <input type="text"
 	name="selectedSlideForGreen"
-	
 	[value]="product.selectedSlideForGreen">
+      <input type="text"
+        name="selectedSlide"
+        [value]="product.selectedSlide">
       <input type="text"
 	name="carga_id"
 	value = 0
