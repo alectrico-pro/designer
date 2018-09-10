@@ -653,7 +653,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGreen"
-	on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}}),AMP.setState({current_slide: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})"
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'green'">
 	<amp-img src="/img/led.png"
@@ -899,6 +899,9 @@
       <input type="text"
 	name="price"
 	[value] ="product.selectedSlideForGreen">
+      <p 
+        <span [text] = "product.selectedSlideForGreen"> </span>
+      </p>
       <input name="clientId"
 	type="hidden"
 	value="CLIENT_ID(cart)"
