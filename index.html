@@ -580,68 +580,72 @@
 	    role="button">
 	  </amp-img>
         </li>
+      </ul>
+    </div>
+
+    <div class="product-gallery">
+
+      <ul hidden
+        [hidden]="product.selectedColor != 'golden'">
         <li>
-	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
+	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
 	    src="/img/juguera_60_40.png"
 	    width="60"
 	    height="40"
-	    [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
+	    [class]="product.selectedSlideForGolden == 0 ? 'selected' : '' "
 	    tabindex="1"
 	    role="button">
 	  </amp-img>
        </li>
        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 2}})"
-            src="/img/secadora_de_ropa_60_40.png"
-            width="60"
-            height="40"
-            [class]="product.selectedSlideForGreen == 2 ? 'selected' : '' "
-            tabindex="2"
-            role="button">
-          </amp-img>
-       </li>
-     </ul>
-
-     <ul hidden
-      [hidden]="product.selectedColor != 'golden'">
-       <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
-		src="/img/microondas_60_40.png"
-		width="60"
-		height="40"
-		class="selected fadeIn"
-		[class]="product.selectedSlideForGolden == 0 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
+	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 1}})"
+	    src="/img/microondas_60_40.png"
+	    width="60"
+	    height="40"
+	    class="selected fadeIn"
+	    [class]="product.selectedSlideForGolden == 1 ? 'selected fadeIn' : '' "
+	    tabindex="0"
+	    role="button">
+	  </amp-img>
+	</li>
       </ul>
+    </div>
 
+    <div class="product-gallery">
       <ul hidden
-	    [hidden]="product.selectedColor != 'red'">
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
-		src="/img/plancha_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
-		src="/img/lavaplatos_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForRed == 1 ? 'selected fadeIn' : '' "
-		tabindex="1"
-		role="button">
-	      </amp-img>
-	    </li>
+	  [hidden]="product.selectedColor != 'red'">
+	<li>
+	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
+	    src="/img/plancha_60_40.png"
+	    width="60"
+	    height="40"
+	    class=""
+	    [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
+	    tabindex="0"
+	    role="button">
+	  </amp-img>
+	</li>
+	<li>
+	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 1}})"
+	    src="/img/secadora_de_ropa_60_40.png"
+	    width="60"
+	    height="40"
+	    [class]="product.selectedSlideForRed == 1 ? 'selected' : '' "
+	    tabindex="2"
+	    role="button">
+	  </amp-img>
+	</li>
+	<li>
+	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 2}})"
+	    src="/img/lavaplatos_60_40.png"
+	    width="60"
+	    height="40"
+	    class=""
+	    [class]="product.selectedSlideForRed == 2 ? 'selected fadeIn' : '' "
+	    tabindex="1"
+	    role="button">
+	  </amp-img>
+	</li>
       </ul>
     </div>
 
