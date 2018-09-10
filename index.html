@@ -919,15 +919,15 @@
       <input type="hidden"
 	name="green"
 	value = 0
-	[value] ="product.selectedSlideForGolden">
+	[value] ="product[:green][product.selectedSlideForGreen.to_sym].nombre">
       <input type="text"
-        name="green"
+        name="golden"
         value = 0
-        [value] ="product.green[product.selectedSlideForGreen].nombre">
+        [value] ="product[:golden][product.selectedSlideForGolden.to_sym].nombre">
       <input type="text"
         name="red"
         value = 0
-        [value] ="product.red[product.selectedSlideForRed].nombre">
+        [value] ="product[:red][product.selectedSlideForRed.to_sym].nombre">
 
       <input name="clientId"
 	type="hidden"
