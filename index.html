@@ -788,9 +788,9 @@
 	    },
 	    "sizes": {
 	      "COCINA": "100 W",
-	      "MESON": "900 W",
-	      "LOGGIA": "1200 W",
-	      "LIVING": "unavailable"
+	      "LIVING": "900 W",
+	      "DORMITORIO": "1200 W",
+	      "LOGIA": "unavailable"
 
 	    },
 	    "defaultSize": "L"
@@ -807,7 +807,7 @@
 	    },
 	    "sizes": {
 	      "COCINA": "2000 W",
-	      "MESON": "3000 W",
+	      "LIVGING": "3000 W",
 	      "DORMITORIO": "4000 W",
 	      "LOGIA": "8000 W"
 
@@ -884,28 +884,28 @@
 			? product.selectedSize
 			: product[product.selectedColor].defaultSize">
 	  <ul class="p0 m1">
-	    <li option="S"
+	    <li option="COCINA"
 	      class=""
               selected
-	      [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['COCINA'] != 'unavailable')
 			? ''
-			: 'unavailable'">S</li>
-	    <li option="M"
+			: 'unavailable'">COCINA</li>
+	    <li option="LIVING"
 	      class=""
-	      [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['LIVING'] != 'unavailable')
 			? ''
-			: 'unavailable'">M</li>
-	    <li option="L"
+			: 'unavailable'">LIVING</li>
+	    <li option="DORMITORIO"
 	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['DORMITORIO'] != 'unavailable')
 			? ''
-			: 'unavailable'">L</li>
+			: 'unavailable'">DORMITORIO</li>
 
-	    <li option="XL"
+	    <li option="LOGGIA"
 	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['XL'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['LOGGIA'] != 'unavailable')
 			? ''
-			: 'unavailable'">XL</li>
+			: 'unavailable'">LOGGIA</li>
 
 
 	  </ul>
