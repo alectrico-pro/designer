@@ -757,13 +757,25 @@
 	  "selectedSlideForGreen": 0,
 	  "moreItemsPageIndex": 0,
 	  "hasMorePages": false,
-          "0":  {
-            "id": "35",
-            "nombre" : "led"
-           },
-          "1":  {
-            "id": "36",
-            "nombre" : "juguera"
+          "green": {
+	    "0":  {
+	      "id": "35",
+	      "nombre" : "led"
+	     },
+	    "1":  {
+	      "id": "36",
+	      "nombre" : "juguera"
+	    }
+          },
+          "red": {
+            "0":  {
+              "id": "37",
+              "nombre" : "plancha"
+             },
+            "1":  {
+              "id": "37",
+              "nombre" : "lava ropa"
+            }
           },
 	  "green": {
 	    "sizes": {
@@ -907,11 +919,16 @@
       <input type="hidden"
 	name="green"
 	value = 0
-	[value] ="product.selectedSlideForGreen">
+	[value] ="product.selectedSlideForGolden">
+      <input type="text"
+        name="green"
+        value = 0
+        [value] ="product.green[product.selectedSlideForGreen].nombre">
       <input type="text"
         name="red"
         value = 0
-        [value] ="product[product.selectedSlideForRed].nombre">
+        [value] ="product.red[product.selectedSlideForRed].nombre">
+
       <input name="clientId"
 	type="hidden"
 	value="CLIENT_ID(cart)"
