@@ -771,12 +771,16 @@
 	    },
 	    "sizes": {
 	      "DORMITORIO": "20 W",
-	      "COCINA": "60 W",
-	      "LOGIA": "unavailable",
-	      "LIVING": "unavailable"
+	      "COCINA"    : "60 W",
+	      "LIVING"    : "60 W",
+	      "ENCIMERA"  : "unavailable",
+	      "CALEFACCION": "unavilable",
+	      "MESÓN COCINA": "unavailable",
+	      "LOGIA"     : "unavailable",
+	      "LAVALOZAS" : "unavailable"
 
 	    },
-	    "defaultSize": "S"
+	    "defaultSize": "COCINA"
 	  },
 
 	  "golden": {
@@ -787,13 +791,16 @@
 	      "0": "microondas"
 	    },
 	    "sizes": {
-	      "COCINA": "100 W",
-	      "LIVING": "900 W",
-	      "DORMITORIO": "1200 W",
-	      "LOGIA": "unavailable"
-
+	      "ENCIMERA":      "900 W",
+	      "CALEFACCIÓN":   "900 W",
+	      "MESÓN COCINA":  "2000 W",
+	      "LAVALOZAS":     "8000 W",
+	      "LOGIA":     "unavailable",
+	      "DORMITORIO": "unavilable",
+	      "COCINA": "unavailable",
+	      
 	    },
-	    "defaultSize": "L"
+	    "defaultSize": "MESÓN COCINA"
 	  },
 
 	  "red": {
@@ -806,19 +813,20 @@
 	      "1": "LavaLozas"
 	    },
 	    "sizes": {
-	      "COCINA": "2000 W",
-	      "LIVGING": "3000 W",
-	      "DORMITORIO": "4000 W",
-	      "LOGIA": "8000 W"
-
+	      "ENCIMERA"    : "4000 W",
+	      "CALEFACCIÓN" : "unavailable",
+	      "MESÓN COCINA": "unavilable",
+	      "LOGIA"       : "unavailable",
+	      "COCINA"      : "unavailable",
+	      "LAVALOZAS"   : "unavailable"
 	    },
-	    "defaultSize": "S"
+	    "defaultSize": "ENCIMERA"
 	  }
 	}
       </script>
     </amp-state>
 
-    <p class="price-description">Potencia:
+    <p class="price-description">Circuito:
       <span [text]="product[product.selectedColor].sizes[product.selectedSize]">20W</span>
     </p>
 
@@ -829,7 +837,7 @@
       on = "submit-success:show-more-list.refresh;submit-error:show-more-list.refresh"
       class="flex flex-wrap m1">
       <div class="items-center flex">
-	<label for="color">Etiqueta:</label>
+	<label for="color">Nivel de Consumo:</label>
 	<amp-selector name="color"
 	  layout="container"
 	  [selected]="product.selectedColor"
@@ -901,11 +909,11 @@
 			? ''
 			: 'unavailable'">DORMITORIO</li>
 
-	    <li option="LOGGIA"
+	    <li option="LOGIA"
 	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['LOGGIA'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['LOGIA'] != 'unavailable')
 			? ''
-			: 'unavailable'">LOGGIA</li>
+			: 'unavailable'">LOGIA</li>
 
 
 	  </ul>
