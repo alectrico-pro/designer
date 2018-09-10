@@ -916,18 +916,18 @@
       <input type="hidden"
         name="carga_id"
 	value="37">
-      <input type="hidden"
+      <input type="text"
 	name="green"
 	value = 0
-	[value] ="product[:green][product.selectedSlideForGreen.to_sym].nombre">
+	[value] ="product['green']["0"].nombre">
       <input type="text"
         name="golden"
         value = 0
-        [value] ="product[:golden][product.selectedSlideForGolden.to_sym].nombre">
+        [value] ="product['golden'][product.selectedSlideForGolden].nombre">
       <input type="text"
         name="red"
         value = 0
-        [value] ="product[:red][product.selectedSlideForRed.to_sym].nombre">
+        [value] ="product['red'][product.selectedSlideForRed].nombre">
 
       <input name="clientId"
 	type="hidden"
