@@ -814,15 +814,16 @@
 	    "nombres": {
               "0": "plancha",
 	      "1": "lavadora de ropas",
-	      "2": "secadora de ropas"
+	      "2": "lavalozas"
 	    },
 	    "circuitos": {
               "0": "N",
 	      "1": "L",
-	      "2": "L"
+	      "2": "C"
 	    },
 	    "sizes": {
               "N": "300 W",
+              "C": "300 W",
 	      "S": "unavailable",
 	      "M": "unavailable",
 	      "L": "4000 W",
@@ -902,6 +903,55 @@
 			? product.selectedSize
 			: product[product.selectedColor].defaultSize">
 	  <ul class="p0 m1">
+
+            <li option="I"
+              class=""
+              selected
+              [class]="(product[product.selectedColor].sizes['I'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">I</li>
+            <li option="C"
+              class=""
+              selected
+              [class]="(product[product.selectedColor].sizes['C'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">C</li>
+            <li option="DS"
+              class=""
+              selected
+              [class]="(product[product.selectedColor].sizes['D'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">D</li>
+
+            <li option="N"
+              class=""
+              selected
+              [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">N</li>
+
+            <li option="E"
+              class=""
+              selected
+              [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">E</li>
+
+
+            <li option="Z"
+              class=""
+              selected
+              [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">Z</li>
+
+            <li option="A"
+              class=""
+              selected
+              [class]="(product[product.selectedColor].sizes['A'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">A</li>
+
 	    <li option="S"
 	      class=""
               selected
