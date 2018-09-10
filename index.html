@@ -935,7 +935,7 @@
         <form method   = "POST"
           action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
           target    = "_top"
-	  on = "submit-success:AMP:setState({ myState: { src: 'https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)&' + random()  })">
+	  on = "submit-success:AMP.setState({ myState: { src: 'https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)&' + random()  })">
           <input name = "clientId" 
              type = "hidden" 
              value = "CLIENT_ID(cart)" 
