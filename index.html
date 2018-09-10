@@ -653,7 +653,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGreen"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index}, {selectedSlideForGreen: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})"
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'green'">
 	<amp-img src="/img/led.png"
@@ -688,7 +688,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGolden"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index},{selectedSlideForGolden: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'golden'">
@@ -708,7 +708,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForRed"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index}, {selectedSlideForRed: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'red'">
@@ -752,7 +752,6 @@
 	{
 	  "selectedColor": "green",
 	  "selectedSize": "S",
-	  "selectedSlide": 0, 
 	  "selectedSlideForRed": 0,
 	  "selectedSlideForGolden": 0,
 	  "selectedSlideForGreen": 0,
@@ -822,7 +821,8 @@
       method="POST"
       action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1/addToCircuito.json"
       target="_top"
-      on = "submit-success:show-more-list.refresh;submit-error:show-more-list.refresh"
+      on = "submit-success:show-more-list.refresh"
+      on = "submit-error:show-more-list.refresh"
       class="flex flex-wrap m1">
       <div class="items-center flex">
 	<label for="color">Etiqueta:</label>
@@ -833,7 +833,6 @@
 		      product: {
 		        carga_id: 37,
 			selectedColor: event.targetOption,
-			selectedSlide: 0,
 			selectedSlideForRed: 0,
 			selectedSlideForGreen: 0,
 			selectedSlideForYellow: 0,
@@ -914,12 +913,12 @@
 	  value="Agregar al Circuito">
       </div>
       <input type="text"
-	name="selectedSlide"
-	[value]="product.selectedSlide">
+	name="selectedSlideForGreen"
+	value="product.selectedSlideForGreen">
       <input type="text"
 	name="carga_id"
 	value = 0
-	[value] ="product[product.selectedColor].ids[product.selectedSlide]">
+	[value] ="product[product.selectedColor].ids['0']">
       <input name="clientId"
 	type="hidden"
 	value="CLIENT_ID(cart)"
