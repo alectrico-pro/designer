@@ -653,7 +653,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGreen"
-	on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}}), AMP.setSate({ product: { selectedSlide: event.index }})"
+	on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}}), AMP.setState({ product: { selectedSlide: event.index }})"
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'green'">
 	<amp-img src="/img/led.png"
@@ -752,7 +752,7 @@
 	{
 	  "selectedColor": "green",
 	  "selectedSize": "S",
-	  "selectedSlide": 0;
+	  "selectedSlide": 0, 
 	  "selectedSlideForRed": 0,
 	  "selectedSlideForGolden": 0,
 	  "selectedSlideForGreen": 0,
