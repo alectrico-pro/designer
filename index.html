@@ -688,7 +688,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGolden"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'golden'">
@@ -708,7 +708,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForRed"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'red'">
@@ -761,26 +761,20 @@
 	  "green": {
 	    "ids" : {
 	      "0": "35",
-	      "1": "36",
-	      "2": "37"
+	      "1": "36"
 	      },
 	    "nombres": {
 	      "0": "Ampolleta Led",
-	      "1": "Jugera",
-	      "2": "Lavadora"
+	      "1": "Jugera"
 	    },
 	    "sizes": {
 	      "DORMITORIO": "20 W",
-	      "COCINA"    : "60 W",
-	      "LIVING"    : "60 W",
-	      "ENCIMERA"  : "unavailable",
-	      "CALEFACCION": "unavilable",
-	      "MESÓN COCINA": "unavailable",
-	      "LOGIA"     : "unavailable",
-	      "LAVALOZAS" : "unavailable"
+	      "COCINA": "60 W",
+	      "LOGIA": "unavailable",
+	      "LIVING": "unavailable"
 
 	    },
-	    "defaultSize": "COCINA"
+	    "defaultSize": "S"
 	  },
 
 	  "golden": {
@@ -791,42 +785,36 @@
 	      "0": "microondas"
 	    },
 	    "sizes": {
-	      "ENCIMERA":      "900 W",
-	      "CALEFACCIÓN":   "900 W",
-	      "MESÓN COCINA":  "2000 W",
-	      "LAVALOZAS":     "8000 W",
-	      "LOGIA":     "unavailable",
-	      "DORMITORIO": "unavilable",
-	      "COCINA": "unavailable",
-	      
+	      "COCINA": "100 W",
+	      "MESON": "900 W",
+	      "LOGGIA": "1200 W",
+	      "LIVING": "unavailable"
+
 	    },
-	    "defaultSize": "MESÓN COCINA"
+	    "defaultSize": "L"
 	  },
 
 	  "red": {
 	    "ids": {
-	      "0": "35",
-	      "1": "36"
+	      "0": "37"
 	    },
 	    "nombres": {
-	      "0": "lavaropas",
-	      "1": "LavaLozas"
+	      "0": "lavaropas"
 	    },
 	    "sizes": {
-	      "ENCIMERA"    : "4000 W",
-	      "CALEFACCIÓN" : "unavailable",
-	      "MESÓN COCINA": "unavilable",
-	      "LOGIA"       : "unavailable",
-	      "COCINA"      : "unavailable",
-	      "LAVALOZAS"   : "unavailable"
+	      "COCINA": "2000 W",
+	      "MESON": "3000 W",
+	      "DORMITORIO": "4000 W",
+	      "LOGIA": "8000 W"
+
 	    },
-	    "defaultSize": "ENCIMERA"
+	    "defaultSize": "S"
 	  }
 	}
       </script>
     </amp-state>
 
-    <p class="price-description">Circuito:
+    <p class="price-description">Potencia:
       <span [text]="product[product.selectedColor].sizes[product.selectedSize]">20W</span>
     </p>
 
@@ -837,7 +825,7 @@
       on = "submit-success:show-more-list.refresh;submit-error:show-more-list.refresh"
       class="flex flex-wrap m1">
       <div class="items-center flex">
-	<label for="color">Nivel de Consumo:</label>
+	<label for="color">Etiqueta:</label>
 	<amp-selector name="color"
 	  layout="container"
 	  [selected]="product.selectedColor"
@@ -892,28 +880,28 @@
 			? product.selectedSize
 			: product[product.selectedColor].defaultSize">
 	  <ul class="p0 m1">
-	    <li option="COCINA"
+	    <li option="S"
 	      class=""
               selected
-	      [class]="(product[product.selectedColor].sizes['COCINA'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
 			? ''
-			: 'unavailable'">COCINA</li>
-	    <li option="LIVING"
+			: 'unavailable'">S</li>
+	    <li option="M"
 	      class=""
-	      [class]="(product[product.selectedColor].sizes['LIVING'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
 			? ''
-			: 'unavailable'">LIVING</li>
-	    <li option="DORMITORIO"
+			: 'unavailable'">M</li>
+	    <li option="L"
 	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['DORMITORIO'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
 			? ''
-			: 'unavailable'">DORMITORIO</li>
+			: 'unavailable'">L</li>
 
-	    <li option="LOGIA"
+	    <li option="XL"
 	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['LOGIA'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['XL'] != 'unavailable')
 			? ''
-			: 'unavailable'">LOGIA</li>
+			: 'unavailable'">XL</li>
 
 
 	  </ul>
@@ -926,12 +914,15 @@
 	  value="Agregar al Circuito">
       </div>
       <input type="text"
+	name="selectedSlideForGreen"
+	[value]="product.selectedSlideForGreen">
+      <input type="text"
         name="selectedSlide"
         [value]="product.selectedSlide">
       <input type="text"
 	name="carga_id"
 	value = 0
-	[value] ="product[product.selectedColor].ids[product.selectedSlide]">
+	[value] ="product[product.selectedColor].ids['0']">
       <input name="clientId"
 	type="hidden"
 	value="CLIENT_ID(cart)"
@@ -953,7 +944,7 @@
       width="auto"
       height="145"
       layout="fixed-height"
-      src  ="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
+      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
 
       id="show-more-list">
       <template type="amp-mustache">
