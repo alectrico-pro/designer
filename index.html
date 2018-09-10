@@ -757,27 +757,9 @@
 	  "selectedSlideForGreen": 0,
 	  "moreItemsPageIndex": 0,
 	  "hasMorePages": false,
-          "green": {
-	    "0":  {
-	      "id": "35",
-	      "nombre" : "led"
-	     },
-	    "1":  {
-	      "id": "36",
-	      "nombre" : "juguera"
-	    }
-          },
-          "red": {
-            "0":  {
-              "id": "37",
-              "nombre" : "plancha"
-             },
-            "1":  {
-              "id": "37",
-              "nombre" : "lava ropa"
-            }
-          },
-	  "green": {
+          "green":  [{ "id": "35",  "nombre" : "led" }, {  "id": "36",  "nombre" : "juguera"}],
+	  "red":    [{ "id": "37",  "nombre" : "plancha" }, {"id": "37", "nombre" : "lava ropa"}],
+	  "golden": [{ "id": "37",  "nombre" : "microondas"    }],
 	    "sizes": {
 	      "S": "20 W",
 	      "M": "60 W",
@@ -919,7 +901,7 @@
       <input type="text"
 	name="green"
 	value = 0
-	[value] ="product['green']['0'].nombre">
+	[value] ="product['green'][1].nombre">
       <input type="text"
         name="golden"
         value = 0
