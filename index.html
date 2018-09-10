@@ -769,6 +769,11 @@
 	      "1": "Jugera",
 	      "2": "Lavadora"
 	    },
+	    "potencias": {
+	      "0": "70 W",
+	      "1": "60 W",
+	      "2": "300 W"
+	    }.
 	    "sizes": {
 	      "S": "20 W",
 	      "M": "60 W",
@@ -786,12 +791,14 @@
 	    "nombres" : {
 	      "0": "microondas"
 	    },
+	    "potencias" : {
+	      "0": "1800 W"
+	      },
 	    "sizes": {
 	      "S": "100 W",
 	      "M": "900 W",
 	      "L": "1200 W",
 	      "XL": "unavailable"
-
 	    },
 	    "defaultSize": "L"
 	  },
@@ -805,6 +812,10 @@
 	      "0": "lavarropas",
 	      "1": "secarropas"
 	    },
+	    "potencias": {
+	      "0": "200 W",
+	      "1": "3000 W"
+	      },
 	    "sizes": {
 	      "S": "2000 W",
 	      "M": "3000 W",
@@ -940,8 +951,11 @@
     </form>
       
     <p class="coigo-carga">Electrodoméstico Seleccionado:
-      <span [text]="product[product.selectedColor].ids[product.selectedSlide]">---</span>
       <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">---</span>
+      <span [text]="product[product.selectedColor].potencia[product.selectedSlide]">---</span>
+      <span>  (-  </span>
+      <span [text]="product[product.selectedColor].ids[product.selectedSlide]">---</span>
+      <span> -)  </span>
     </p>
 
 
