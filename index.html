@@ -818,7 +818,7 @@
       </script>
     </amp-state>
 
-    <p class="price-description">Potencia:
+    <p class="price-description">Potencia Máxima:
       <span [text]="product[product.selectedColor].sizes[product.selectedSize]">20W</span>
     </p>
 
@@ -829,7 +829,7 @@
       on = "submit-success:show-more-list.refresh;submit-error:show-more-list.refresh"
       class="flex flex-wrap m1">
       <div class="items-center flex">
-	<label for="color">Etiqueta:</label>
+	<label for="color">Grupo:</label>
 	<amp-selector name="color"
 	  layout="container"
 	  [selected]="product.selectedColor"
@@ -876,7 +876,7 @@
       </div>
 
       <div class="items-center flex">
-	<label for="size">Potencia:</label>
+	<label for="size">Circuito:</label>
 	<amp-selector name="size"
 	  layout="container"
 	  on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
@@ -1011,19 +1011,19 @@
       <div role="tab"
 	class="tabButton h4 ampstart-nav-item"
 	selected
-	option="a">ETIQUETA</div>
+	option="a">GRUPO</div>
       <div role="tabpanel"
-	class="tabContent p1 p">Los electrodomésticos de etiqueta verde consumen poco y pueden ser agregados libremente. Los de etiqueta dorada son peligrosos y debe agregar pocos. Los rojos son los más peligrosos y solo pueden estar en circuitos exclusivos.</div>
+	class="tabContent p1 p">Los electrodomésticos de iluminación se encuentran en el grupo verde. Los que tienen enchufes en el amarillo y los electrodomésticos peligrosos en el grupo rojo. Para los más peligrosos se requiere generalmente una unión soldada en vez de usar enchufes. Debe contactar a un Instalador Eléctrico Autorizado para que haga la instalación. </div>
       <div role="tab"
 	class="tabButton h4 ampstart-nav-item"
 	option="b">CANTIDAD</div>
       <div role="tabpanel"
-	class="tabContent p1 p">Especifique la cantidad de electrodomésticos que quiere agregar. Puede repetir este procedimiento hasta agregar todos sus electrodomésticos.No olvide presionar al botón "AGREGAR AL CIRCUITO" cada vez</div>
+	class="tabContent p1 p">Ingrese la cantidad de electrodomésticos que quiere agregar con cada toque de botón.</div>
       <div role="tab"
 	class="tabButton h4 ampstart-nav-item"
-	option="c"> POTENCIA</div>
+	option="c"> CIRCUITO</div>
       <div role="tabpanel"
-	class="tabContent p1 p">Elija el rango de potencia del electrodoméstico. Use S: Small para equipos pequeños o de menor consumo.</div>
+	class="tabContent p1 p">Elija a qué circuito va a agregar el electrodoméstico.</div>
     </amp-selector>
   </body>
 </html>
