@@ -757,9 +757,13 @@
 	  "selectedSlideForGreen": 0,
 	  "moreItemsPageIndex": 0,
 	  "hasMorePages": false,
-          "green":  [{ "id": "35",  "nombre" : "led" }, {  "id": "36",  "nombre" : "juguera"}],
-	  "red":    [{ "id": "37",  "nombre" : "plancha" }, {"id": "37", "nombre" : "lava ropa"}],
-	  "golden": [{ "id": "37",  "nombre" : "microondas"    }],
+          "green": {
+	    "ids":  {
+	      "0": "35",
+	      "1": "36"
+	    },
+          },
+	  "green": {
 	    "sizes": {
 	      "S": "20 W",
 	      "M": "60 W",
@@ -898,19 +902,10 @@
       <input type="hidden"
         name="carga_id"
 	value="37">
-      <input type="text"
+      <input type="hidden"
 	name="green"
 	value = 0
-	[value] ="product['green'][1].nombre">
-      <input type="text"
-        name="golden"
-        value = 0
-        [value] ="product['golden'][product.selectedSlideForGolden].nombre">
-      <input type="text"
-        name="red"
-        value = 0
-        [value] ="product['red'][product.selectedSlideForRed].nombre">
-
+        [value] ="product[product.selectedColor].ids['0']"
       <input name="clientId"
 	type="hidden"
 	value="CLIENT_ID(cart)"
