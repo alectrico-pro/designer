@@ -833,6 +833,7 @@
 		      product: {
 		        carga_id: 37,
 			selectedColor: event.targetOption,
+			selectedSlide: 0,
 			selectedSlideForRed: 0,
 			selectedSlideForGreen: 0,
 			selectedSlideForYellow: 0,
@@ -912,9 +913,9 @@
 	  name="Agregar al Circuito"
 	  value="Agregar al Circuito">
       </div>
-      <input type="hidden"
-	name="img"
-	value="/img/plancha.png">
+      <input type="text"
+	name="selectedSlide"
+	[value]="product.selectedSlide">
       <input type="text"
 	name="carga_id"
 	value = 0
