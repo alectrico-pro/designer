@@ -653,7 +653,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGreen"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index}, {selectedSlideForGreen: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlide: event.index} {selectedSlideForGreen: event.index}})"
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'green'">
 	<amp-img src="/img/led.png"
@@ -768,10 +768,10 @@
 	      "1": "Jugera"
 	    },
 	    "sizes": {
-	      "S": "20 W",
-	      "M": "60 W",
-	      "L": "unavailable",
-	      "XL": "unavailable"
+	      "DORMITORIO": "20 W",
+	      "COCINA": "60 W",
+	      "LOGIA": "unavailable",
+	      "LIVING": "unavailable"
 
 	    },
 	    "defaultSize": "S"
@@ -785,10 +785,10 @@
 	      "0": "microondas"
 	    },
 	    "sizes": {
-	      "S": "100 W",
-	      "M": "900 W",
-	      "L": "1200 W",
-	      "XL": "unavailable"
+	      "COCINA": "100 W",
+	      "MESON": "900 W",
+	      "LOGGIA": "1200 W",
+	      "LIVING": "unavailable"
 
 	    },
 	    "defaultSize": "L"
@@ -802,10 +802,10 @@
 	      "0": "lavaropas"
 	    },
 	    "sizes": {
-	      "S": "2000 W",
-	      "M": "3000 W",
-	      "L": "4000 W",
-	      "XL": "8000 W"
+	      "COCINA": "2000 W",
+	      "MESON": "3000 W",
+	      "DORMITORIO": "4000 W",
+	      "LOGIA": "8000 W"
 
 	    },
 	    "defaultSize": "S"
