@@ -688,7 +688,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForGolden"
-	on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'golden'">
@@ -708,7 +708,7 @@
 	layout="responsive"
 	type="slides"
 	[slide]="product.selectedSlideForRed"
-	on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})"
+	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
 	hidden
 	class="fadeIn"
 	[hidden]="product.selectedColor != 'red'">
