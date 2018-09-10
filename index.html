@@ -818,9 +818,11 @@
       </script>
     </amp-state>
 
-    <p class="price-description">Potencia Máxima:
+    <p class="price-description">Potencia: 
       <span [text]="product[product.selectedColor].sizes[product.selectedSize]">20W</span>
     </p>
+
+
 
     <form id="order"
       method="POST"
@@ -917,13 +919,7 @@
 	  name="Agregar al Circuito"
 	  value="Agregar al Circuito">
       </div>
-      <input type="text"
-	name="selectedSlideForGreen"
-	[value]="product.selectedSlideForGreen">
-      <input type="text"
-        name="selectedSlide"
-        [value]="product.selectedSlide">
-      <input type="text"
+      <input type="hidden"
 	name="carga_id"
 	value = 0
 	[value] ="product[product.selectedColor].ids[product.selectedSlide]">
@@ -943,6 +939,11 @@
       </div>
     </form>
       
+    <p class="coigo-carga">Electrodoméstico Seleccionado:
+      <span [text]="product[product.selectedColor].ids[product.selectedSlide]">---</span>
+      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">---</span>
+    </p>
+
 
     <amp-list class="items m1"
       width="auto"
