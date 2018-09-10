@@ -963,6 +963,7 @@
 
       id="show-more-list">
       <template type="amp-mustache">
+      <!--
 	<a class="text-decoration-none p1"
 	  href="#">
 	  <amp-img width="70.31"
@@ -971,19 +972,22 @@
 	    alt="{{cantidad}}"
 	    src="{{img}}"></amp-img>
 	</a>
-	<!-- 
-
+       -->
         <form method   = "POST"
           action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
           target    = "_top"
 	  on = "submit-success:show-more-list.refresh">
+          <amp-img width="70.31"
+            height="46.8"
+            layout="fixed"
+            alt="{{cantidad}}"
+            src="{{img}}"></amp-img>
           <input name = "clientId" 
              type = "hidden" 
              value = "CLIENT_ID(cart)" 
              data-amp-replace = "CLIENT_ID">
           <button  type = "submit" > X
         </form>
-	-->
       </template>
     </amp-list>
 
