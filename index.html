@@ -664,34 +664,37 @@
 	  role="button"
 	  tabindex="0">
 	</amp-img>
+       </amp-carousel>
+
+      <amp-carousel id="golden-apple-carousel"
+        width="1024"
+        height="682"
+        layout="responsive"
+        type="slides"
+        [slide]="product.selectedSlideForGolden"
+        on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
+        hidden
+        class="fadeIn"
+        [hidden]="product.selectedColor != 'golden'">
+    
 	<amp-img src="/img/juguera.png"
 	  width="1024"
 	  height="682"
 	  layout="responsive"
 	  on="tap:gallery-lightbox"
 	  role="button"
-	  tabindex="1">
+	  tabindex="0">
 	</amp-img>
+
 	<amp-img src="/img/secadora_de_ropa.png"
 	  width="1024"
 	  height="682"
 	  layout="responsive"
 	  on="tap:gallery-lightbox"
 	  role="button"
-	  tabindex="2">
+	  tabindex="0">
 	</amp-img>
-      </amp-carousel>
 
-      <amp-carousel id="golden-apple-carousel"
-	width="1024"
-	height="682"
-	layout="responsive"
-	type="slides"
-	[slide]="product.selectedSlideForGolden"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
-	hidden
-	class="fadeIn"
-	[hidden]="product.selectedColor != 'golden'">
 	<amp-img src="/img/microondas.png"
 	  width="1024"
 	  height="682"
@@ -986,7 +989,7 @@
              type = "hidden" 
              value = "CLIENT_ID(cart)" 
              data-amp-replace = "CLIENT_ID">
-          <button  type = "submit" > X
+          <button  type = "submit" > 
         </form>
       </template>
     </amp-list>
@@ -1041,7 +1044,7 @@
 	class="tabButton h4 ampstart-nav-item"
 	option="c"> CIRCUITO</div>
       <div role="tabpanel"
-	class="tabContent p1 p">Elija a qué circuito va a agregar el electrodoméstico. S: Sala, M: Mesón de Cocina, L: Logia, XL: Dormitorio Principal, D: Dormitorios, N: Enchufes Normales, E: Circuito Exclusivo de Encimera, Z: Circuito Exclusivo de Lavalozas, C: Calefacción, A: Aire Acondicionado, I: Iluminación </div>
+	class="tabContent p1 p">Elija a qué circuito va a agregar el electrodoméstico. S: Sala, M: Mesón de Cocina, L: LOGGIA, XL: Dormitorio Principal, D: Dormitorios, N: Enchufes Normales, E: Circuito Exclusivo de Encimera, Z: Circuito Exclusivo de Lavalozas, C: Calefacción, A: Aire Acondicionado, I: Iluminación </div>
     </amp-selector>
   </body>
 </html>
