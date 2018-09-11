@@ -770,6 +770,18 @@
 	  "selectedSlideForGreen": 0,
 	  "moreItemsPageIndex": 0,
 	  "hasMorePages": false,
+            "circuitos": {
+              "C": "Calefacción",
+              "D": "Dormitorios",
+              "E": "Encimera",
+              "N": "Enchufes",
+              "Z": "Exclusivo de Lavavajillas",
+              "A": "Exclusivo de Aire Acondicionado",
+              "M": "Mesón de Cocina",
+              "L": "Loggia",
+              "XL": "Dormitorio Suite",
+              "I": "Iluminación"
+              },
 	  "green": {
 	    "ids" : {
 	      "0": "35"
@@ -809,18 +821,6 @@
 	      "0": "M",
               "1": "M"
 	    },
-	    "circuitos": {
-	      "C": "Calefacción",
-	      "D": "Dormitorios",
-	      "E": "Encimera",
-	      "N": "Enchufes",
-	      "Z": "Exclusivo de Lavavajillas",
-	      "A": "Exclusivo de Aire Acondicionado",
-	      "M": "Mesón de Cocina",
-	      "L": "Loggia",
-	      "XL": "Dormitorio Suite",
-	      "I": "Iluminación"
-	      },
 	    "sizes": {
               "C": "unavailable",
               "D": "unavailable",
@@ -1042,7 +1042,7 @@
     </p>
     <p class="price-description">
       <span > Será agregado al circuito </span>
-      <span [text]="product[product.selectedColor].circuitos[product.selectedSize]">---</span>
+      <span [text]="product.circuitos[product.selectedSize]">---</span>
     </p>
 
 
