@@ -877,16 +877,6 @@
       <span [text]="product[product.selectedColor].ids[product.selectedSlide]">35</span>
       <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta Led</span>
     </p>
-    <p class="price-description">
-      <span > Circuito: </span>
-      <span [text]="product.circuitos[product.selectedSize]">I: Iluminación</span>
-    </p>
-
-    <p class="price-description">Potencia Total Permitida en este Circuito:
-      <span [text]="product[product.selectedColor].sizes[product.selectedSize]">200W</span>
-    </p>
-
-
 
     <form id="order"
       method="POST"
@@ -1079,12 +1069,18 @@
 
 
 	</ul>
-
-
-
-
 	</amp-selector>
       </div>
+
+    <p class="price-description">
+      <span > Circuito: </span>
+      <span [text]="product.circuitos[product.selectedSize]">I: Iluminación</span>
+    </p>
+
+    <p class="price-description">Potencia Total Permitida en este Circuito:
+      <span [text]="product[product.selectedColor].sizes[product.selectedSize]">200W</span>
+    </p>
+
       <div class="items-center flex my1">
 	<input type="submit"
 	  class="ampstart-btn caps"
@@ -1146,6 +1142,8 @@
         </form>
       </template>
     </amp-list>
+
+
 
 
     <amp-state id = "myState"
