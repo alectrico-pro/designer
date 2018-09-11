@@ -1143,33 +1143,6 @@
 
     </amp-list>
 
-
-
-
-    <amp-state id = "myState"
-      src = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)">
-    </amp-state>
-
-     
-    <form method="GET"
-      action="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
-      action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
-      target="_top"
-      on="submit-success: AMP.setState({
-	    myState: { items: myState.items.concat(event.response.items)},
-	    product: {moreItemsPageIndex: product.moreItemsPageIndex + 1,
-		      hasMorePages: event.response.hasMorePages}
-	  });">
-      <input type="hidden"
-	name="moreItemsPageIndex"
-	value="0"
-	[value]="product.moreItemsPageIndex">
-      <input type="submit"
-	value= "+ INFO"
-	class="ampstart-btn caps m1 mb3"
-	[hidden]="!product.hasMorePages">
-    </form>
-      
     <amp-install-serviceworker
       src="/sw.js"
       data-iframe-src="https://designer.com/sw.js"
