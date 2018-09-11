@@ -584,6 +584,19 @@
 	    role="button">
 	  </amp-img>
         </li>
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
+            src="/img/ampolleta_incandescente_60_40.png"
+            width="60"
+            height="40"
+            class="selected"
+            [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+
       </ul>
     </div>
 
@@ -790,6 +803,19 @@
 	  role="button"
 	  tabindex="0">
 	</amp-img>
+
+        <amp-img src="/img/ampolleta_incandescente.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+
+
+
+
        </amp-carousel>
 
       <amp-carousel id="golden-apple-carousel"
@@ -909,10 +935,6 @@
           tabindex="0">
         </amp-img>
 
-
-
-
-
         <amp-img src="/img/secadora_de_ropa.png"
           width="1024"
           height="682"
@@ -921,12 +943,6 @@
           role="button"
           tabindex="0">
         </amp-img>
-
-
-
-
-
-
 
 	<amp-img src="/img/lavaplatos.png"
 	  width="1024"
@@ -1016,13 +1032,16 @@
               },
 	  "green": {
 	    "ids" : {
-	      "0": "35"
+	      "0": "35",
+	      "1": ""
 	      },
 	    "nombres": {
-	      "0": "Ampolleta Led"
+	      "0": "Ampolleta Led",
+	      "1": "Ampolleta Incandescente"
 	    },
 	    "circuitos": {
-	      "0": "I"
+	      "0": "I",
+	      "1": "I"
 	    },
 	    "sizes": {
               "C": "unavailable",
