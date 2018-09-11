@@ -656,24 +656,24 @@
 	</li>
 
         <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 1}})"
             src="/img/frigobar_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+            [class]="product.selectedSlideForCoral == 1 ? 'selected' : '' "
             tabindex="0"
             role="button">
           </amp-img>
         </li>
 
         <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 2}})"
             src="/img/refrigerador_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+            [class]="product.selectedSlideForCoral == 2 ? 'selected' : '' "
             tabindex="0"
             role="button">
           </amp-img>
@@ -681,37 +681,34 @@
 
 
         <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 3}})"
             src="/img/refrigerador_de_dos_puertas_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+            [class]="product.selectedSlideForCoral == 3 ? 'selected' : '' "
             tabindex="0"
             role="button">
           </amp-img>
         </li>
 
-
-
-
 	<li>
-	  <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 1}})"
+	  <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 4}})"
 	    src="/img/secadora_de_ropa_60_40.png"
 	    width="60"
 	    height="40"
-	    [class]="product.selectedSlideForCoral == 1 ? 'selected fadeIn' : '' "
+	    [class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
 	    tabindex="2"
 	    role="button">
 	  </amp-img>
 	</li>
 	<li>
-	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 2}})"
+	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 5}})"
 	    src="/img/lavaplatos_60_40.png"
 	    width="60"
 	    height="40"
 	    class=""
-	    [class]="product.selectedSlideForCoral == 2 ? 'selected fadeIn' : '' "
+	    [class]="product.selectedSlideForCoral == 5 ? 'selected fadeIn' : '' "
 	    tabindex="1"
 	    role="button">
 	  </amp-img>
@@ -1041,27 +1038,27 @@
 	  "coral": {
 	    "ids": {
               "0": "37",
-	      "1": "276",
-	      "2": "101",
               "3": "843",
               "4": "252",
-              "5": "921"
+              "5": "921",
+	      "1": "276",
+	      "2": "101"
 	    },
 	    "nombres": {
               "0": "plancha",
-	      "1": "secadora de ropas",
-	      "2": "lavalozas",
-              "3": "frigobar",
-              "4": "refrigerador",
-              "5": "refrigerador de dos puertas"
+              "1": "frigobar",
+              "2": "refrigerador",
+              "3": "refrigerador de dos puertas"
+	      "4": "secadora de ropas",
+	      "5": "lavalozas",
 	    },
 	    "circuitos": {
               "0": "N",
-	      "1": "L",
-	      "2": "C",
+	      "1": "R",
+	      "2": "R",
               "3": "R",
-              "4": "R",
-              "5": "R"            
+              "4": "L",
+              "5": "Z"            
 
 	    },
 	    "sizes": {
