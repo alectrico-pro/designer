@@ -612,7 +612,7 @@
             src="/img/ampolleta_incandescente_60_40.png"
             width="60"
             height="40"
-            class="selected"
+            class=""
             [class]="product.selectedSlideForGreen == 1 ? 'selected fadeIn' : '' "
             tabindex="0"
             role="button">
@@ -1069,7 +1069,7 @@
     <amp-state id="product">
       <script type="application/json">
 	{
-	  "selectedColor": "blue",
+	  "selectedColor": "green",
 	  "selectedSize": "S",
 	  "selectedSlide": 0,
           "selectedSlideForBlue": 0,
@@ -1313,12 +1313,12 @@
 
             <li>
               <div option="blue"
-                selected
                 class="square blue"></div>
             </li>
 
 	    <li>
 	      <div option="green"
+                selected 
 		class="square green"></div>
 	    </li>
 	    <li>
