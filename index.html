@@ -654,6 +654,47 @@
 	    role="button">
 	  </amp-img>
 	</li>
+
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+            src="/img/frigobar_60_40.png"
+            width="60"
+            height="40"
+            class=""
+            [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+            src="/img/refrigerador_60_40.png"
+            width="60"
+            height="40"
+            class=""
+            [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+            src="/img/refrigerador_de_dos_puertas_60_40.png"
+            width="60"
+            height="40"
+            class=""
+            [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+
+
+
 	<li>
 	  <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 1}})"
 	    src="/img/secadora_de_ropa_60_40.png"
@@ -797,6 +838,40 @@
 	  tabindex="0">
 	</amp-img>
 
+
+        <amp-img src="/img/frigobar.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+
+
+        <amp-img src="/img/refrigerador.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+
+
+        <amp-img src="/img/refrigerador_de_dos_puertas.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+
+
+
+
+
         <amp-img src="/img/secadora_de_ropa.png"
           width="1024"
           height="682"
@@ -805,6 +880,11 @@
           role="button"
           tabindex="0">
         </amp-img>
+
+
+
+
+
 
 
 	<amp-img src="/img/lavaplatos.png"
@@ -973,13 +1053,13 @@
 	      "2": "lavalozas",
               "3": "frigobar",
               "4": "refrigerador",
-              "5": "refrigerador grande"
+              "5": "refrigerador de dos puertas"
 	    },
 	    "circuitos": {
               "0": "N",
 	      "1": "L",
 	      "2": "C",
-              "3": "E",
+              "3": "R",
               "4": "R",
               "5": "R"            
 
