@@ -933,14 +933,13 @@
       </div>
 
       <div class="items-center flex">
-	<label for="size">Circuito:</label>
 	<amp-selector name="size"
 	  layout="container"
 	  on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
 	  [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
 			? product.selectedSize
 			: product[product.selectedColor].defaultSize">
-          <label for="size">Normales:</label>
+          <label for="size">Circuitos Normales:</label>
 
 	  <ul class="p0 m1">
 
@@ -973,7 +972,7 @@
 
           </ul>
 
-          <label for="size">Climatización:</label>
+          <label for="size">Circuitos de Climatización:</label>
 
           <ul class= "p0 m1">
             <li option="C"
@@ -989,7 +988,7 @@
                         : 'unavailable'">A</li>
               
           </ul>
-          <label for="size">Cocina:</label>
+          <label for="size">Circuitos de Cocina:</label>
 
           <ul class= "p0 m1">
 
@@ -1020,7 +1019,7 @@
                         : 'unavailable'">Z</li>
 	  </ul>
 
-          <label for="size">Exclusivo:</label>
+          <label for="size">Circuitos Exclusivos:</label>
 
           <ul class = "p0 m1">
 
