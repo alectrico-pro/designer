@@ -950,12 +950,13 @@
                         : 'unavailable'">I</li>
             </li>
           </ul>
-          <ul>
+          <ul class= "p0 m1">
             <li option="C"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['C'] != 'unavailable')
                         ? ''
                         : 'unavailable'">C</li>
+
             <li option="D"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['D'] != 'unavailable')
@@ -967,19 +968,6 @@
               [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
                         ? ''
                         : 'unavailable'">N</li>
-
-            <li option="E"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">E</li>
-
-
-            <li option="Z"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">Z</li>
 
             <li option="A"
               class="unavailable"
@@ -1011,6 +999,21 @@
 
 
 	  </ul>
+          <ul class = "p0 m1">
+            <li option="E"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">E</li>
+
+
+            <li option="Z"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">Z</li>
+
+          </ul>
 	</amp-selector>
       </div>
       <div class="items-center flex my1">
