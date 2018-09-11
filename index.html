@@ -1282,7 +1282,7 @@
       </script>
     </amp-state>
 
-    <p class="price-description">Electrodoméstico Seleccionado:
+    <p class="price-description"> Seleccionado:
       <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta Led</span>
     </p>
 
@@ -1296,6 +1296,7 @@
 	<label for="color">Grupo:</label>
 	<amp-selector name="color"
 	  layout="container"
+          selected = "green"
 	  [selected]="product.selectedColor"
 	  on="select:AMP.setState({
 		      product: {
