@@ -985,7 +985,7 @@
 
 
 
-          <label for="size">Circuitos de Climatización:</label>
+          <label for="size">Climatización:</label>
 
           <ul class= "p0 m1">
             <li option="C"
@@ -1015,7 +1015,7 @@
 
 
 
-          <label for="size">Circuitos de Cocina:</label>
+          <label for="size">Cocina:</label>
 
           <ul class= "p0 m1">
 
@@ -1024,20 +1024,6 @@
 	      [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
 			? ''
 			: 'unavailable'">M</li>
-
-	    <li option="H"
-	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['H'] != 'unavailable')
-			? ''
-			: 'unavailable'">H</li>
-
-
-            <li option="E"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">E</li>
-
 
             <li option="Z"
               class="unavailable"
@@ -1059,7 +1045,7 @@
 
 
 
-          <label for="size">Circuitos Exclusivos:</label>
+          <label for="size">Exclusivos:</label>
 
           <ul class = "p0 m1">
 
@@ -1069,8 +1055,25 @@
                         ? ''
                         : 'unavailable'">L</li>
 
+            <li option="E"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">E</li>
+
+            <li option="H"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['H'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">H</li>
+
+
 
 	</ul>
+
+
+
+
 	</amp-selector>
       </div>
       <div class="items-center flex my1">
