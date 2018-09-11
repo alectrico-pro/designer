@@ -771,16 +771,16 @@
 	  "moreItemsPageIndex": 0,
 	  "hasMorePages": false,
             "circuitos": {
-              "C": "Calefacción",
-              "D": "Dormitorios",
-              "E": "Encimera",
-              "N": "Enchufes",
-              "Z": "Exclusivo de Lavavajillas",
-              "A": "Exclusivo de Aire Acondicionado",
-              "M": "Mesón de Cocina",
-              "L": "Loggia",
-              "H": "Horno Eléctrico",
-              "I": "Iluminación"
+              "C": "C: Calefacción",
+              "D": "D: Dormitorios",
+              "E": "E: Encimera",
+              "N": "N: Enchufes Normales",
+              "Z": "Z: Exclusivo de Lavavajillas",
+              "A": "A: Exclusivo de Aire Acondicionado",
+              "M": "M: Mesón de Cocina",
+              "L": "L: Loggia",
+              "H": "H: Horno Eléctrico",
+              "I": "I: Iluminación"
               },
 	  "green": {
 	    "ids" : {
@@ -873,18 +873,18 @@
       </script>
     </amp-state>
 
-    <p class="price-description">Potencia: 
-      <span [text]="product[product.selectedColor].sizes[product.selectedSize]">900W</span>
-    </p>
     <p class="price-description">Electrodoméstico Seleccionado:
-      <span [text]="product[product.selectedColor].ids[product.selectedSlide]">---</span>
-      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">---</span>
+      <span [text]="product[product.selectedColor].ids[product.selectedSlide]">35</span>
+      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Juguera</span>
     </p>
     <p class="price-description">
-      <span > Será agregado al circuito </span>
-      <span [text]="product.circuitos[product.selectedSize]">---</span>
+      <span > Circuito: </span>
+      <span [text]="product.circuitos[product.selectedSize]">M: Mesón de Cocina</span>
     </p>
 
+    <p class="price-description">Potencia Total Permitida en este Circuito:
+      <span [text]="product[product.selectedColor].sizes[product.selectedSize]">900W</span>
+    </p>
 
 
 
