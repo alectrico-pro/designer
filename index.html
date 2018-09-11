@@ -1018,7 +1018,7 @@
               "D": "unavailable",
               "E": "45000 W",
               "N": "unavailable",
-              "Z": "unavailable",
+              "Z": "3000 W",
               "A": "unavailable",
               "S": "unavailable",
               "M": "unavailable",
@@ -1193,12 +1193,6 @@
 			? ''
 			: 'unavailable'">M</li>
 
-            <li option="Z"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">Z</li>
-
             <li option="R"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['R'] != 'unavailable')
@@ -1242,6 +1236,13 @@
               [class]="(product[product.selectedColor].sizes['H'] != 'unavailable')
                         ? ''
                         : 'unavailable'">H</li>
+
+            <li option="Z"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">Z</li>
+
 
 	</ul>
 	</amp-selector>
