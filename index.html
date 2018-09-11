@@ -889,7 +889,8 @@
               "M": "M: Mesón de Cocina",
               "L": "L: Loggia",
               "H": "H: Horno Eléctrico",
-              "I": "I: Iluminación"
+              "I": "I: Iluminación",
+              "R": "R: Refrigeradores"
               },
 	  "green": {
 	    "ids" : {
@@ -960,21 +961,24 @@
 	      "1": "276",
 	      "2": "101",
               "3": "71",
-              "4": "76"
+              "4": "",
+              "5": ""
 	    },
 	    "nombres": {
               "0": "plancha",
 	      "1": "secadora de ropas",
 	      "2": "lavalozas",
-              "3": "encimera",
-              "4": "encimera_induccion"
+              "3": "frigobar",
+              "4": "refrigerador",
+              "5": "refrigerador grande"
 	    },
 	    "circuitos": {
               "0": "N",
 	      "1": "L",
 	      "2": "C",
               "3": "E",
-              "4": "E"
+              "4": "R",
+              "5": "R"            
 
 	    },
 	    "sizes": {
@@ -988,7 +992,8 @@
               "S": "1200 W",
               "M": "900 W",
               "L": "4000 W",
-              "H": "unavailable"
+              "H": "unavailable",
+              "R": "300 W"
 	    },
 	    "defaultSize": "N"
 	  },
@@ -1018,7 +1023,8 @@
               "S": "unavailable",
               "M": "unavailable",
               "L": "unavailable",
-              "H": "unavailable"
+              "H": "unavailable",
+              "R": "unavailable"
             },
             "defaultSize": "E"
           }
@@ -1193,6 +1199,12 @@
                         ? ''
                         : 'unavailable'">Z</li>
 	  </ul>
+            <li option="R"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['R'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">R</li>
+          </ul>
 
         </amp-selector>
       </div>
