@@ -805,6 +805,29 @@
       </ul>
     </div>
 
+
+   <div class="product-gallery">
+      <amp-carousel id="blue-apple-carousel"
+        width="1024"
+        height="682"
+        layout="responsive"
+        type="slides"
+        [slide]="product.selectedSlideForBlue"
+        on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
+        class="fadeIn"
+        [hidden]="product.selectedColor != 'blue'">
+        <amp-img src="/img/alectrico.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+      </div>
+   </div>
+
+
 	    
     <div class="product-gallery">
       <amp-carousel id="green-apple-carousel"
@@ -1045,6 +1068,7 @@
 	  "selectedColor": "green",
 	  "selectedSize": "S",
 	  "selectedSlide": 0,
+          "selectedSlideForBlue": 0,
           "selectedSlideForCoral": 0,
 	  "selectedSlideForRed": 0,
 	  "selectedSlideForGolden": 0,
@@ -1090,8 +1114,8 @@
               "I": "200 W",
               "R": "100 W"
             },
-
-
+           "defaultSize": "I"
+          },
 
 	  "green": {
 	    "ids" : {
@@ -1273,6 +1297,7 @@
 		      product: {
 			selectedColor: event.targetOption,
 			selectedSlide: 0,
+                        selectedSlideForBlue: 0,
                         selectedSlideForCoral: 0,
 			selectedSlideForRed: 0,
 			selectedSlideForGreen: 0,
