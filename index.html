@@ -673,6 +673,29 @@
 	    role="button">
 	  </amp-img>
 	</li>
+
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 3}})"
+            src="/img/encimera_60_40.png"
+            width="60"
+            height="40"
+            class=""
+            [class]="product.selectedSlideForRed == 3 ? 'selected fadeIn' : '' "
+            tabindex="1"
+            role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 4}})"
+            src="/img/encimera_induccion_60_40.png"
+            width="60"
+            height="40"
+            class=""
+            [class]="product.selectedSlideForRed == 4 ? 'selected fadeIn' : '' "
+            tabindex="1"
+            role="button">
+          </amp-img>
+        </li>
       </ul>
     </div>
 
@@ -785,6 +808,30 @@
 	  role="button"
 	  tabindex="1">
 	</amp-img>
+
+        <amp-img src="/img/encimera.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="1">
+        </amp-img>
+
+        <amp-img src="/img/encimera_induccion.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="1">
+        </amp-img>
+
+
+
+
+
+
       </amp-carousel>
 
 	
@@ -895,16 +942,23 @@
               "0": "37",
 	      "1": "276",
 	      "2": "101"
+              "3": "76",
+              "4": "72"
 	    },
 	    "nombres": {
               "0": "plancha",
 	      "1": "secadora de ropas",
-	      "2": "lavalozas"
+	      "2": "lavalozas",
+              "3": "encimera",
+              "4": "encimera_induccion"
 	    },
 	    "circuitos": {
               "0": "N",
 	      "1": "L",
-	      "2": "C"
+	      "2": "C",
+              "3": "E",
+              "4": "E"
+
 	    },
 	    "sizes": {
               "I": "unavailable",
