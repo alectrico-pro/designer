@@ -773,14 +773,13 @@
             "circuitos": {
               "C": "Calefacción",
               "D": "Dormitorios",
-              "C/E": "Exclusivo de Cocina Encimera",
-              "E": "Enchufes",
-              "V": "Exclusivo de Lavavajillas",
-              "A/C": "Exclusivo de Aire Acondicionado",
+              "E": "Encimera",
+              "N": "Enchufes",
+              "Z": "Exclusivo de Lavavajillas",
+              "A": "Exclusivo de Aire Acondicionado",
               "M": "Mesón de Cocina",
-              "S"; "Sala",
               "L": "Loggia",
-              "H": "Horno",
+              "XL": "Dormitorio Suite",
               "I": "Iluminación"
               },
 	  "green": {
@@ -796,14 +795,14 @@
 	    "sizes": {
               "C": "unavailable",
               "D": "unavailable",
-              "C/E": "unavailable",
               "E": "unavailable",
-              "V": "unavailable",
-              "A/C": "unavailable",
+              "N": "unavailable",
+              "Z": "unavailable",
+              "A": "unavailable",
               "S": "unavailable",
               "M": "unavailable",
               "L": "unavailable",
-              "H": "unavailable",
+              "XL": "unavailable",
 	      "I": "200 W"
 	    },
 	    "defaultSize": "I"
@@ -825,14 +824,14 @@
 	    "sizes": {
               "C": "unavailable",
               "D": "unavailable",
-              "C/E": "unavailable",
-              "E": "200 W",
-              "V": "unavailable",
-              "A/C": "unavailable",
+              "E": "unavailable",
+              "N": "200 W",
+              "Z": "unavailable",
+              "A": "unavailable",
 	      "S": "unavailable",
 	      "M": "900 W",
 	      "L": "unavailable",
-	      "H": "unavailable",
+	      "XL": "unavailable",
               "I": "unavailable"
 
 	    },
@@ -856,19 +855,19 @@
 	      "2": "C"
 	    },
 	    "sizes": {
+              "I": "unavailable",
               "C": "unavailable",
               "D": "unavailable",
-              "C/E": "unavailable",
-              "E": "300 W",
-              "V": "unavailable",
-              "A/C": "unavailable",
+              "E": "unavailable",
+              "N": "300 W",
+              "Z": "unavailable",
+              "A": "unavailable",
               "S": "unavailable",
               "M": "900 W",
               "L": "4000 W",
-              "H": "unavailable",
-              "I": "unavailable"
+              "XL": "unavailable"
 	    },
-	    "defaultSize": "E"
+	    "defaultSize": "N"
 	  }
 	}
       </script>
@@ -958,23 +957,17 @@
                         ? ''
                         : 'unavailable'">D</li>
 
-            <li option="E"
+            <li option="N"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
                         ? ''
-                        : 'unavailable'">E</li>
+                        : 'unavailable'">N</li>
 
             <li option="S"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
                         ? ''
                         : 'unavailable'">S</li>
-
-            <li option="L"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">L</li>
 
 
 
@@ -989,11 +982,11 @@
                         ? ''
                         : 'unavailable'">C</li>
 
-            <li option="A/C"
+            <li option="A"
               class="unavailable"
-              [class]="(product[product.selectedColor].sizes['A/C'] != 'unavailable')
+              [class]="(product[product.selectedColor].sizes['A'] != 'unavailable')
                         ? ''
-                        : 'unavailable'">A/C</li>
+                        : 'unavailable'">A</li>
               
           </ul>
           <label for="size">Cocina:</label>
@@ -1013,20 +1006,32 @@
 			: 'unavailable'">H</li>
 
 
-            <li option="C/E"
+            <li option="E"
               class="unavailable"
-              [class]="(product[product.selectedColor].sizes['C/E'] != 'unavailable')
+              [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
                         ? ''
-                        : 'unavailable'">C/E</li>
+                        : 'unavailable'">E</li>
 
 
-            <li option="V"
+            <li option="Z"
               class="unavailable"
-              [class]="(product[product.selectedColor].sizes['V'] != 'unavailable')
+              [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
                         ? ''
-                        : 'unavailable'">V</li>
+                        : 'unavailable'">Z</li>
 	  </ul>
 
+          <label for="size">Exclusivo:</label>
+
+          <ul class = "p0 m1">
+
+            <li option="L"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">L</li>
+
+
+	</ul>
 	</amp-selector>
       </div>
       <div class="items-center flex my1">
