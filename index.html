@@ -737,6 +737,7 @@
             src="/img/lavadora_de_ropa_60_40.png"
             width="60"
             height="40"
+	    class= ""
             [class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
             tabindex="2"
             role="button">
@@ -750,11 +751,13 @@
 	    src="/img/secadora_de_ropa_60_40.png"
 	    width="60"
 	    height="40"
+	    class=""
 	    [class]="product.selectedSlideForCoral == 5 ? 'selected fadeIn' : '' "
 	    tabindex="2"
 	    role="button">
 	  </amp-img>
 	</li>
+
 	<li>
 	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 6}})"
 	    src="/img/lavaplatos_60_40.png"
