@@ -942,6 +942,8 @@
 			: product[product.selectedColor].defaultSize">
 	  <ul class="p0 m1">
 
+            <label for="size">Normales:</label>
+
             <li option="I"
               class=""
               selected
@@ -949,14 +951,6 @@
                         ? ''
                         : 'unavailable'">I</li>
             </li>
-          </ul>
-          <ul class= "p0 m1">
-            <li option="C"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['C'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">C</li>
-
             <li option="D"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['D'] != 'unavailable')
@@ -968,23 +962,39 @@
               [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
                         ? ''
                         : 'unavailable'">N</li>
+          </ul>
+
+          <label for="size">Climatización:</label>
+
+          <ul class= "p0 m1">
+            <li option="C"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['C'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">C</li>
 
             <li option="A"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['A'] != 'unavailable')
                         ? ''
                         : 'unavailable'">A</li>
+              
+          </ul>
+          <ul class= "p0 m1">
+            <label for="size">Cocina:</label>
 
 	    <li option="S"
               class="unavailable"
 	      [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
 			? ''
 			: 'unavailable'">S</li>
+
 	    <li option="M"
               class="unavailable"
 	      [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
 			? ''
 			: 'unavailable'">M</li>
+
 	    <li option="L"
 	      class="unavailable"
 	      [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
@@ -999,6 +1009,8 @@
 
 
 	  </ul>
+          <label for="size">Exclusivo:</label>
+
           <ul class = "p0 m1">
             <li option="E"
               class="unavailable"
