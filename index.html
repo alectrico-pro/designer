@@ -609,7 +609,33 @@
 	    role="button">
 	  </amp-img>
 	</li>
-      </ul>
+       <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 2}})"
+            src="/img/hornillo_60_40.png"
+            width="60"
+            height="40"
+            class="selected fadeIn"
+            [class]="product.selectedSlideForGolden == 2 ? 'selected fadeIn' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+       <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 3}})"
+            src="/img/hervidor_60_40.png"
+            width="60"
+            height="40"
+            class="selected fadeIn"
+            [class]="product.selectedSlideForGolden == 3 ? 'selected fadeIn' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+
+
+
+    </ul>
     </div>
 
     <div class="product-gallery">
@@ -699,6 +725,27 @@
 	  role="button"
 	  tabindex="0">
 	</amp-img>
+
+        <amp-img src="/img/hornillo.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+        <amp-img src="/img/hervidor.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+
+
+
+
       </amp-carousel>
 
       <amp-carousel id="red-apple-carousel"
@@ -809,15 +856,22 @@
 	  "golden": {
 	    "ids" :{
 	      "0": "36",
-              "1": "1692"
+              "1": "1692",
+              "2": "124",
+              "3": "236"
 	    },	
 	    "nombres" : {
               "0": "juguera",
-              "1": "microondas"
+              "1": "microondas",
+              "2": "hornillo",
+              "3": "hervidor"
 	    },
 	    "circuito_recomendado":{
 	      "0": "M",
-              "1": "M"
+              "1": "M",
+              "2": "M",
+              "3": "M",
+
 	    },
 	    "sizes": {
               "C": "unavailable",
