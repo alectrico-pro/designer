@@ -876,6 +876,15 @@
     <p class="price-description">Potencia: 
       <span [text]="product[product.selectedColor].sizes[product.selectedSize]">900W</span>
     </p>
+    <p class="price-description">Electrodoméstico Seleccionado:
+      <span [text]="product[product.selectedColor].ids[product.selectedSlide]">---</span>
+      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">---</span>
+    </p>
+    <p class="price-description">
+      <span > Será agregado al circuito </span>
+      <span [text]="product.circuitos[product.selectedSize]">---</span>
+    </p>
+
 
 
 
@@ -1102,16 +1111,6 @@
       </div>
     </form>
       
-    <p class="price-description">Electrodoméstico Seleccionado:
-      <span [text]="product[product.selectedColor].ids[product.selectedSlide]">---</span>
-      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">---</span>
-    </p>
-    <p class="price-description">
-      <span > Será agregado al circuito </span>
-      <span [text]="product.circuitos[product.selectedSize]">---</span>
-    </p>
-
-
     <amp-list class="items m1"
       width="auto"
       height="145"
