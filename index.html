@@ -635,11 +635,9 @@
             role="button">
           </amp-img>
         </li>
-
-
-
-
     </ul>
+
+
     </div>
 
     <div class="product-gallery">
@@ -677,25 +675,30 @@
 	    role="button">
 	  </amp-img>
 	</li>
+      </ul>
+    </div>
 
+    <div class="product-gallery">
+      <ul hidden
+        [hidden]="product.selectedColor != 'red'">
         <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 3}})"
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
             src="/img/encimera_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForCoral == 3 ? 'selected fadeIn' : '' "
+            [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
             tabindex="1"
             role="button">
           </amp-img>
         </li>
         <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 4}})"
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
             src="/img/encimera_induccion_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
+            [class]="product.selectedSlideForCoral == 1 ? 'selected fadeIn' : '' "
             tabindex="1"
             role="button">
           </amp-img>
@@ -812,7 +815,18 @@
 	  role="button"
 	  tabindex="1">
 	</amp-img>
+    </amp-carousel>
 
+    <amp-carousel id="red-apple-carousel"
+        width="1024"
+        height="682"
+        layout="responsive"
+        type="slides"
+        [slide]="product.selectedSlideForRed"
+        on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
+        hidden
+        class="fadeIn"
+        [hidden]="product.selectedColor != 'red'">
         <amp-img src="/img/encimera.png"
           width="1024"
           height="682"
@@ -830,13 +844,11 @@
           role="button"
           tabindex="1">
         </amp-img>
-
-
-
-
-
-
       </amp-carousel>
+
+
+
+
 
 	
       <amp-image-lightbox id="gallery-lightbox"
@@ -980,6 +992,42 @@
 	    },
 	    "defaultSize": "N"
 	  }
+
+          "red": {
+            "ids": {
+              "0": "71",
+              "1": "76"
+            },
+            "nombres": {
+              "0": "encimera",
+              "1": "encimera_induccion"
+            },
+            "circuitos": {
+              "0": "E",
+              "1": "E"
+
+            },
+            "sizes": {
+              "I": "unavailable",
+              "C": "unavailable",
+              "D": "unavailable",
+              "E": "45000 W",
+              "N": "unavailable",
+              "Z": "unavailable",
+              "A": "unavailable",
+              "S": "unavailable",
+              "M": "unavailable",
+              "L": "unavailable",
+              "H": "unavailable"
+            },
+            "defaultSize": "E"
+          }
+
+
+
+
+
+
 	}
       </script>
     </amp-state>
