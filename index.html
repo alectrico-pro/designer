@@ -486,6 +486,10 @@
       background-color: #DAA520;
     }
 
+    .coral {
+      background-color : #FF7F50;
+    }
+
     @media (max-width: 1024px) {
       .product-gallery > ul {
         display: none;
@@ -640,24 +644,24 @@
 
     <div class="product-gallery">
       <ul hidden
-	  [hidden]="product.selectedColor != 'red'">
+	  [hidden]="product.selectedColor != 'coral">
 	<li>
-	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
+	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
 	    src="/img/plancha_60_40.png"
 	    width="60"
 	    height="40"
 	    class=""
-	    [class]="product.selectedSlideForRed == 0 ? 'selected' : '' "
+	    [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
 	    tabindex="0"
 	    role="button">
 	  </amp-img>
 	</li>
 	<li>
-	  <amp-img on="tap:AMP.setState({product: {selectedSlideForRed: 1}})"
+	  <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 1}})"
 	    src="/img/secadora_de_ropa_60_40.png"
 	    width="60"
 	    height="40"
-	    [class]="product.selectedSlideForRed == 1 ? 'selected fadeIn' : '' "
+	    [class]="product.selectedSlideForCoral == 1 ? 'selected fadeIn' : '' "
 	    tabindex="2"
 	    role="button">
 	  </amp-img>
@@ -668,30 +672,30 @@
 	    width="60"
 	    height="40"
 	    class=""
-	    [class]="product.selectedSlideForRed == 2 ? 'selected fadeIn' : '' "
+	    [class]="product.selectedSlideForCoral == 2 ? 'selected fadeIn' : '' "
 	    tabindex="1"
 	    role="button">
 	  </amp-img>
 	</li>
 
         <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 3}})"
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 3}})"
             src="/img/encimera_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForRed == 3 ? 'selected fadeIn' : '' "
+            [class]="product.selectedSlideForCoral == 3 ? 'selected fadeIn' : '' "
             tabindex="1"
             role="button">
           </amp-img>
         </li>
         <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 4}})"
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 4}})"
             src="/img/encimera_induccion_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForRed == 4 ? 'selected fadeIn' : '' "
+            [class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
             tabindex="1"
             role="button">
           </amp-img>
@@ -771,16 +775,16 @@
 
       </amp-carousel>
 
-      <amp-carousel id="red-apple-carousel"
+      <amp-carousel id="coral-apple-carousel"
 	width="1024"
 	height="682"
 	layout="responsive"
 	type="slides"
-	[slide]="product.selectedSlideForRed"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
+	[slide]="product.selectedSlideForCoral"
+	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForCoral: event.index}})"
 	hidden
 	class="fadeIn"
-	[hidden]="product.selectedColor != 'red'">
+	[hidden]="product.selectedColor != 'coral'">
 	<amp-img src="/img/plancha.png"
 	  width="1024"
 	  height="682"
@@ -857,6 +861,7 @@
 	  "selectedColor": "green",
 	  "selectedSize": "S",
 	  "selectedSlide": 0,
+          "selectedSlideForCoral": 0,
 	  "selectedSlideForRed": 0,
 	  "selectedSlideForGolden": 0,
 	  "selectedSlideForGreen": 0,
@@ -937,7 +942,7 @@
 	    "defaultSize": "M"
 	  },
 
-	  "red": {
+	  "coral": {
 	    "ids": {
               "0": "37",
 	      "1": "276",
@@ -999,6 +1004,7 @@
 		      product: {
 			selectedColor: event.targetOption,
 			selectedSlide: 0,
+                        selectedSlideForCoral: 0,
 			selectedSlideForRed: 0,
 			selectedSlideForGreen: 0,
 			selectedSlideForYellow: 0,
@@ -1016,12 +1022,12 @@
 		class="square golden"></div>
 	    </li>
 	    <li>
-	      <div option="red"
-		class="square red"></div>
+	      <div option="coral"
+		class="square coral"></div>
 	    </li>
             <li>
-              <div option="black"
-                class="square black"></div>
+              <div option="red"
+                class="square red"></div>
             </li>
 	  </ul>
 	</amp-selector>
