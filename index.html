@@ -635,6 +635,33 @@
             role="button">
           </amp-img>
         </li>
+
+       <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 4}})"
+            src="/img/olla_arrocera_60_40.png"
+            width="60"
+            height="40"
+            class="selected fadeIn"
+            [class]="product.selectedSlideForGolden == 4 ? 'selected fadeIn' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+       <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 5}})"
+            src="/img/cafetera_expresso_60_40.png"
+            width="60"
+            height="40"
+            class="selected fadeIn"
+            [class]="product.selectedSlideForGolden == 5 ? 'selected fadeIn' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+
+
     </ul>
 
 
@@ -811,6 +838,23 @@
           tabindex="0">
         </amp-img>
 
+        <amp-img src="/img/olla_arrocera.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+
+        <amp-img src="/img/cafetera_expresso.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
 
 
 
@@ -1002,19 +1046,27 @@
 	      "0": "36",
               "1": "1692",
               "2": "124",
-              "3": "236"
+              "3": "236",
+	      "4": "",
+	      "5": ""
+
 	    },	
 	    "nombres" : {
               "0": "juguera",
               "1": "microondas",
               "2": "hornillo",
-              "3": "hervidor"
+              "3": "hervidor",
+	      "4": "olla arrocera",
+	      "5": "cafetera expresso"
+
 	    },
 	    "circuito_recomendado":{
 	      "0": "M",
               "1": "M",
               "2": "M",
-              "3": "M"
+              "3": "M",
+	      "4": "M",
+	      "5": "M"
 
 	    },
 	    "sizes": {
