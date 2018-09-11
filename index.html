@@ -940,9 +940,9 @@
 	  [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
 			? product.selectedSize
 			: product[product.selectedColor].defaultSize">
-	  <ul class="p0 m1">
+          <label for="size">Normales:</label>
 
-            <label for="size">Normales:</label>
+	  <ul class="p0 m1">
 
             <li option="I"
               class=""
@@ -980,8 +980,9 @@
                         : 'unavailable'">A</li>
               
           </ul>
+          <label for="size">Cocina:</label>
+
           <ul class= "p0 m1">
-            <label for="size">Cocina:</label>
 
 	    <li option="S"
               class="unavailable"
@@ -1012,6 +1013,7 @@
           <label for="size">Exclusivo:</label>
 
           <ul class = "p0 m1">
+
             <li option="E"
               class="unavailable"
               [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
