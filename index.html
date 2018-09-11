@@ -934,7 +934,6 @@
 
       <div class="items-center flex">
 	<amp-selector name="size"
-	  layout="container"
 	  on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
 	  [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
 			? product.selectedSize
