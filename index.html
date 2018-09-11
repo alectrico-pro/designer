@@ -590,7 +590,7 @@
             width="60"
             height="40"
             class="selected"
-            [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
+            [class]="product.selectedSlideForGreen == 1 ? 'selected fadeIn' : '' "
             tabindex="0"
             role="button">
           </amp-img>
@@ -731,6 +731,19 @@
             role="button">
           </amp-img>
         </li>
+
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 4}})"
+            src="/img/lavadora_de_ropa_60_40.png"
+            width="60"
+            height="40"
+            [class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
+            tabindex="2"
+            role="button">
+          </amp-img>
+        </li>
+
+
 
 	<li>
 	  <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 4}})"
@@ -943,6 +956,17 @@
           role="button"
           tabindex="0">
         </amp-img>
+
+        <amp-img src="/img/lavadora_de_ropa.png"
+          width="1024"
+          height="682"
+          layout="responsive"
+          on="tap:gallery-lightbox"
+          role="button"
+          tabindex="0">
+        </amp-img>
+
+
 
 	<amp-img src="/img/lavaplatos.png"
 	  width="1024"
