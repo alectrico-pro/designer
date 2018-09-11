@@ -577,6 +577,23 @@
     class="m1">Agregue los electrodomésticos a diferentes circuitos. </p>
 
     <div class="product-gallery">
+      <ul [hidden]="product.selectedColor != 'blue'">
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+            src="/img/alectrico_60_40.png"
+            width="60"
+            height="40"
+            class="selected"
+            [class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+    </div>
+
+
+
+    <div class="product-gallery">
       <ul [hidden]="product.selectedColor != 'green'">
         <li>
 	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
@@ -1094,7 +1111,7 @@
 
          "blue": {
             "ids" : {
-              "0": "35"
+              "0": ""
               },
             "nombres": {
               "0": "Visita de Instalador Eléctrico"
