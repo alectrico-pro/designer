@@ -962,6 +962,21 @@
               [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
                         ? ''
                         : 'unavailable'">N</li>
+
+            <li option="S"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">S</li>
+
+            <li option="L"
+              class="unavailable"
+              [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
+                        ? ''
+                        : 'unavailable'">L</li>
+
+
+
           </ul>
 
           <label for="size">Climatización:</label>
@@ -984,35 +999,18 @@
 
           <ul class= "p0 m1">
 
-	    <li option="S"
-              class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
-			? ''
-			: 'unavailable'">S</li>
-
 	    <li option="M"
               class="unavailable"
 	      [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
 			? ''
 			: 'unavailable'">M</li>
 
-	    <li option="L"
+	    <li option="H"
 	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
+	      [class]="(product[product.selectedColor].sizes['H'] != 'unavailable')
 			? ''
-			: 'unavailable'">L</li>
+			: 'unavailable'">H</li>
 
-	    <li option="XL"
-	      class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['XL'] != 'unavailable')
-			? ''
-			: 'unavailable'">XL</li>
-
-
-	  </ul>
-          <label for="size">Exclusivo:</label>
-
-          <ul class = "p0 m1">
 
             <li option="E"
               class="unavailable"
@@ -1026,8 +1024,8 @@
               [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
                         ? ''
                         : 'unavailable'">Z</li>
+	  </ul>
 
-          </ul>
 	</amp-selector>
       </div>
       <div class="items-center flex my1">
