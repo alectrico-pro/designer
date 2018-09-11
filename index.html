@@ -577,6 +577,7 @@
     class="m1">Agregue los electrodomésticos a diferentes circuitos. </p>
 
     <div class="product-gallery">
+      
       <ul [hidden]="product.selectedColor != 'blue'">
         <li>
           <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
@@ -595,7 +596,9 @@
 
 
     <div class="product-gallery">
-      <ul [hidden]="product.selectedColor != 'green'">
+
+      <ul hidden
+        [hidden]="product.selectedColor != 'green'">
         <li>
 	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
 	    src="/img/led_60_40.png"
@@ -849,6 +852,7 @@
 	[slide]="product.selectedSlideForGreen"
 	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
 	class="fadeIn"
+        hidden
 	[hidden]="product.selectedColor != 'green'">
 	<amp-img src="/img/led.png"
 	  width="1024"
@@ -1069,7 +1073,7 @@
     <amp-state id="product">
       <script type="application/json">
 	{
-	  "selectedColor": "green",
+	  "selectedColor": "blue",
 	  "selectedSize": "S",
 	  "selectedSlide": 0,
           "selectedSlideForBlue": 0,
