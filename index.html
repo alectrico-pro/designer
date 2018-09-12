@@ -839,12 +839,14 @@
         on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
         class="fadeIn"
         [hidden]="product.selectedColor != 'blue'">
+        <div 
           role="button"
           tabindex="0">
           <a class="ampstart-btn caps m2 close-gallery-button"
             href = "tel:+56962000921">
             Llamar
           </a>
+	</div>
 	  <amp-img src="/img/alectrico.png"
 	    width="1024"
 	    height="682"
@@ -870,6 +872,17 @@
             role="button"
             tabindex="0">
           </amp-img>
+
+          <amp-img src="/img/proyecto_solar.png"
+            width="1024"
+            height="682"
+            layout="responsive"
+            on="tap:gallery-lightbox"
+            role="button"
+            tabindex="0">
+          </amp-img>
+
+
       </amp-carousel>
 
       <amp-carousel id="green-apple-carousel"
