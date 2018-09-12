@@ -595,6 +595,43 @@
             role="button">
           </amp-img>
         </li>
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+            src="/img/mantencion_electrico_60_40.png"
+            width="60"
+            height="40"
+            class="selected"
+            [class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+            src="/img/atencion_corte_de_luz_60_40.png"
+            width="60"
+            height="40"
+            class="selected"
+            [class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+            src="/img/proyecto_energia_solar_60_40.png"
+            width="60"
+            height="40"
+            class="selected"
+            [class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
+
+
+
       </ul>
     </div>
 
@@ -856,6 +893,13 @@
 	  </amp-img>
         </div>
 
+        <div 
+          role="button"
+          tabindex="0">
+          <a class="ampstart-btn caps m2 close-gallery-button"
+            href = "tel:+56962000921">
+            Llamar
+          </a>
           <amp-img src="/img/mantencion_electrica.png"
             width="1024"
             height="682"
@@ -864,7 +908,15 @@
             role="button"
             tabindex="0">
           </amp-img>
+        </div>
 
+        <div 
+          role="button"
+          tabindex="0">
+          <a class="ampstart-btn caps m2 close-gallery-button"
+            href = "tel:+56962000921">
+            Llamar
+          </a>
           <amp-img src="/img/atencion_corte_de_luz.png"
             width="1024"
             height="682"
@@ -873,7 +925,15 @@
             role="button"
             tabindex="0">
           </amp-img>
+        </div>
 
+        <div 
+          role="button"
+          tabindex="0">
+          <a class="ampstart-btn caps m2 close-gallery-button"
+            href = "tel:+56962000921">
+            Llamar
+          </a>
           <amp-img src="/img/proyecto_energia_solar.png"
             width="1024"
             height="682"
@@ -882,7 +942,7 @@
             role="button"
             tabindex="0">
           </amp-img>
-
+        </div>
 
       </amp-carousel>
 
