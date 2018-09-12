@@ -1317,7 +1317,7 @@
       on = "submit-success:show-more-list.refresh;submit-error:show-more-list.refresh"
       class="flex flex-wrap m1">
       <div class="items-center flex">
-	<label for="color">Grupo:</label>
+	<label for="color"></label>
 	<amp-selector name="color"
 	  layout="container"
 	  [selected]="product.selectedColor"
@@ -1607,16 +1607,17 @@
       class="ampTabContainer ampstart-headerbar-nav"
       keyboard-select-mode="select">
       <div role="tab"
+        class="tabButton h4 ampstart-nav-item"
+        option="c">CIRCUITOS</div>
+      <div role="tabpanel"
+        class="tabContent p1 p">Se muestran los circuitos a los que podría conectar electrodomésticos. Aquellos que no son adecuados para un electrodoméstico en particular están marcados con una X. En algunos circuitos solo puede haber un tipo de electrodoméstico, estos circuitos se llaman exclusivos.</div>
+      <div role="tab"
 	class="tabButton h4 ampstart-nav-item"
 	selected
 	option="a">GRUPOS</div>
       <div role="tabpanel"
 	class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen y considerando los circuitos a los que pueden ser conectados. El grupo azul es diferente, no agrupa electrodomésticos sino los servicios que puede contratar en alectrico.cl.</div>
-      <div role="tab"
-	class="tabButton h4 ampstart-nav-item"
-	option="c"> CIRCUITOS</div>
-      <div role="tabpanel"
-	class="tabContent p1 p">Se muestran los circuitos a los que podría conectar electrodomésticos. Aquellos que no son adecuados para un electrodoméstico en particular están marcados con una X. En algunos circuitos solo puede haber un tipo de electrodoméstico, estos circuitos se llaman exclusivos.</div>
+
     </amp-selector>
   </body>
 </html>
