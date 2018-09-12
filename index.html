@@ -596,39 +596,50 @@
           </amp-img>
         </li>
         <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 1}})"
             src="/img/mantencion_electrica_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForBlue == 0 ? 'selected fadeIn' : '' "
+            [class]="product.selectedSlideForBlue == 1 ? 'selected fadeIn' : '' "
             tabindex="0"
             role="button">
           </amp-img>
         </li>
         <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 2}})"
             src="/img/atencion_corte_de_luz_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForBlue == 0 ? 'selected fadeIn' : '' "
+            [class]="product.selectedSlideForBlue == 2 ? 'selected fadeIn' : '' "
             tabindex="0"
             role="button">
           </amp-img>
         </li>
         <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
-            src="/img/proyecto_de_energia_solar_60_40.png"
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 3}})"
+            src="/img/proyecto_energia_solar_60_40.png"
             width="60"
             height="40"
             class=""
-            [class]="product.selectedSlideForBlue == 0 ? 'selected fadeIn' : '' "
+            [class]="product.selectedSlideForBlue == 3 ? 'selected fadeIn' : '' "
             tabindex="0"
             role="button">
           </amp-img>
         </li>
 
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 4}})"
+            src="/img/instalacion_luminaria_60_40.png"
+            width="60"
+            height="40"
+            class=""
+            [class]="product.selectedSlideForBlue == 4 ? 'selected fadeIn' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
 
 
 
@@ -944,6 +955,25 @@
           </amp-img>
         </div>
 
+        <div 
+          role="button"
+          tabindex="0">
+          <a class="ampstart-btn caps m2 close-gallery-button"
+            href = "tel:+56962000921">
+            Llamar
+          </a>
+          <amp-img src="/img/instalacion_luminaria.png"
+            width="1024"
+            height="682"
+            layout="responsive"
+            on="tap:gallery-lightbox"
+            role="button"
+            tabindex="0">
+          </amp-img>
+        </div>
+
+
+
       </amp-carousel>
 
       <amp-carousel id="green-apple-carousel"
@@ -1216,9 +1246,11 @@
          "blue": {
             "ids" : {
               "0": ""
+
               },
             "nombres": {
               "0": "Visita a Domicilio de Instalador Eléctrico Autorizado SEC."
+              
             },
             "circuitos": {
               "0": "I"
