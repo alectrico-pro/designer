@@ -1052,10 +1052,14 @@
 
       <amp-image-lightbox id="llamar-lightbox"
         layout="nodisplay">
-         <a class="ampstart-btn caps m2 close-gallery-button"
-	   href = "tel:+56962000921">
-	   +56962000921
-	 </a>	
+        <div 
+          role="button"
+          tabindex="0">
+	  <a class="ampstart-btn caps m2 close-gallery-button"
+	    href = "tel:+56962000921">
+	    Llamar
+	  </a>	
+        </div>
       </amp-image-lightbox>
 
 
@@ -1298,6 +1302,15 @@
     <p class="price-description"> Seleccionado:
       <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Visita a Domicilio de Instalador Eléctrico Autorizado SEC.</span>
     </p>
+        <div 
+          role="button"
+          tabindex="0">
+          <a class="ampstart-btn caps m2 close-gallery-button"
+            href = "tel:+56962000921">
+            Llamar
+          </a>
+        </div>
+
 
     <form id="order"
       method="POST"
