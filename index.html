@@ -574,7 +574,7 @@
   <body>
     <h2 class="m1">Designer Aléctrico</h2>
     <p id="product-description"
-    class="m1">Agregue los electrodomésticos a diferentes circuitos. </p>
+    class="m1">Agregue electrodomésticos a diferentes circuitos. Si tiene problemas llame a alectrico,  +56 962000921. </p>
 
     <div class="product-gallery">
       
@@ -1065,6 +1065,13 @@
 	    tabindex="0">
 	    Cerrar
 	  </button>
+          <button class="ampstart-btn caps m2 close-gallery-button"
+            on="tap:gallery-lightbox.close"
+            role="button"
+            tabindex="0">
+            Llamar
+          </button>
+
 	</div>
       </amp-image-lightbox>
     </div>
@@ -1287,7 +1294,7 @@
     </amp-state>
 
     <p class="price-description"> Seleccionado:
-      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta Led</span>
+      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Visita a Domicilio.</span>
     </p>
 
     <form id="order"
@@ -1469,7 +1476,7 @@
 
 
 
-          <label for="size">Exclusivos:</label>
+          <label for="size">Circuitos Exclusivos:</label>
 
           <ul class = "p0 m1">
 
@@ -1591,12 +1598,12 @@
 	selected
 	option="a">GRUPOS</div>
       <div role="tabpanel"
-	class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen. Los electrodomésticos que necesitan una potencia mayor suelen ser más peligrosos y se contempla que estén solos en su propio circuito del tipo exclusivo. Los de menor consumo usan enchufes de 10A o de 16A y pueden conectarse o desconectarse para usarlos en diferentes circuitos. Los de iluminación usan soquetes y solo pueden conectarse al circuito de iluminación.</div>
+	class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen y considerando los circuitos a los que pueden ser conectados. El grupo azul es diferente, no agrupa electrodomésticos sino los servicios que puede contratar en alectrico.cl</div>
       <div role="tab"
 	class="tabButton h4 ampstart-nav-item"
 	option="c"> CIRCUITOS</div>
       <div role="tabpanel"
-	class="tabContent p1 p">Elija a qué circuito va a agregar el electrodoméstico. S: Sala (Living), M: Mesón de Cocina, L: Loggia (Lavadero),D: Dormitorios, N: Enchufes Normales, E: Circuito Exclusivo de Encimera, Z: Circuito Exclusivo de Lavalozas (Lavavajillas), C: Calefacción, A: Aire Acondicionado, I: Iluminación, H: Horno Eléctrico Empotrado </div>
+	class="tabContent p1 p">Se muestran los circuitos a los que podría conectar electrodomésticos. Aquellos que no son adecuados para un electrodoméstico en particular están marcados con una X. En algunos circuitos solo puede haber un tipo de electrodoméstico, estos circuitos se llaman exclusivos.</div>
     </amp-selector>
   </body>
 </html>
