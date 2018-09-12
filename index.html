@@ -584,7 +584,6 @@
 
     <div id="abe-preview-header" 
       class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4">
-
       <a href=".." class="caps text-decoration-none">
         <i class="align-middle inline-block mr1">
           <svg fill="#000000" 
@@ -598,7 +597,7 @@
 
      <h1 id="abe-preview-header-title" 
        class="h3 center truncate caps">
-        Demo: Product Page
+        Aléctrico Designer
      </h1>
 
    </div>
@@ -643,1302 +642,1302 @@
 	</div>
 
 	<p id="product-description" class="m1">Lorem ipsum dolor sit amet, ut sed non vel mattis. Et nulla suscipit ante ligula nisl in. Ut venenatis et mauris, mauris porta vulputate tellus mauris integer facilisis.</p>
-      </div>
-    </div>
 
-    <button class="ampstart-btn caps m1 mb3" 
-      on="tap:watch-video-lightbox">
-      Show Video 
-    </button>
+	<button class="ampstart-btn caps m1 mb3" 
+	  on="tap:watch-video-lightbox">
+	  Show Video 
+	</button>
 
-    <amp-lightbox id="watch-video-lightbox" 
-      layout="nodisplay">
-      <div class="amp-youtube-container">
-	<div class="video"><a on="tap:watch-video-lightbox.close" role="button" tabindex="0">Close</a>
-	  <amp-youtube width="480"
-	    height="270" 
-	    layout="responsive" 
-	    data-videoid="lBTCB7yLs8Y">
-	  </amp-youtube>
+	<amp-lightbox id="watch-video-lightbox" 
+	  layout="nodisplay">
+	  <div class="amp-youtube-container">
+	    <div class="video"><a on="tap:watch-video-lightbox.close" role="button" tabindex="0">Close</a>
+	      <amp-youtube width="480"
+		height="270" 
+		layout="responsive" 
+		data-videoid="lBTCB7yLs8Y">
+	      </amp-youtube>
+	    </div>
+	  </div>
+	</amp-lightbox>
+
+
+	<h2 class="m1">Aléctrico Designer</h2>
+	<p id="product-description"
+	class="m1">Agregue electrodomésticos a los circuitos que no tengan una X. </p>
+	<p id="product-description"
+	 class="m1">Los circuitos están representados por letras. Por ejemplo la letra I significa circuito de Iluminación.</p>
+
+	<p id="product-description"
+	     class="m1">Los electrodomésticos están agrupados por colores, excepto el azul. Por ejemplo, las cocinas encimeras están en el grupo rojo.</p>
+
+
+	<div class="product-gallery">
+	  
+	  <ul [hidden]="product.selectedColor != 'blue'">
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+		src="/img/alectrico_60_40.png"
+		width="60"
+		height="40"
+		class="selected"
+		[class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 1}})"
+		src="/img/mantencion_electrica_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForBlue == 1 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 2}})"
+		src="/img/atencion_corte_de_luz_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForBlue == 2 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 3}})"
+		src="/img/proyecto_energia_solar_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForBlue == 3 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 4}})"
+		src="/img/instalacion_luminaria_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForBlue == 4 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 5}})"
+		src="/img/instalacion_enchufe_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForBlue == 5 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+
+
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 6}})"
+		src="/img/instalador_sec_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForBlue == 6 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+
+
+	  </ul>
 	</div>
-      </div>
-    </amp-lightbox>
-
-
-    <h2 class="m1">Aléctrico Designer</h2>
-    <p id="product-description"
-    class="m1">Agregue electrodomésticos a los circuitos que no tengan una X. </p>
-    <p id="product-description"
-     class="m1">Los circuitos están representados por letras. Por ejemplo la letra I significa circuito de Iluminación.</p>
-
-    <p id="product-description"
-         class="m1">Los electrodomésticos están agrupados por colores, excepto el azul. Por ejemplo, las cocinas encimeras están en el grupo rojo.</p>
-
-
-    <div class="product-gallery">
-      
-      <ul [hidden]="product.selectedColor != 'blue'">
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
-            src="/img/alectrico_60_40.png"
-            width="60"
-            height="40"
-            class="selected"
-            [class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 1}})"
-            src="/img/mantencion_electrica_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForBlue == 1 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 2}})"
-            src="/img/atencion_corte_de_luz_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForBlue == 2 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 3}})"
-            src="/img/proyecto_energia_solar_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForBlue == 3 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 4}})"
-            src="/img/instalacion_luminaria_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForBlue == 4 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 5}})"
-            src="/img/instalacion_enchufe_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForBlue == 5 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
 
 
 
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 6}})"
-            src="/img/instalador_sec_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForBlue == 6 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
+	<div class="product-gallery">
+
+	  <ul hidden
+	    [hidden]="product.selectedColor != 'green'">
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
+		src="/img/led_60_40.png"
+		width="60"
+		height="40"
+		class="selected"
+		[class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
+		src="/img/ampolleta_incandescente_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForGreen == 1 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+     
+
+	  </ul>
+	</div>
+
+	<div class="product-gallery">
+
+	  <ul hidden
+	    [hidden]="product.selectedColor != 'golden'">
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
+		src="/img/juguera_60_40.png"
+		width="60"
+		height="40"
+		class= "selected"
+		[class]="product.selectedSlideForGolden == 0 ? 'selected' : '' "
+		tabindex="1"
+		role="button">
+	      </amp-img>
+	   </li>
+	   <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 1}})"
+		src="/img/microondas_60_40.png"
+		width="60"
+		height="40"
+		class="selected fadeIn"
+		[class]="product.selectedSlideForGolden == 1 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+	   <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 2}})"
+		src="/img/hornillo_60_40.png"
+		width="60"
+		height="40"
+		class="selected fadeIn"
+		[class]="product.selectedSlideForGolden == 2 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+	   <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 3}})"
+		src="/img/hervidor_60_40.png"
+		width="60"
+		height="40"
+		class="selected fadeIn"
+		[class]="product.selectedSlideForGolden == 3 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+	   <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 4}})"
+		src="/img/olla_arrocera_60_40.png"
+		width="60"
+		height="40"
+		class="selected fadeIn"
+		[class]="product.selectedSlideForGolden == 4 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+	   <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 5}})"
+		src="/img/cafetera_expresso_60_40.png"
+		width="60"
+		height="40"
+		class="selected fadeIn"
+		[class]="product.selectedSlideForGolden == 5 ? 'selected fadeIn' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+	  </ul>
+	</div>
+
+	<div class="product-gallery">
+	  <ul hidden
+	      [hidden]="product.selectedColor != 'coral'">
+	    <li>
+	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+		src="/img/plancha_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+	    <li>
+	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 1}})"
+		src="/img/frigobar_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForCoral == 1 ? 'selected' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+	    <li>
+	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 2}})"
+		src="/img/refrigerador_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForCoral == 2 ? 'selected' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+
+	    <li>
+	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 3}})"
+		src="/img/refrigerador_dos_puertas_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForCoral == 3 ? 'selected' : '' "
+		tabindex="0"
+		role="button">
+	      </amp-img>
+	    </li>
+
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 4}})"
+		src="/img/lavadora_de_ropa_60_40.png"
+		width="60"
+		height="40"
+		class= ""
+		[class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
+		tabindex="2"
+		role="button">
+	      </amp-img>
+	    </li>
 
 
 
-      </ul>
-    </div>
+	    <li>
+	      <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 5}})"
+		src="/img/secadora_de_ropa_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForCoral == 5 ? 'selected fadeIn' : '' "
+		tabindex="2"
+		role="button">
+	      </amp-img>
+	    </li>
 
+	    <li>
+	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 6}})"
+		src="/img/lavaplatos_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForCoral == 6 ? 'selected fadeIn' : '' "
+		tabindex="1"
+		role="button">
+	      </amp-img>
+	    </li>
+	  </ul>
+	</div>
 
+	<div class="product-gallery">
+	  <ul hidden
+	    [hidden]="product.selectedColor != 'red'">
+	    <li>
+	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
+		src="/img/encimera_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
+		tabindex="1"
+		role="button">
+	      </amp-img>
+	    </li>
+	    <li>
+	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
+		src="/img/encimera_induccion_60_40.png"
+		width="60"
+		height="40"
+		class=""
+		[class]="product.selectedSlideForCoral == 1 ? 'selected fadeIn' : '' "
+		tabindex="1"
+		role="button">
+	      </amp-img>
+	    </li>
+	  </ul>
+	</div>
+      <!--
+	Carruseles
+      -->
 
-    <div class="product-gallery">
-
-      <ul hidden
-        [hidden]="product.selectedColor != 'green'">
-        <li>
-	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
-	    src="/img/led_60_40.png"
-	    width="60"
-	    height="40"
-	    class="selected"
-	    [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
-	    tabindex="0"
-	    role="button">
-	  </amp-img>
-        </li>
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
-            src="/img/ampolleta_incandescente_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForGreen == 1 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
- 
-
-      </ul>
-    </div>
-
-    <div class="product-gallery">
-
-      <ul hidden
-        [hidden]="product.selectedColor != 'golden'">
-        <li>
-	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
-	    src="/img/juguera_60_40.png"
-	    width="60"
-	    height="40"
-            class= "selected"
-	    [class]="product.selectedSlideForGolden == 0 ? 'selected' : '' "
-	    tabindex="1"
-	    role="button">
-	  </amp-img>
-       </li>
-       <li>
-	  <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 1}})"
-	    src="/img/microondas_60_40.png"
-	    width="60"
-	    height="40"
-	    class="selected fadeIn"
-	    [class]="product.selectedSlideForGolden == 1 ? 'selected fadeIn' : '' "
-	    tabindex="0"
-	    role="button">
-	  </amp-img>
-	</li>
-       <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 2}})"
-            src="/img/hornillo_60_40.png"
-            width="60"
-            height="40"
-            class="selected fadeIn"
-            [class]="product.selectedSlideForGolden == 2 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-       <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 3}})"
-            src="/img/hervidor_60_40.png"
-            width="60"
-            height="40"
-            class="selected fadeIn"
-            [class]="product.selectedSlideForGolden == 3 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-
-       <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 4}})"
-            src="/img/olla_arrocera_60_40.png"
-            width="60"
-            height="40"
-            class="selected fadeIn"
-            [class]="product.selectedSlideForGolden == 4 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-
-       <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 5}})"
-            src="/img/cafetera_expresso_60_40.png"
-            width="60"
-            height="40"
-            class="selected fadeIn"
-            [class]="product.selectedSlideForGolden == 5 ? 'selected fadeIn' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-      </ul>
-    </div>
-
-    <div class="product-gallery">
-      <ul hidden
-	  [hidden]="product.selectedColor != 'coral'">
-	<li>
-	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
-	    src="/img/plancha_60_40.png"
-	    width="60"
-	    height="40"
-	    class=""
-	    [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
-	    tabindex="0"
-	    role="button">
-	  </amp-img>
-	</li>
-
-        <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 1}})"
-            src="/img/frigobar_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForCoral == 1 ? 'selected' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-
-        <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 2}})"
-            src="/img/refrigerador_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForCoral == 2 ? 'selected' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-
-
-        <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 3}})"
-            src="/img/refrigerador_dos_puertas_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForCoral == 3 ? 'selected' : '' "
-            tabindex="0"
-            role="button">
-          </amp-img>
-        </li>
-
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 4}})"
-            src="/img/lavadora_de_ropa_60_40.png"
-            width="60"
-            height="40"
-	    class= ""
-            [class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
-            tabindex="2"
-            role="button">
-          </amp-img>
-        </li>
-
-
-
-	<li>
-	  <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 5}})"
-	    src="/img/secadora_de_ropa_60_40.png"
-	    width="60"
-	    height="40"
-	    class=""
-	    [class]="product.selectedSlideForCoral == 5 ? 'selected fadeIn' : '' "
-	    tabindex="2"
-	    role="button">
-	  </amp-img>
-	</li>
-
-	<li>
-	  <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 6}})"
-	    src="/img/lavaplatos_60_40.png"
-	    width="60"
-	    height="40"
-	    class=""
-	    [class]="product.selectedSlideForCoral == 6 ? 'selected fadeIn' : '' "
-	    tabindex="1"
-	    role="button">
-	  </amp-img>
-	</li>
-      </ul>
-    </div>
-
-    <div class="product-gallery">
-      <ul hidden
-        [hidden]="product.selectedColor != 'red'">
-        <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
-            src="/img/encimera_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
-            tabindex="1"
-            role="button">
-          </amp-img>
-        </li>
-        <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
-            src="/img/encimera_induccion_60_40.png"
-            width="60"
-            height="40"
-            class=""
-            [class]="product.selectedSlideForCoral == 1 ? 'selected fadeIn' : '' "
-            tabindex="1"
-            role="button">
-          </amp-img>
-        </li>
-      </ul>
-    </div>
-  <!--
-    Carruseles
-  -->
-
-   <div class="product-gallery">
-      <amp-carousel id="blue-apple-carousel"
-        width="1024"
-        height="682"
-        layout="responsive"
-        type="slides"
-        [slide]="product.selectedSlideForBlue"
-        on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
-        class="fadeIn"
-        [hidden]="product.selectedColor != 'blue'">
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-	  <amp-img src="/img/alectrico.png"
+       <div class="product-gallery">
+	  <amp-carousel id="blue-apple-carousel"
 	    width="1024"
 	    height="682"
 	    layout="responsive"
-	    on="tap:gallery-lightbox"
-	    role="button"
-	    tabindex="0">
-	  </amp-img>
-        </div>
+	    type="slides"
+	    [slide]="product.selectedSlideForBlue"
+	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
+	    class="fadeIn"
+	    [hidden]="product.selectedColor != 'blue'">
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>
+	      <amp-img src="/img/alectrico.png"
+		width="1024"
+		height="682"
+		layout="responsive"
+		on="tap:gallery-lightbox"
+		role="button"
+		tabindex="0">
+	      </amp-img>
+	    </div>
 
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-          <amp-img src="/img/mantencion_electrica.png"
-            width="1024"
-            height="682"
-            layout="responsive"
-            on="tap:gallery-lightbox"
-            role="button"
-            tabindex="0">
-          </amp-img>
-        </div>
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>
+	      <amp-img src="/img/mantencion_electrica.png"
+		width="1024"
+		height="682"
+		layout="responsive"
+		on="tap:gallery-lightbox"
+		role="button"
+		tabindex="0">
+	      </amp-img>
+	    </div>
 
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-          <amp-img src="/img/atencion_corte_de_luz.png"
-            width="1024"
-            height="682"
-            layout="responsive"
-            on="tap:gallery-lightbox"
-            role="button"
-            tabindex="0">
-          </amp-img>
-        </div>
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>
+	      <amp-img src="/img/atencion_corte_de_luz.png"
+		width="1024"
+		height="682"
+		layout="responsive"
+		on="tap:gallery-lightbox"
+		role="button"
+		tabindex="0">
+	      </amp-img>
+	    </div>
 
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-          <amp-img src="/img/proyecto_energia_solar.png"
-            width="1024"
-            height="682"
-            layout="responsive"
-            on="tap:gallery-lightbox"
-            role="button"
-            tabindex="0">
-          </amp-img>
-        </div>
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>
+	      <amp-img src="/img/proyecto_energia_solar.png"
+		width="1024"
+		height="682"
+		layout="responsive"
+		on="tap:gallery-lightbox"
+		role="button"
+		tabindex="0">
+	      </amp-img>
+	    </div>
 
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-          <amp-img src="/img/instalacion_luminaria.png"
-            width="1024"
-            height="682"
-            layout="responsive"
-            on="tap:gallery-lightbox"
-            role="button"
-            tabindex="0">
-          </amp-img>
-        </div>
-
-
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-          <amp-img src="/img/instalacion_enchufe.png"
-            width="1024"
-            height="682"
-            layout="responsive"
-            on="tap:gallery-lightbox"
-            role="button"
-            tabindex="0">
-          </amp-img>
-        </div>
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>
+	      <amp-img src="/img/instalacion_luminaria.png"
+		width="1024"
+		height="682"
+		layout="responsive"
+		on="tap:gallery-lightbox"
+		role="button"
+		tabindex="0">
+	      </amp-img>
+	    </div>
 
 
-
-
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-          <amp-img src="/img/instalador_sec.png"
-            width="1290"
-            height="1290"
-            layout="responsive"
-            on="tap:gallery-lightbox"
-            role="button"
-            tabindex="0">
-          </amp-img>
-        </div>
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>
+	      <amp-img src="/img/instalacion_enchufe.png"
+		width="1024"
+		height="682"
+		layout="responsive"
+		on="tap:gallery-lightbox"
+		role="button"
+		tabindex="0">
+	      </amp-img>
+	    </div>
 
 
 
 
-      </amp-carousel>
-
-      <amp-carousel id="green-apple-carousel"
-	width="1024"
-	height="682"
-	layout="responsive"
-	type="slides"
-	[slide]="product.selectedSlideForGreen"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
-	class="fadeIn"
-        hidden
-	[hidden]="product.selectedColor != 'green'">
-	<amp-img src="/img/led.png"
-	  width="1024"
-	  height="682"
-	  layout="responsive"
-	  on="tap:gallery-lightbox"
-	  role="button"
-	  tabindex="0">
-	</amp-img>
-
-        <amp-img src="/img/ampolleta_incandescente.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-      </amp-carousel>
-
-      <amp-carousel id="golden-apple-carousel"
-        width="1024"
-        height="682"
-        layout="responsive"
-        type="slides"
-        [slide]="product.selectedSlideForGolden"
-        on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
-        hidden
-        class="fadeIn"
-        [hidden]="product.selectedColor != 'golden'">
-    
-	<amp-img src="/img/juguera.png"
-	  width="1024"
-	  height="682"
-	  layout="responsive"
-	  on="tap:gallery-lightbox"
-	  role="button"
-	  tabindex="0">
-	</amp-img>
-
-	<amp-img src="/img/microondas.png"
-	  width="1024"
-	  height="682"
-	  layout="responsive"
-	  on="tap:gallery-lightbox"
-	  role="button"
-	  tabindex="0">
-	</amp-img>
-
-        <amp-img src="/img/hornillo.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-        <amp-img src="/img/hervidor.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-
-        <amp-img src="/img/olla_arrocera.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-
-        <amp-img src="/img/cafetera_expresso.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-      </amp-carousel>
-
-      <amp-carousel id="coral-apple-carousel"
-	width="1024"
-	height="682"
-	layout="responsive"
-	type="slides"
-	[slide]="product.selectedSlideForCoral"
-	on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForCoral: event.index}})"
-	hidden
-	class="fadeIn"
-	[hidden]="product.selectedColor != 'coral'">
-	<amp-img src="/img/plancha.png"
-	  width="1024"
-	  height="682"
-	  layout="responsive"
-	  on="tap:gallery-lightbox"
-	  role="button"
-	  tabindex="0">
-	</amp-img>
-
-
-        <amp-img src="/img/frigobar.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-
-
-        <amp-img src="/img/refrigerador.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-
-
-        <amp-img src="/img/refrigerador_dos_puertas.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
-
-
-        <amp-img src="/img/lavadora_de_ropa.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>
+	      <amp-img src="/img/instalador_sec.png"
+		width="1290"
+		height="1290"
+		layout="responsive"
+		on="tap:gallery-lightbox"
+		role="button"
+		tabindex="0">
+	      </amp-img>
+	    </div>
 
 
 
 
-        <amp-img src="/img/secadora_de_ropa.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="0">
-        </amp-img>
+	  </amp-carousel>
 
+	  <amp-carousel id="green-apple-carousel"
+	    width="1024"
+	    height="682"
+	    layout="responsive"
+	    type="slides"
+	    [slide]="product.selectedSlideForGreen"
+	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
+	    class="fadeIn"
+	    hidden
+	    [hidden]="product.selectedColor != 'green'">
+	    <amp-img src="/img/led.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
 
-	<amp-img src="/img/lavaplatos.png"
-	  width="1024"
-	  height="682"
-	  layout="responsive"
-	  on="tap:gallery-lightbox"
-	  role="button"
-	  tabindex="1">
-	</amp-img>
-    </amp-carousel>
+	    <amp-img src="/img/ampolleta_incandescente.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+	  </amp-carousel>
 
-    <amp-carousel id="red-apple-carousel"
-        width="1024"
-        height="682"
-        layout="responsive"
-        type="slides"
-        [slide]="product.selectedSlideForRed"
-        on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
-        hidden
-        class="fadeIn"
-        [hidden]="product.selectedColor != 'red'">
-        <amp-img src="/img/encimera.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="1">
-        </amp-img>
-
-        <amp-img src="/img/encimera_induccion.png"
-          width="1024"
-          height="682"
-          layout="responsive"
-          on="tap:gallery-lightbox"
-          role="button"
-          tabindex="1">
-        </amp-img>
-      </amp-carousel>
-
-
-      <amp-image-lightbox id="llamar-lightbox"
-        layout="nodisplay">
-        <div 
-          role="button"
-          tabindex="0">
-	  <a class="ampstart-btn caps m2 close-gallery-button"
-	    href = "tel:+56962000921">
-	    Llamar
-	  </a>	
-        </div>
-      </amp-image-lightbox>
-
-
-
-
-
+	  <amp-carousel id="golden-apple-carousel"
+	    width="1024"
+	    height="682"
+	    layout="responsive"
+	    type="slides"
+	    [slide]="product.selectedSlideForGolden"
+	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
+	    hidden
+	    class="fadeIn"
+	    [hidden]="product.selectedColor != 'golden'">
 	
-      <amp-image-lightbox id="gallery-lightbox"
-	layout="nodisplay">
-	<div on="tap:gallery-lightbox.close"
-	  role="button"
-	  tabindex="0">
-	  <button class="ampstart-btn caps m2 close-gallery-button"
-	    on="tap:gallery-lightbox.close"
-	    role="button"
-	    tabindex="0">
-	    Cerrar
-	  </button>
-        </div>
-      </amp-image-lightbox>
-    </div>
+	    <amp-img src="/img/juguera.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+	    <amp-img src="/img/microondas.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+	    <amp-img src="/img/hornillo.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+	    <amp-img src="/img/hervidor.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+	    <amp-img src="/img/olla_arrocera.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+	    <amp-img src="/img/cafetera_expresso.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+	  </amp-carousel>
+
+	  <amp-carousel id="coral-apple-carousel"
+	    width="1024"
+	    height="682"
+	    layout="responsive"
+	    type="slides"
+	    [slide]="product.selectedSlideForCoral"
+	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForCoral: event.index}})"
+	    hidden
+	    class="fadeIn"
+	    [hidden]="product.selectedColor != 'coral'">
+	    <amp-img src="/img/plancha.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+
+	    <amp-img src="/img/frigobar.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+
+	    <amp-img src="/img/refrigerador.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+
+	    <amp-img src="/img/refrigerador_dos_puertas.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+
+	    <amp-img src="/img/lavadora_de_ropa.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+
+
+
+	    <amp-img src="/img/secadora_de_ropa.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="0">
+	    </amp-img>
+
+
+	    <amp-img src="/img/lavaplatos.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="1">
+	    </amp-img>
+	</amp-carousel>
+
+	<amp-carousel id="red-apple-carousel"
+	    width="1024"
+	    height="682"
+	    layout="responsive"
+	    type="slides"
+	    [slide]="product.selectedSlideForRed"
+	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
+	    hidden
+	    class="fadeIn"
+	    [hidden]="product.selectedColor != 'red'">
+	    <amp-img src="/img/encimera.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="1">
+	    </amp-img>
+
+	    <amp-img src="/img/encimera_induccion.png"
+	      width="1024"
+	      height="682"
+	      layout="responsive"
+	      on="tap:gallery-lightbox"
+	      role="button"
+	      tabindex="1">
+	    </amp-img>
+	  </amp-carousel>
+
+
+	  <amp-image-lightbox id="llamar-lightbox"
+	    layout="nodisplay">
+	    <div 
+	      role="button"
+	      tabindex="0">
+	      <a class="ampstart-btn caps m2 close-gallery-button"
+		href = "tel:+56962000921">
+		Llamar
+	      </a>	
+	    </div>
+	  </amp-image-lightbox>
+
+
+
+
 
 	    
-    <amp-state id="product">
-      <script type="application/json">
-	{
-	  "selectedColor": "blue",
-	  "selectedSize": "S",
-	  "selectedSlide": 0,
-          "selectedSlideForBlue": 0,
-          "selectedSlideForCoral": 0,
-	  "selectedSlideForRed": 0,
-	  "selectedSlideForGolden": 0,
-	  "selectedSlideForGreen": 0,
-	  "moreItemsPageIndex": 0,
-	  "hasMorePages": false,
-            "circuitos": {
-              "C": "C: Calefacción",
-              "D": "D: Dormitorios",
-              "E": "E: Encimera",
-              "N": "N: Enchufes Normales",
-              "Z": "Z: Exclusivo de Lavavajillas",
-              "A": "A: Exclusivo de Aire Acondicionado",
-              "M": "M: Mesón de Cocina",
-              "L": "L: Loggia",
-              "H": "H: Horno Eléctrico",
-              "I": "I: Iluminación",
-              "R": "R: Refrigeradores",
-              "S": "S: Sala"
-              },
+	  <amp-image-lightbox id="gallery-lightbox"
+	    layout="nodisplay">
+	    <div on="tap:gallery-lightbox.close"
+	      role="button"
+	      tabindex="0">
+	      <button class="ampstart-btn caps m2 close-gallery-button"
+		on="tap:gallery-lightbox.close"
+		role="button"
+		tabindex="0">
+		Cerrar
+	      </button>
+	    </div>
+	  </amp-image-lightbox>
+	</div>
 
-         "blue": {
-            "ids" : {
-              "0": "",
-              "1": "",
-              "2": "",
-              "3": "",
-              "4": "",
-              "5": "",
-              "6": ""
+		
+	<amp-state id="product">
+	  <script type="application/json">
+	    {
+	      "selectedColor": "blue",
+	      "selectedSize": "S",
+	      "selectedSlide": 0,
+	      "selectedSlideForBlue": 0,
+	      "selectedSlideForCoral": 0,
+	      "selectedSlideForRed": 0,
+	      "selectedSlideForGolden": 0,
+	      "selectedSlideForGreen": 0,
+	      "moreItemsPageIndex": 0,
+	      "hasMorePages": false,
+		"circuitos": {
+		  "C": "C: Calefacción",
+		  "D": "D: Dormitorios",
+		  "E": "E: Encimera",
+		  "N": "N: Enchufes Normales",
+		  "Z": "Z: Exclusivo de Lavavajillas",
+		  "A": "A: Exclusivo de Aire Acondicionado",
+		  "M": "M: Mesón de Cocina",
+		  "L": "L: Loggia",
+		  "H": "H: Horno Eléctrico",
+		  "I": "I: Iluminación",
+		  "R": "R: Refrigeradores",
+		  "S": "S: Sala"
+		  },
 
-              },
-            "nombres": {
-              "0": "Visita a Domicilio de Instalador Eléctrico Autorizado SEC.",
-              "1": "Mantención Eléctrica.",
-              "2": "Reparación de CortoCircuito.",
-              "3": "Proyecto de Energía Solar OffGrid.",
-              "4": "Instalación de Luminarias.",
-              "5": "Instalación de Enchufes.",
-              "6": "Certificación TE1 de Instalaciones Eléctricas."
-            },
-            "circuitos": {
-              "0": "I",
-              "1": "I",
-              "2": "I",
-              "3": "I",
-              "4": "I",
-              "5": "I",
-              "6": "I"
-            },
-            "sizes": {
-              "C": "300 W",
-              "D": "300 W",
-              "E": "200 W",
-              "N": "300 W",
-              "Z": "200 W",
-              "A": "100 W",
-              "S": "200 W",
-              "M": "200 W",
-              "L": "100 W",
-              "H": "200 W",
-              "I": "200 W",
-              "R": "100 W"
-            },
-           "defaultSize": "I"
-          },
+	     "blue": {
+		"ids" : {
+		  "0": "",
+		  "1": "",
+		  "2": "",
+		  "3": "",
+		  "4": "",
+		  "5": "",
+		  "6": ""
 
-	  "green": {
-	    "ids" : {
-	      "0": "35",
-	      "1": "99"
+		  },
+		"nombres": {
+		  "0": "Visita a Domicilio de Instalador Eléctrico Autorizado SEC.",
+		  "1": "Mantención Eléctrica.",
+		  "2": "Reparación de CortoCircuito.",
+		  "3": "Proyecto de Energía Solar OffGrid.",
+		  "4": "Instalación de Luminarias.",
+		  "5": "Instalación de Enchufes.",
+		  "6": "Certificación TE1 de Instalaciones Eléctricas."
+		},
+		"circuitos": {
+		  "0": "I",
+		  "1": "I",
+		  "2": "I",
+		  "3": "I",
+		  "4": "I",
+		  "5": "I",
+		  "6": "I"
+		},
+		"sizes": {
+		  "C": "300 W",
+		  "D": "300 W",
+		  "E": "200 W",
+		  "N": "300 W",
+		  "Z": "200 W",
+		  "A": "100 W",
+		  "S": "200 W",
+		  "M": "200 W",
+		  "L": "100 W",
+		  "H": "200 W",
+		  "I": "200 W",
+		  "R": "100 W"
+		},
+	       "defaultSize": "I"
 	      },
-	    "nombres": {
-	      "0": "Ampolleta Led.",
-	      "1": "Ampolleta Incandescente."
+
+	      "green": {
+		"ids" : {
+		  "0": "35",
+		  "1": "99"
+		  },
+		"nombres": {
+		  "0": "Ampolleta Led.",
+		  "1": "Ampolleta Incandescente."
+		},
+		"circuitos": {
+		  "0": "I",
+		  "1": "I"
+		},
+		"sizes": {
+		  "C": "unavailable",
+		  "D": "unavailable",
+		  "E": "unavailable",
+		  "N": "unavailable",
+		  "Z": "unavailable",
+		  "A": "unavailable",
+		  "S": "unavailable",
+		  "M": "unavailable",
+		  "L": "unavailable",
+		  "H": "unavailable",
+		  "I": "200 W",
+		  "R": "unavailable"
+		},
+		"defaultSize": "I"
+	      },
+
+	      "golden": {
+		"ids" :{
+		  "0": "36",
+		  "1": "1692",
+		  "2": "124",
+		  "3": "236",
+		  "4": "211",
+		  "5": "579"
+		},	
+		"nombres" : {
+		  "0": "Juguera.",
+		  "1": "Microondas.",
+		  "2": "Hornillo.",
+		  "3": "Hervidor.",
+		  "4": "Olla Arrocera.",
+		  "5": "Cafetera Expresso"
+
+		},
+		"circuito_recomendado":{
+		  "0": "M",
+		  "1": "M",
+		  "2": "M",
+		  "3": "M",
+		  "4": "M",
+		  "5": "M"
+
+		},
+		"sizes": {
+		  "C": "unavailable",
+		  "D": "unavailable",
+		  "E": "unavailable",
+		  "N": "200 W",
+		  "Z": "unavailable",
+		  "A": "unavailable",
+		  "S": "unavailable",
+		  "M": "900 W",
+		  "L": "unavailable",
+		  "H": "unavailable",
+		  "I": "unavailable",
+		  "R": "unavailable"
+
+		},
+		"defaultSize": "M"
+	      },
+
+	      "coral": {
+		"ids": {
+		  "0": "37",
+		  "1": "843",
+		  "2": "252",
+		  "3": "921",
+		  "4": "7",
+		  "5": "276",
+		  "6": "101"
+		},
+		"nombres": {
+		  "0": "Plancha.",
+		  "1": "Frigobar.",
+		  "2": "Refrigerador.",
+		  "3": "Refrigerador de dos puertas.",
+		  "4": "Lavadora de ropas.",
+		  "5": "Secadora de ropas.",
+		  "6": "Lavalozas."
+		},
+		"circuitos": {
+		  "0": "N",
+		  "1": "R",
+		  "2": "R",
+		  "3": "R",
+		  "4": "L",
+		  "5": "L",
+		  "6": "Z"            
+
+		},
+		"sizes": {
+		  "I": "unavailable",
+		  "C": "unavailable",
+		  "D": "300 W",
+		  "E": "unavailable",
+		  "N": "300 W",
+		  "Z": "unavailable",
+		  "A": "unavailable",
+		  "S": "1200 W",
+		  "M": "900 W",
+		  "L": "4000 W",
+		  "H": "unavailable",
+		  "R": "300 W"
+		},
+		"defaultSize": "R"
+	      },
+
+	      "red": {
+		"ids": {
+		  "0": "71",
+		  "1": "76"
+		},
+		"nombres": {
+		  "0": "Cocina Encimera Vitrocerámica.",
+		  "1": "Cocina Encimera Inducción."
+		},
+		"circuitos": {
+		  "0": "E",
+		  "1": "E"
+
+		},
+		"sizes": {
+		  "I": "unavailable",
+		  "C": "unavailable",
+		  "D": "unavailable",
+		  "E": "45000 W",
+		  "N": "unavailable",
+		  "Z": "3000 W",
+		  "A": "unavailable",
+		  "S": "unavailable",
+		  "M": "unavailable",
+		  "L": "3000 W",
+		  "H": "3000 W",
+		  "R": "unavailable"
+		},
+		"defaultSize": "E"
+	      }
+
+
+
+
+
+
+	    }
+	  </script>
+	</amp-state>
+
+	<p class="price-description"> Seleccionado:
+	  <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Visita a Domicilio de Instalador Eléctrico Autorizado SEC.</span>
+	</p>
+
+	<form id="order"
+	  method="POST"
+	  action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1/addToCircuito.json"
+	  target="_top"
+	  on = "submit-success:show-more-list.refresh;submit-error:show-more-list.refresh"
+	  class="flex flex-wrap m1">
+	  <div class="items-center flex">
+	    <label for="color"></label>
+	    <amp-selector name="color"
+	      layout="container"
+	      [selected]="product.selectedColor"
+	      on="select:AMP.setState({
+			  product: {
+			    selectedColor: event.targetOption,
+			    selectedSlide: 0,
+			    selectedSlideForBlue: 0,
+			    selectedSlideForCoral: 0,
+			    selectedSlideForRed: 0,
+			    selectedSlideForGreen: 0,
+			    selectedSlideForYellow: 0,
+			    selectedSize: product[event.targetOption].sizes[product.selectedSize] != 'unavailable' ? product.selectedSize : product[event.targetOption].defaultSize
+			  }
+			})">
+	      <ul class="p0 m1">
+
+		<li>
+		  <div option="blue"
+		    selected
+		    class="square blue"></div>
+		</li>
+
+		<li>
+		  <div option="green"
+		    class="square green"></div>
+		</li>
+		<li>
+		  <div option="golden"
+		    class="square golden"></div>
+		</li>
+		<li>
+		  <div option="coral"
+		    class="square coral"></div>
+		</li>
+		<li>
+		  <div option="red"
+		    class="square red"></div>
+		</li>
+	      </ul>
+	    </amp-selector>
+	  </div>
+
+	  <div class="items-center flex">
+	    <label for="quantity">Cantidad:</label>
+	    <amp-selector name="quantity"
+	      layout="container">
+	      <ul class="p0 m1">
+		<li option="1"
+		  selected>1</li>
+		<li option="2">2</li>
+		<li option="3">3</li>
+	      </ul>
+	    </amp-selector>
+	  </div>
+
+	  <div class="items-center flex">
+	    <amp-selector name="size"
+	      layout="container"
+	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+			    ? product.selectedSize
+			    : product[product.selectedColor].defaultSize">
+	      <label for="size">Circuitos Normales:</label>
+
+	      <ul class="p0 m1">
+
+		<li option="I"
+		  class=""
+		  selected
+		  [class]="(product[product.selectedColor].sizes['I'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">I</li>
+		</li>
+		<li option="D"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['D'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">D</li>
+
+		<li option="N"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">N</li>
+
+		<li option="S"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">S</li>
+
+
+
+	      </ul>
+	    </amp-selector>
+	  </div>
+
+
+	  <div class="items-center flex">
+	    <amp-selector name="size"
+	      layout="container"
+	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+			    ? product.selectedSize
+			    : product[product.selectedColor].defaultSize">
+
+
+
+	      <label for="size">Climatización:</label>
+
+	      <ul class= "p0 m1">
+		<li option="C"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['C'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">C</li>
+
+		<li option="A"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['A'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">A</li>
+		  
+	      </ul>
+	    </amp-selector>
+	  </div>
+
+	  <div class="items-center flex">
+	    <amp-selector name="size"
+	      layout="container"
+	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+			    ? product.selectedSize
+			    : product[product.selectedColor].defaultSize">
+
+
+
+
+	      <label for="size">Cocina:</label>
+
+	      <ul class= "p0 m1">
+
+		<li option="M"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">M</li>
+
+		<li option="R"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['R'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">R</li>
+
+
+	      </ul>
+
+	    </amp-selector>
+	  </div>
+
+	  <div class="items-center flex">
+	    <amp-selector name="size"
+	      layout="container"
+	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+			    ? product.selectedSize
+			    : product[product.selectedColor].defaultSize">
+
+
+
+	      <label for="size">Circuitos Exclusivos:</label>
+
+	      <ul class = "p0 m1">
+
+		<li option="L"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">L</li>
+
+		<li option="E"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">E</li>
+
+		<li option="H"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['H'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">H</li>
+
+		<li option="Z"
+		  class="unavailable"
+		  [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
+			    ? ''
+			    : 'unavailable'">Z</li>
+
+
+	    </ul>
+	    </amp-selector>
+	  </div>
+
+	<p class="price-description">
+	  <span > Circuito: </span>
+	  <span [text]="product.circuitos[product.selectedSize]">I: Iluminación</span>
+	  <span [text]="product[product.selectedColor].sizes[product.selectedSize]">200W</span>
+	</p>
+
+	  <div class="items-center flex my1">
+	    <input type="submit"
+	      class="ampstart-btn caps"
+	      name="Agregar al Circuito"
+	      value="Agregar al Circuito">
+	  </div>
+	  <input type="hidden"
+	    name="carga_id"
+	    value = ""
+	    [value] ="product[product.selectedColor].ids[product.selectedSlide]">
+	  <input name="clientId"
+	    type="hidden"
+	    value="CLIENT_ID(cart)"
+	    data-amp-replace="CLIENT_ID">
+	  <div submit-success>
+	    <template type="amp-mustache">
+	       {{error}}
+	    </template>
+	  </div>
+	  <div submit-error>
+	    <template type="amp-mustache">
+	      {{error}}
+	    </template>
+	  </div>
+	</form>
+	  
+	<amp-list class="items m1"
+	  width="auto"
+	  height="145"
+	  layout="fixed-height"
+	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
+
+	  id="show-more-list">
+	  <template type="amp-mustache">
+	  <!--
+	    <a class="text-decoration-none p1"
+	      href="#">
+	      <amp-img width="70.31"
+		height="46.8"
+		layout="fixed"
+		alt="{{cantidad}}"
+		src="{{img}}"></amp-img>
+	    </a>
+	   -->
+	    <form method   = "POST"
+	      action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+	      target    = "_top"
+	      on = "submit-success:show-more-list.refresh">
+	      <amp-img width="170.31"
+		height="146.8"
+		layout="fixed"
+		alt="{{cantidad}}"
+		src="{{img}}"></amp-img>
+	      <input name = "clientId" 
+		 type = "hidden" 
+		 value = "CLIENT_ID(cart)" 
+		 data-amp-replace = "CLIENT_ID">
+	      <button  type = "submit" > x
+	    </form>
+	  </template>
+
+	  <div overflow = "" 
+	       class = "list-overflow">
+	   VER MAS
+	  </div>
+
+	</amp-list>
+
+	<amp-analytics type="googleanalytics">
+	  <script type="application/json">{
+	    "vars": {
+	      "account": "UA-109124551-1"
 	    },
-	    "circuitos": {
-	      "0": "I",
-	      "1": "I"
-	    },
-	    "sizes": {
-              "C": "unavailable",
-              "D": "unavailable",
-              "E": "unavailable",
-              "N": "unavailable",
-              "Z": "unavailable",
-              "A": "unavailable",
-              "S": "unavailable",
-              "M": "unavailable",
-              "L": "unavailable",
-              "H": "unavailable",
-	      "I": "200 W",
-              "R": "unavailable"
-	    },
-	    "defaultSize": "I"
-	  },
+	    "triggers": {
+	      "default pageview": {
+		"on": "visible",
+		"request": "pageview",
+		"vars": {
+		  "title": "Aléctrico Designer"
+		}
+	      }
+	    }
+	  }
+	  </script>
+	</amp-analytics>
 
-	  "golden": {
-	    "ids" :{
-	      "0": "36",
-              "1": "1692",
-              "2": "124",
-              "3": "236",
-	      "4": "211",
-	      "5": "579"
-	    },	
-	    "nombres" : {
-              "0": "Juguera.",
-              "1": "Microondas.",
-              "2": "Hornillo.",
-              "3": "Hervidor.",
-	      "4": "Olla Arrocera.",
-	      "5": "Cafetera Expresso"
+	<amp-install-serviceworker
+	  src="/sw.js"
+	  data-iframe-src="https://designer.com/sw.js"
+	  layout="nodisplay">
+	</amp-install-serviceworker>
 
-	    },
-	    "circuito_recomendado":{
-	      "0": "M",
-              "1": "M",
-              "2": "M",
-              "3": "M",
-	      "4": "M",
-	      "5": "M"
-
-	    },
-	    "sizes": {
-              "C": "unavailable",
-              "D": "unavailable",
-              "E": "unavailable",
-              "N": "200 W",
-              "Z": "unavailable",
-              "A": "unavailable",
-	      "S": "unavailable",
-	      "M": "900 W",
-	      "L": "unavailable",
-	      "H": "unavailable",
-              "I": "unavailable",
-              "R": "unavailable"
-
-	    },
-	    "defaultSize": "M"
-	  },
-
-	  "coral": {
-	    "ids": {
-              "0": "37",
-              "1": "843",
-              "2": "252",
-              "3": "921",
-	      "4": "7",
-	      "5": "276",
-	      "6": "101"
-	    },
-	    "nombres": {
-              "0": "Plancha.",
-              "1": "Frigobar.",
-              "2": "Refrigerador.",
-              "3": "Refrigerador de dos puertas.",
-	      "4": "Lavadora de ropas.",
-	      "5": "Secadora de ropas.",
-	      "6": "Lavalozas."
-	    },
-	    "circuitos": {
-              "0": "N",
-	      "1": "R",
-	      "2": "R",
-              "3": "R",
-	      "4": "L",
-              "5": "L",
-              "6": "Z"            
-
-	    },
-	    "sizes": {
-              "I": "unavailable",
-              "C": "unavailable",
-              "D": "300 W",
-              "E": "unavailable",
-              "N": "300 W",
-              "Z": "unavailable",
-              "A": "unavailable",
-              "S": "1200 W",
-              "M": "900 W",
-              "L": "4000 W",
-              "H": "unavailable",
-              "R": "300 W"
-	    },
-	    "defaultSize": "R"
-	  },
-
-          "red": {
-            "ids": {
-              "0": "71",
-              "1": "76"
-            },
-            "nombres": {
-              "0": "Cocina Encimera Vitrocerámica.",
-              "1": "Cocina Encimera Inducción."
-            },
-            "circuitos": {
-              "0": "E",
-              "1": "E"
-
-            },
-            "sizes": {
-              "I": "unavailable",
-              "C": "unavailable",
-              "D": "unavailable",
-              "E": "45000 W",
-              "N": "unavailable",
-              "Z": "3000 W",
-              "A": "unavailable",
-              "S": "unavailable",
-              "M": "unavailable",
-              "L": "3000 W",
-              "H": "3000 W",
-              "R": "unavailable"
-            },
-            "defaultSize": "E"
-          }
-
-
-
-
-
-
-	}
-      </script>
-    </amp-state>
-
-    <p class="price-description"> Seleccionado:
-      <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Visita a Domicilio de Instalador Eléctrico Autorizado SEC.</span>
-    </p>
-
-    <form id="order"
-      method="POST"
-      action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1/addToCircuito.json"
-      target="_top"
-      on = "submit-success:show-more-list.refresh;submit-error:show-more-list.refresh"
-      class="flex flex-wrap m1">
-      <div class="items-center flex">
-	<label for="color"></label>
-	<amp-selector name="color"
+	<amp-selector role="tablist"
 	  layout="container"
-	  [selected]="product.selectedColor"
-	  on="select:AMP.setState({
-		      product: {
-			selectedColor: event.targetOption,
-			selectedSlide: 0,
-                        selectedSlideForBlue: 0,
-                        selectedSlideForCoral: 0,
-			selectedSlideForRed: 0,
-			selectedSlideForGreen: 0,
-			selectedSlideForYellow: 0,
-			selectedSize: product[event.targetOption].sizes[product.selectedSize] != 'unavailable' ? product.selectedSize : product[event.targetOption].defaultSize
-		      }
-		    })">
-	  <ul class="p0 m1">
+	  class="ampTabContainer ampstart-headerbar-nav"
+	  keyboard-select-mode="select">
+	  <div role="tab"
+	    class="tabButton h4 ampstart-nav-item"
+	    option="c">CIRCUITOS</div>
+	  <div role="tabpanel"
+	    class="tabContent p1 p">Se muestran los circuitos a los que podría conectar electrodomésticos. Aquellos que no son adecuados para un electrodoméstico en particular están marcados con una X. En algunos circuitos solo puede haber un tipo de electrodoméstico, estos circuitos se llaman exclusivos.</div>
+	  <div role="tab"
+	    class="tabButton h4 ampstart-nav-item"
+	    selected
+	    option="a">GRUPOS</div>
+	  <div role="tabpanel"
+	    class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen y considerando los circuitos a los que pueden ser conectados. El grupo azul es diferente, no agrupa electrodomésticos sino los servicios que puede contratar en alectrico.cl.</div>
 
-            <li>
-              <div option="blue"
-                selected
-                class="square blue"></div>
-            </li>
-
-	    <li>
-	      <div option="green"
-		class="square green"></div>
-	    </li>
-	    <li>
-	      <div option="golden"
-		class="square golden"></div>
-	    </li>
-	    <li>
-	      <div option="coral"
-		class="square coral"></div>
-	    </li>
-            <li>
-              <div option="red"
-                class="square red"></div>
-            </li>
-	  </ul>
 	</amp-selector>
       </div>
-
-      <div class="items-center flex">
-	<label for="quantity">Cantidad:</label>
-	<amp-selector name="quantity"
-	  layout="container">
-	  <ul class="p0 m1">
-	    <li option="1"
-	      selected>1</li>
-	    <li option="2">2</li>
-	    <li option="3">3</li>
-	  </ul>
-	</amp-selector>
-      </div>
-
-      <div class="items-center flex">
-	<amp-selector name="size"
-	  layout="container"
-	  on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	  [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
-			? product.selectedSize
-			: product[product.selectedColor].defaultSize">
-          <label for="size">Circuitos Normales:</label>
-
-	  <ul class="p0 m1">
-
-            <li option="I"
-              class=""
-              selected
-              [class]="(product[product.selectedColor].sizes['I'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">I</li>
-            </li>
-            <li option="D"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['D'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">D</li>
-
-            <li option="N"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">N</li>
-
-            <li option="S"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">S</li>
-
-
-
-          </ul>
-        </amp-selector>
-      </div>
-
-
-      <div class="items-center flex">
-        <amp-selector name="size"
-          layout="container"
-          on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-          [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
-                        ? product.selectedSize
-                        : product[product.selectedColor].defaultSize">
-
-
-
-          <label for="size">Climatización:</label>
-
-          <ul class= "p0 m1">
-            <li option="C"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['C'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">C</li>
-
-            <li option="A"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['A'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">A</li>
-              
-          </ul>
-        </amp-selector>
-      </div>
-
-      <div class="items-center flex">
-        <amp-selector name="size"
-          layout="container"
-          on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-          [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
-                        ? product.selectedSize
-                        : product[product.selectedColor].defaultSize">
-
-
-
-
-          <label for="size">Cocina:</label>
-
-          <ul class= "p0 m1">
-
-	    <li option="M"
-              class="unavailable"
-	      [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
-			? ''
-			: 'unavailable'">M</li>
-
-            <li option="R"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['R'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">R</li>
-
-
-          </ul>
-
-        </amp-selector>
-      </div>
-
-      <div class="items-center flex">
-        <amp-selector name="size"
-          layout="container"
-          on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-          [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
-                        ? product.selectedSize
-                        : product[product.selectedColor].defaultSize">
-
-
-
-          <label for="size">Circuitos Exclusivos:</label>
-
-          <ul class = "p0 m1">
-
-            <li option="L"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">L</li>
-
-            <li option="E"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">E</li>
-
-            <li option="H"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['H'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">H</li>
-
-            <li option="Z"
-              class="unavailable"
-              [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
-                        ? ''
-                        : 'unavailable'">Z</li>
-
-
-	</ul>
-	</amp-selector>
-      </div>
-
-    <p class="price-description">
-      <span > Circuito: </span>
-      <span [text]="product.circuitos[product.selectedSize]">I: Iluminación</span>
-      <span [text]="product[product.selectedColor].sizes[product.selectedSize]">200W</span>
-    </p>
-
-      <div class="items-center flex my1">
-	<input type="submit"
-	  class="ampstart-btn caps"
-	  name="Agregar al Circuito"
-	  value="Agregar al Circuito">
-      </div>
-      <input type="hidden"
-	name="carga_id"
-	value = ""
-	[value] ="product[product.selectedColor].ids[product.selectedSlide]">
-      <input name="clientId"
-	type="hidden"
-	value="CLIENT_ID(cart)"
-	data-amp-replace="CLIENT_ID">
-      <div submit-success>
-	<template type="amp-mustache">
-	   {{error}}
-	</template>
-      </div>
-      <div submit-error>
-	<template type="amp-mustache">
-	  {{error}}
-	</template>
-      </div>
-    </form>
-      
-    <amp-list class="items m1"
-      width="auto"
-      height="145"
-      layout="fixed-height"
-      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/1.json?clientId=CLIENT_ID(cart)"
-
-      id="show-more-list">
-      <template type="amp-mustache">
-      <!--
-	<a class="text-decoration-none p1"
-	  href="#">
-	  <amp-img width="70.31"
-	    height="46.8"
-	    layout="fixed"
-	    alt="{{cantidad}}"
-	    src="{{img}}"></amp-img>
-	</a>
-       -->
-        <form method   = "POST"
-          action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
-          target    = "_top"
-	  on = "submit-success:show-more-list.refresh">
-          <amp-img width="170.31"
-            height="146.8"
-            layout="fixed"
-            alt="{{cantidad}}"
-            src="{{img}}"></amp-img>
-          <input name = "clientId" 
-             type = "hidden" 
-             value = "CLIENT_ID(cart)" 
-             data-amp-replace = "CLIENT_ID">
-          <button  type = "submit" > x
-        </form>
-      </template>
-
-      <div overflow = "" 
-           class = "list-overflow">
-       VER MAS
-      </div>
-
-    </amp-list>
-
-    <amp-analytics type="googleanalytics">
-      <script type="application/json">{
-        "vars": {
-          "account": "UA-109124551-1"
-        },
-        "triggers": {
-          "default pageview": {
-            "on": "visible",
-            "request": "pageview",
-            "vars": {
-              "title": "Aléctrico Designer"
-            }
-          }
-        }
-      }
-      </script>
-    </amp-analytics>
-
-    <amp-install-serviceworker
-      src="/sw.js"
-      data-iframe-src="https://designer.com/sw.js"
-      layout="nodisplay">
-    </amp-install-serviceworker>
-
-    <amp-selector role="tablist"
-      layout="container"
-      class="ampTabContainer ampstart-headerbar-nav"
-      keyboard-select-mode="select">
-      <div role="tab"
-        class="tabButton h4 ampstart-nav-item"
-        option="c">CIRCUITOS</div>
-      <div role="tabpanel"
-        class="tabContent p1 p">Se muestran los circuitos a los que podría conectar electrodomésticos. Aquellos que no son adecuados para un electrodoméstico en particular están marcados con una X. En algunos circuitos solo puede haber un tipo de electrodoméstico, estos circuitos se llaman exclusivos.</div>
-      <div role="tab"
-	class="tabButton h4 ampstart-nav-item"
-	selected
-	option="a">GRUPOS</div>
-      <div role="tabpanel"
-	class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen y considerando los circuitos a los que pueden ser conectados. El grupo azul es diferente, no agrupa electrodomésticos sino los servicios que puede contratar en alectrico.cl.</div>
-
-    </amp-selector>
+    </div>
   </body>
 </html>
