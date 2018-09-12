@@ -1805,6 +1805,24 @@
 
     </amp-list>
 
+    <amp-analytics type="googleanalytics">
+      <script type="application/json">{
+        "vars": {
+          "account": "UA-109124551-1"
+        },
+        "triggers": {
+          "default pageview": {
+            "on": "visible",
+            "request": "pageview",
+            "vars": {
+              "title": "Aléctrico Designer"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+
     <amp-install-serviceworker
       src="/sw.js"
       data-iframe-src="https://designer.com/sw.js"
