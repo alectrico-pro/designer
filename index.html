@@ -571,6 +571,100 @@
   </head>
 
   <body>
+    <amp-sidebar id="drawermenu" layout="nodisplay">
+      <a href="/" class="caps text-decoration-none block p1">Products</a>
+      <hr>
+      <a class="caps text-decoration-none block p1" 
+        href="/samples_templates/product_browse_page/preview/">Fruit</a> 
+      <a class="caps text-decoration-none block p1" 
+        href="/samples_templates/product_browse_page/preview/">Vegetable</a> 
+      <a class="caps text-decoration-none block p1"
+        href="/samples_templates/product_browse_page/preview/">More</a>
+    </amp-sidebar>
+
+    <div id="abe-preview-header" 
+      class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4">
+
+      <a href=".." class="caps text-decoration-none">
+        <i class="align-middle inline-block mr1">
+          <svg fill="#000000" 
+ 	    height="24" viewBox="0 0 24 24" 
+	    width="24" xmlns="http://www.w3.org/2000/svg">
+	    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+	    <path d="M0 0h24v24H0z" fill="none"/>
+	  </svg>
+        </i>
+     </a>
+
+     <h1 id="abe-preview-header-title" 
+       class="h3 center truncate caps">
+        Demo: Product Page
+     </h1>
+
+   </div>
+
+   <div id="abe-preview">
+
+     <div class="ampstart-card m1">
+
+       <div class="header">
+
+	  <a id="sample-menu" on="tap:drawermenu.toggle">
+	    <amp-img srcset="/img/ic_menu_white_1x_web_24dp.png 1x, /img/ic_menu_white_2x_web_24dp.png 2x" 
+	      width="24" 
+	      height="24" 
+	     alt="navigation">
+	    </amp-img>
+	  </a>
+
+
+	  <form method="GET" action="/samples_templates/product_browse_page/preview/search" 
+	    target="_top">
+	    <input name="search" type="search" placeholder="Search">
+	    <a id="sample-logo" href="/">Product</a> 
+	    <input type="submit" value="">
+	  </form>
+
+	</div>
+
+
+        <h2 class="m1">Apple</h2>
+
+	<div class="m1">
+	  <amp-social-share type="twitter" width="30" height="22"></amp-social-share>
+
+	  <amp-social-share type="facebook" width="30" height="22" data-attribution="254325784911610"></amp-social-share>
+
+	  <amp-social-share type="gplus" width="30" height="22"></amp-social-share>
+
+	  <amp-social-share type="email" width="30" height="22"></amp-social-share>
+
+	  <amp-social-share type="pinterest" width="33" height="22"></amp-social-share>
+	</div>
+
+	<p id="product-description" class="m1">Lorem ipsum dolor sit amet, ut sed non vel mattis. Et nulla suscipit ante ligula nisl in. Ut venenatis et mauris, mauris porta vulputate tellus mauris integer facilisis.</p>
+      </div>
+    </div>
+
+    <button class="ampstart-btn caps m1 mb3" 
+      on="tap:watch-video-lightbox">
+      Show Video 
+    </button>
+
+    <amp-lightbox id="watch-video-lightbox" 
+      layout="nodisplay">
+      <div class="amp-youtube-container">
+	<div class="video"><a on="tap:watch-video-lightbox.close" role="button" tabindex="0">Close</a>
+	  <amp-youtube width="480"
+	    height="270" 
+	    layout="responsive" 
+	    data-videoid="lBTCB7yLs8Y">
+	  </amp-youtube>
+	</div>
+      </div>
+    </amp-lightbox>
+
+
     <h2 class="m1">Aléctrico Designer</h2>
     <p id="product-description"
     class="m1">Agregue electrodomésticos a los circuitos que no tengan una X. </p>
