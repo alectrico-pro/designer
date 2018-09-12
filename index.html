@@ -641,6 +641,18 @@
           </amp-img>
         </li>
 
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 5}})"
+            src="/img/instalacion_electrico_autorizado_sec_60_40.png"
+            width="60"
+            height="40"
+            class=""
+            [class]="product.selectedSlideForBlue == 5 ? 'selected fadeIn' : '' "
+            tabindex="0"
+            role="button">
+          </amp-img>
+        </li>
+
 
 
       </ul>
@@ -972,6 +984,24 @@
           </amp-img>
         </div>
 
+        <div 
+          role="button"
+          tabindex="0">
+          <a class="ampstart-btn caps m2 close-gallery-button"
+            href = "tel:+56962000921">
+            Llamar
+          </a>
+          <amp-img src="/img/instalador_electrico_autorizado_sec.png"
+            width="1024"
+            height="682"
+            layout="responsive"
+            on="tap:gallery-lightbox"
+            role="button"
+            tabindex="0">
+          </amp-img>
+        </div>
+
+
 
 
       </amp-carousel>
@@ -1249,7 +1279,8 @@
               "1": "",
               "2": "",
               "3": "",
-              "4": ""
+              "4": "",
+              "5": ""
 
               },
             "nombres": {
@@ -1257,14 +1288,16 @@
               "1": "Mantención Eléctrica.",
               "2": "Reparación de CortoCircuito.",
               "3": "Proyecto de Energía Solar OffGrid.",
-              "4": "Instalación de Luminarias."
+              "4": "Instalación de Luminarias.",
+              "5": "Certificación TE1 de Instalaciones Eléctricas."
             },
             "circuitos": {
               "0": "I",
               "1": "I",
               "2": "I",
               "3": "I",
-              "4": "I"
+              "4": "I",
+              "5": "I"
             },
             "sizes": {
               "C": "300 W",
