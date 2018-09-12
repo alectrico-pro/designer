@@ -575,16 +575,6 @@
     <h2 class="m1">Designer Aléctrico</h2>
     <p id="product-description"
     class="m1">Agregue electrodomésticos a los circuitos que no tengan una X. </p>
-        <div 
-          role="button"
-          tabindex="0">
-          <a class="ampstart-btn caps m2 close-gallery-button"
-            href = "tel:+56962000921">
-            Llamar
-          </a>
-        </div>
-
-
     <div class="product-gallery">
       
       <ul [hidden]="product.selectedColor != 'blue'">
@@ -843,11 +833,20 @@
         on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
         class="fadeIn"
         [hidden]="product.selectedColor != 'blue'">
+        <div 
+          role="button"
+          tabindex="0">
+          <a class="ampstart-btn caps m2 close-gallery-button"
+            href = "tel:+56962000921">
+            Llamar
+          </a>
+        </div>
+
         <amp-img src="/img/alectrico.png"
           width="1024"
           height="682"
           layout="responsive"
-          on="tap:llamar-lightbox"
+          on="tap:gallery-lightbox"
           role="button"
           tabindex="0">
         </amp-img>
