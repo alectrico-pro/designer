@@ -1,6 +1,7 @@
 {
   "short_name": "Designer",
   "name": "Aléctrico Designer",
+  "display": "standalone",
   "icons": [
   { 
     "src": "/img/launcher-icon-1x.png",
