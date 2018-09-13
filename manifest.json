@@ -1,0 +1,14 @@
+{
+  "shot_name": "Designer",
+  "name": "Aléctrico Designer",
+  "icons": [
+  { 
+    "src"; "/img/plancha_60_40.png",
+    "type": "image/png",
+    "sizes": "60x40"
+  }
+  ],
+  "start_url": "index.html?launcher=true"
+}
+
+
