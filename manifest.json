@@ -3,9 +3,19 @@
   "name": "Aléctrico Designer",
   "icons": [
   { 
-    "src": "/img/alectrico_60_40.png",
+    "src": "/img/launcher-icon-1x.png",
     "type": "image/png",
-    "sizes": "60x40"
+    "sizes": "48x48"
+  },
+  {
+    "src": "/img/launcher-icon-1x.png",
+    "type": "image/png",
+    "sizes": "96x96"
+  },
+  {
+    "src": "/img/launcher-icon-1x.png",
+    "type": "image/png",
+    "sizes": "192x192"
   }
   ],
   "start_url": "index.html?launcher=true"
