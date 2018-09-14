@@ -1,0 +1,3 @@
+  convert alectrico.png -alpha off -resize 256x256 \
+          -define icon:auto-resize="180,152,144,76,72,60,57" \
+          apple-touch-icon.ico
