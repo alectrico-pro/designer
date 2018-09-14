@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+# Your Favicon Package
 
-You can use the [editor on GitHub](https://github.com/alectrico-pro/designer/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This package was generated with [RealFaviconGenerator](https://realfavicongenerator.net/) [v0.16](https://realfavicongenerator.net/change_log#v0.16)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Install instructions
 
-### Markdown
+To install this package:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Extract this package in the root of your web site. If your site is <code>http://www.example.com</code>, you should be able to access a file named <code>http://www.example.com/favicon.ico</code>.
 
-```markdown
-Syntax highlighted code block
+Insert the following code in the `head` section of your pages:
 
-# Header 1
-## Header 2
-### Header 3
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d7d08">
+    <meta name="apple-mobile-web-app-title" content="Al&eacute;ctrico Designer">
+    <meta name="application-name" content="Al&eacute;ctrico Designer">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="theme-color" content="#c4c4c4">
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/alectrico-pro/designer/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+*Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
