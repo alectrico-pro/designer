@@ -1705,24 +1705,24 @@
 		<li option="I"
 		  class=""
 		  selected
-		  [class]="(product[product.selectedColor].sizes['I'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['I'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">I</li>
 		</li>
 		<li option="D"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['D'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['D'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">D</li>
 
 		<li option="N"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['N'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['N'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">N</li>
 
 		<li option="S"
-		  [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['S'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">S</li>
 
@@ -1748,13 +1748,13 @@
 	      <ul class= "p0 m1">
 		<li option="C"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['C'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['C'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">C</li>
 
 		<li option="A"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['A'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['A'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">A</li>
 		  
@@ -1763,7 +1763,7 @@
 	  </div>
 
 	  <div class="items-center flex">
-	    <amp-selector name="circuio"
+	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
 	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
@@ -1779,13 +1779,13 @@
 
 		<li option="M"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['M'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">M</li>
 
 		<li option="R"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['R'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['R'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">R</li>
 
@@ -1811,25 +1811,25 @@
 
 		<li option="L"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['L'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">L</li>
 
 		<li option="E"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['E'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['E'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">E</li>
 
 		<li option="H"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['H'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['H'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">H</li>
 
 		<li option="Z"
 		  class="unavailable"
-		  [class]="(product[product.selectedColor].sizes['Z'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['Z'] != 'unavailable')
 			    ? ''
 			    : 'unavailable'">Z</li>
 
