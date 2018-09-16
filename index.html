@@ -391,11 +391,11 @@
       color: #fff;
     }
 
-    form#order amp-selector:not([disabled]) [option][selected]:not([disabled]):not(.unavailable):not(.square) {
+    form#order amp-selector:not([disabled]) [option][selected]:not([disabled]):not(.inadecuado):not(.square) {
       background-color: #eb407a;
     }
 
-    form#order amp-selector:not([disabled]) [option][selected]:not([disabled]):not(.unavailable).square {
+    form#order amp-selector:not([disabled]) [option][selected]:not([disabled]):not(.inadecuado).square {
       outline: 1px solid #eb407a;
     }
 
@@ -418,7 +418,7 @@
       animation-name: fadeIn;
     }
 
-    .unavailable {
+    .inadecuado {
       position: relative;
       background: gray;
       overflow: hidden;
@@ -427,7 +427,7 @@
       user-select: none;
     }
 
-    .unavailable:before, .unavailable:after {
+    .inadecuado:before, .inadecuado:after {
       position: absolute;
       content: '';
       background: grey;
@@ -445,7 +445,7 @@
       border-bottom: 2px solid;
     }
 
-    .unavailable:after {
+    .inadecuado:after {
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
     }
@@ -1475,18 +1475,18 @@
 		  "1": "I"
 		},
 		"potencias": {
-		  "C": "unavailable",
-		  "D": "unavailable",
-		  "E": "unavailable",
-		  "N": "unavailable",
-		  "Z": "unavailable",
-		  "A": "unavailable",
-		  "S": "unavailable",
-		  "M": "unavailable",
-		  "L": "unavailable",
-		  "H": "unavailable",
+		  "C": "inadecuado",
+		  "D": "inadecuado",
+		  "E": "inadecuado",
+		  "N": "inadecuado",
+		  "Z": "inadecuado",
+		  "A": "inadecuado",
+		  "S": "inadecuado",
+		  "M": "inadecuado",
+		  "L": "inadecuado",
+		  "H": "inadecuado",
 		  "I": "2200 W",
-		  "R": "unavailable"
+		  "R": "inadecuado"
 		},
 		"defaultPotencia": "I"
 	      },
@@ -1519,18 +1519,18 @@
 
 		},
 		"potencias": {
-		  "C": "unavailable",
-		  "D": "unavailable",
-		  "E": "unavailable",
+		  "C": "inadecuado",
+		  "D": "inadecuado",
+		  "E": "inadecuado",
 		  "N": "3520 W",
-		  "Z": "unavailable",
-		  "A": "unavailable",
-		  "S": "unavailable",
+		  "Z": "inadecuado",
+		  "A": "inadecuado",
+		  "S": "inadecuado",
 		  "M": "3520 W",
-		  "L": "unavailable",
-		  "H": "unavailable",
-		  "I": "unavailable",
-		  "R": "unavailable"
+		  "L": "inadecuado",
+		  "H": "inadecuado",
+		  "I": "inadecuado",
+		  "R": "inadecuado"
 
 		},
 		"defaultPotencia": "M"
@@ -1566,17 +1566,17 @@
 
 		},
 		"potencias": {
-		  "I": "unavailable",
-		  "C": "unavailable",
+		  "I": "inadecuado",
+		  "C": "inadecuado",
 		  "D": "3520 W",
-		  "E": "unavailable",
+		  "E": "inadecuado",
 		  "N": "3520 W",
-		  "Z": "unavailable",
-		  "A": "unavailable",
+		  "Z": "inadecuado",
+		  "A": "inadecuado",
 		  "S": "3520 W",
 		  "M": "3520 W",
 		  "L": "3520 W",
-		  "H": "unavailable",
+		  "H": "inadecuado",
 		  "R": "2200 W"
 		},
 		"defaultPotencia": "R"
@@ -1597,18 +1597,18 @@
 
 		},
 		"potencias": {
-		  "I": "unavailable",
-		  "C": "unavailable",
-		  "D": "unavailable",
+		  "I": "inadecuado",
+		  "C": "inadecuado",
+		  "D": "inadecuado",
 		  "E": "8800 W",
-		  "N": "unavailable",
+		  "N": "inadecuado",
 		  "Z": "3520 W",
-		  "A": "unavailable",
-		  "S": "unavailable",
-		  "M": "unavailable",
+		  "A": "inadecuado",
+		  "S": "inadecuado",
+		  "M": "inadecuado",
 		  "L": "3520 W",
 		  "H": "3520 W",
-		  "R": "unavailable"
+		  "R": "inadecuado"
 		},
 		"defaultPotencia": "E"
 	      }
@@ -1646,7 +1646,7 @@
 			    selectedSlideForRed: 0,
 			    selectedSlideForGreen: 0,
 			    selectedSlideForYellow: 0,
-			    selectedPotencia: product[event.targetOption].sizes[product.selectedPotencia] != 'unavailable' ? product.selectedPotencia : product[event.targetOption].defaultPotencia
+			    selectedPotencia: product[event.targetOption].sizes[product.selectedPotencia] != 'inadecuado' ? product.selectedPotencia : product[event.targetOption].defaultPotencia
 			  }
 			})">
 	      <ul class="p0 m1">
@@ -1695,7 +1695,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
 			    ? product.selectedPotencia
 			    : product[product.selectedColor].defaultPotencia">
 	      <label for="size">Circuitos Normales:</label>
@@ -1705,26 +1705,26 @@
 		<li option="I"
 		  class=""
 		  selected
-		  [class]="(product[product.selectedColor].potencias['I'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['I'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">I</li>
+			    : 'inadecuado'">I</li>
 		</li>
 		<li option="D"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['D'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['D'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">D</li>
+			    : 'inadecuado'">D</li>
 
 		<li option="N"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['N'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['N'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">N</li>
+			    : 'inadecuado'">N</li>
 
 		<li option="S"
-		  [class]="(product[product.selectedColor].potencias['S'] != 'unavailable')
+		  [class]="(product[product.selectedColor].potencias['S'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">S</li>
+			    : 'inadecuado'">S</li>
 
 
 
@@ -1737,7 +1737,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
 			    ? product.selectedPotencia
 			    : product[product.selectedColor].defaultPotencia">
 
@@ -1747,16 +1747,16 @@
 
 	      <ul class= "p0 m1">
 		<li option="C"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['C'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['C'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">C</li>
+			    : 'inadecuado'">C</li>
 
 		<li option="A"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['A'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['A'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">A</li>
+			    : 'inadecuado'">A</li>
 		  
 	      </ul>
 	    </amp-selector>
@@ -1766,7 +1766,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
 			    ? product.selectedPotencia
 			    : product[product.selectedColor].defaultPotencia">
 
@@ -1778,16 +1778,16 @@
 	      <ul class= "p0 m1">
 
 		<li option="M"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['M'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['M'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">M</li>
+			    : 'inadecuado'">M</li>
 
 		<li option="R"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['R'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['R'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">R</li>
+			    : 'inadecuado'">R</li>
 
 
 	      </ul>
@@ -1799,7 +1799,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
 			    ? product.selectedPotencia
 			    : product[product.selectedColor].defaultPotencia">
 
@@ -1810,28 +1810,28 @@
 	      <ul class = "p0 m1">
 
 		<li option="L"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['L'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['L'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">L</li>
+			    : 'inadecuado'">L</li>
 
 		<li option="E"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['E'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['E'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">E</li>
+			    : 'inadecuado'">E</li>
 
 		<li option="H"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['H'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['H'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">H</li>
+			    : 'inadecuado'">H</li>
 
 		<li option="Z"
-		  class="unavailable"
-		  [class]="(product[product.selectedColor].potencias['Z'] != 'unavailable')
+		  class="inadecuado"
+		  [class]="(product[product.selectedColor].potencias['Z'] != 'inadecuado')
 			    ? ''
-			    : 'unavailable'">Z</li>
+			    : 'inadecuado'">Z</li>
 
 
 	    </ul>
