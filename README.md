@@ -15,9 +15,9 @@ Insert the following code in the `head` section of your pages:
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="apple-mobile-web-app-title" content="Al&eacute;ctrico">
-    <meta name="application-name" content="Al&eacute;ctrico">
-    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="apple-mobile-web-app-title" content="Al&eacute;ctrico Designer">
+    <meta name="application-name" content="Al&eacute;ctrico Designer">
+    <meta name="msapplication-TileColor" content="#0c0c0d">
     <meta name="theme-color" content="#ffffff">
 
 *Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
