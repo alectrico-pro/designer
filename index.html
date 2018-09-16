@@ -960,6 +960,24 @@
 		role="button">
 	      </amp-img>
 	    </li>
+
+
+            <li>
+              <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 7}})"
+                src="/img/splitter_60_40.png"
+                width="60"
+                height="40"
+                class=""
+                [class]="product.selectedSlideForCoral == 6 ? 'selected fadeIn' : '' "
+                tabindex="1"
+                role="button">
+              </amp-img>
+            </li>
+
+
+
+
+
 	  </ul>
 	</div>
 
@@ -1322,6 +1340,18 @@
 	      role="button"
 	      tabindex="1">
 	    </amp-img>
+
+            <amp-img src="/img/splitter.png"
+              width="1024"
+              height="682"
+              layout="responsive"
+              on="tap:gallery-lightbox"
+              role="button"
+              tabindex="1">
+            </amp-img>
+
+
+
 	</amp-carousel>
 
 	<amp-carousel id="red-apple-carousel"
