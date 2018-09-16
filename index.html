@@ -666,7 +666,9 @@
 
 	<div class="product-gallery">
 	  
-	  <ul [hidden]="product.selectedColor != 'blue'">
+	  <ul 
+	    hidden
+	    [hidden]="product.selectedColor != 'blue'">
 	    <li>
 	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
 		src="/img/alectrico_60_40.png"
@@ -759,7 +761,7 @@
 
 	<div class="product-gallery">
 
-	  <ul hidden
+	  <ul
 	    [hidden]="product.selectedColor != 'green'">
 	    <li>
 	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
@@ -995,6 +997,7 @@
 	    [slide]="product.selectedSlideForBlue"
 	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
 	    class="fadeIn"
+	    hidden
 	    [hidden]="product.selectedColor != 'blue'">
 	    <div 
 	      role="button"
@@ -1132,7 +1135,6 @@
 	    [slide]="product.selectedSlideForGreen"
 	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
 	    class="fadeIn"
-	    hidden
 	    [hidden]="product.selectedColor != 'green'">
 	    <amp-img src="/img/led.png"
 	      width="1024"
