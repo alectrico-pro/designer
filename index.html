@@ -1391,7 +1391,7 @@
 	  <script type="application/json">
 	    {
 	      "selectedColor": "green",
-	      "selectedSize": "I",
+	      "selectedPotencia": "I",
 	      "selectedSlide": 0,
 	      "selectedSlideForBlue": 0,
 	      "selectedSlideForCoral": 0,
@@ -1444,7 +1444,7 @@
 		  "5": "I",
 		  "6": "I"
 		},
-		"sizes": {
+		"potencias": {
 		  "C": "300 W",
 		  "D": "300 W",
 		  "E": "200 W",
@@ -1458,7 +1458,7 @@
 		  "I": "200 W",
 		  "R": "100 W"
 		},
-	       "defaultSize": "I"
+	       "defaultPotencia": "I"
 	      },
 
 	      "green": {
@@ -1474,7 +1474,7 @@
 		  "0": "I",
 		  "1": "I"
 		},
-		"sizes": {
+		"potencias": {
 		  "C": "unavailable",
 		  "D": "unavailable",
 		  "E": "unavailable",
@@ -1488,7 +1488,7 @@
 		  "I": "200 W",
 		  "R": "unavailable"
 		},
-		"defaultSize": "I"
+		"defaultPotencia": "I"
 	      },
 
 	      "golden": {
@@ -1509,7 +1509,7 @@
 		  "5": "Cafetera Expresso"
 
 		},
-		"circuito_recomendado":{
+		"circuitos":{
 		  "0": "M",
 		  "1": "M",
 		  "2": "M",
@@ -1518,7 +1518,7 @@
 		  "5": "M"
 
 		},
-		"sizes": {
+		"potencias": {
 		  "C": "unavailable",
 		  "D": "unavailable",
 		  "E": "unavailable",
@@ -1533,7 +1533,7 @@
 		  "R": "unavailable"
 
 		},
-		"defaultSize": "M"
+		"defaultPotencia": "M"
 	      },
 
 	      "coral": {
@@ -1565,7 +1565,7 @@
 		  "6": "Z"            
 
 		},
-		"sizes": {
+		"potencias": {
 		  "I": "unavailable",
 		  "C": "unavailable",
 		  "D": "300 W",
@@ -1579,7 +1579,7 @@
 		  "H": "unavailable",
 		  "R": "300 W"
 		},
-		"defaultSize": "R"
+		"defaultPotencia": "R"
 	      },
 
 	      "red": {
@@ -1596,7 +1596,7 @@
 		  "1": "E"
 
 		},
-		"sizes": {
+		"potencias": {
 		  "I": "unavailable",
 		  "C": "unavailable",
 		  "D": "unavailable",
@@ -1610,7 +1610,7 @@
 		  "H": "3000 W",
 		  "R": "unavailable"
 		},
-		"defaultSize": "E"
+		"defaultPotencia": "E"
 	      }
 
 
@@ -1646,7 +1646,7 @@
 			    selectedSlideForRed: 0,
 			    selectedSlideForGreen: 0,
 			    selectedSlideForYellow: 0,
-			    selectedSize: product[event.targetOption].sizes[product.selectedSize] != 'unavailable' ? product.selectedSize : product[event.targetOption].defaultSize
+			    selectedPotencia: product[event.targetOption].sizes[product.selectedPotencia] != 'unavailable' ? product.selectedPotencia : product[event.targetOption].defaultPotencia
 			  }
 			})">
 	      <ul class="p0 m1">
@@ -1694,10 +1694,10 @@
 	  <div class="items-center flex">
 	    <amp-selector name="circuito"
 	      layout="container"
-	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
-			    ? product.selectedSize
-			    : product[product.selectedColor].defaultSize">
+	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+			    ? product.selectedPotencia
+			    : product[product.selectedColor].defaultPotencia">
 	      <label for="size">Circuitos Normales:</label>
 
 	      <ul class="p0 m1">
@@ -1736,10 +1736,10 @@
 	  <div class="items-center flex">
 	    <amp-selector name="circuito"
 	      layout="container"
-	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
-			    ? product.selectedSize
-			    : product[product.selectedColor].defaultSize">
+	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+			    ? product.selectedPotencia
+			    : product[product.selectedColor].defaultPotencia">
 
 
 
@@ -1765,10 +1765,10 @@
 	  <div class="items-center flex">
 	    <amp-selector name="circuito"
 	      layout="container"
-	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
-			    ? product.selectedSize
-			    : product[product.selectedColor].defaultSize">
+	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+			    ? product.selectedPotencia
+			    : product[product.selectedColor].defaultPotencia">
 
 
 
@@ -1798,10 +1798,10 @@
 	  <div class="items-center flex">
 	    <amp-selector name="circuito"
 	      layout="container"
-	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
-			    ? product.selectedSize
-			    : product[product.selectedColor].defaultSize">
+	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'unavailable')
+			    ? product.selectedPotencia
+			    : product[product.selectedColor].defaultPotencia">
 
 
 
@@ -1840,8 +1840,8 @@
 
 	<p class="price-description">
 	  <span > Circuito: </span>
-	  <span [text]="product.circuitos[product.selectedSize]">I: Iluminación</span>
-	  <span [text]="product[product.selectedColor].potencias[product.selectedSize]">200 W</span>
+	  <span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
+	  <span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
 	</p>
 
 	  <div class="items-center flex my1">
