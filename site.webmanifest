@@ -16,6 +16,5 @@
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone",
-    "startup": "index.html/?launcher=true"
-
+    "start_url": "https://index.html/?launcher=true"
 }
