@@ -1695,7 +1695,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
 			    ? product.selectedSize
 			    : product[product.selectedColor].defaultSize">
 	      <label for="size">Circuitos Normales:</label>
@@ -1737,7 +1737,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
 			    ? product.selectedSize
 			    : product[product.selectedColor].defaultSize">
 
@@ -1766,7 +1766,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
 			    ? product.selectedSize
 			    : product[product.selectedColor].defaultSize">
 
@@ -1799,7 +1799,7 @@
 	    <amp-selector name="circuito"
 	      layout="container"
 	      on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+	      [selected]="(product[product.selectedColor].potencias[product.selectedSize] != 'unavailable')
 			    ? product.selectedSize
 			    : product[product.selectedColor].defaultSize">
 
@@ -1841,7 +1841,7 @@
 	<p class="price-description">
 	  <span > Circuito: </span>
 	  <span [text]="product.circuitos[product.selectedSize]">I: Iluminación</span>
-	  <span [text]="product[product.selectedColor].sizes[product.selectedSize]">200 W</span>
+	  <span [text]="product[product.selectedColor].potencias[product.selectedSize]">200 W</span>
 	</p>
 
 	  <div class="items-center flex my1">
