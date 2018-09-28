@@ -1808,7 +1808,6 @@
 	  <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span>
 	</p>
 
-	<!--
 	<form id="order"
 	  method="POST"
 	  action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
@@ -2052,7 +2051,6 @@
 	</form>
 	  
 
-	-->
 
 	<amp-list 
           class="items m1"
@@ -2105,13 +2103,11 @@
 	    </form>
 	    -->
 	  </template>
-        <!--
 	<amp-install-serviceworker
 	  src="/sw.js"
 	  data-iframe-src="https://designer.com/sw.js"
 	  layout="nodisplay">
 	</amp-install-serviceworker>
-        -->
         <!--
 	<amp-selector role="tablist"
 	  layout="container"
@@ -2128,17 +2124,14 @@
 	    option="a">GRUPOS</div>
 	  <div role="tabpanel"
 	    class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen y considerando los circuitos a los que pueden ser conectados. El grupo azul es diferente, no agrupa electrodomésticos sino los servicios que puede contratar en alectrico.cl.</div>
-
-	</amp-selector>
         -->
-        <!--
+	</amp-selector>
 	<section amp-access="loggedIn" 
 	  id= "resumen" 
 	  class= "checkout-section"
 	  amp-access-hide = ""
 	  >
 	  <h3 class="">Resumen de Electromésticos</h3>
-        -->
 	  <amp-list 
               template= "cart-list-template"
 	      credentials="include"
@@ -2201,10 +2194,7 @@
 		  </div>
 		</div>
 	      </template>
-	  <!--
           </section>
-	  -->
-	  <!--
         <div class="my2">
 	  <button amp-access="NOT loggedIn"
 	    on="tap:amp-access.login-sign-in,resumen.show"
@@ -2246,7 +2236,6 @@
           }
           </script>
         </amp-analytics>
-       -->
 
       </div>
   
