@@ -2070,65 +2070,27 @@
           <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
         </amp-list>
 
+	<template 
+	  type="amp-mustache"
+	  id= "carrusel-list-template"
+	>
+	  <form method   = "POST"
+	    action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+	    target    = "_top"
+	    on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+	    <amp-img width="170.31"
+	      height="146.8"
+	      layout="fixed"
+	      alt="{{cantidad}}"
+	      src="{{img}}"></amp-img>
+	    <input name = "clientId" 
+	       type = "hidden" 
+	       value = "CLIENT_ID(cart)" 
+	       data-amp-replace = "CLIENT_ID">
+	    <button  type = "submit" > x
+	  </form>
+	</template>
 
-
-
-	  <template 
-	    type="amp-mustache"
-	    id= "carrusel-list-template"
-	  >
-	  <!--
-	    <a class="text-decoration-none p1"
-	      href="#">
-	      <amp-img width="70.31"
-		height="46.8"
-		layout="fixed"
-		alt="{{cantidad}}"
-		src="{{img}}"></amp-img>
-	    </a>
-	   -->
-	    <form method   = "POST"
-	      action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
-	      target    = "_top"
-	      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-	      <amp-img width="170.31"
-		height="146.8"
-		layout="fixed"
-		alt="{{cantidad}}"
-		src="{{img}}"></amp-img>
-	      <input name = "clientId" 
-		 type = "hidden" 
-		 value = "CLIENT_ID(cart)" 
-		 data-amp-replace = "CLIENT_ID">
-	      <button  type = "submit" > x
-	    </form>
-	  </template>
-
-	<amp-install-serviceworker
-	  src="/sw.js"
-	  data-iframe-src="https://designer.com/sw.js"
-	  layout="nodisplay">
-	</amp-install-serviceworker>
-
-        <!--
-	<amp-selector role="tablist"
-	  layout="container"
-	  class="ampTabContainer ampstart-headerbar-nav"
-	  keyboard-select-mode="select">
-	  <div role="tab"
-	    class="tabButton h4 ampstart-nav-item"
-	    option="c">CIRCUITOS</div>
-	  <div role="tabpanel"
-	    class="tabContent p1 p">Se muestran los circuitos a los que podría conectar electrodomésticos. Aquellos que no son adecuados para un electrodoméstico en particular están marcados con una X. En algunos circuitos solo puede haber un tipo de electrodoméstico, estos circuitos se llaman exclusivos.</div>
-	  <div role="tab"
-	    class="tabButton h4 ampstart-nav-item"
-	    selected
-	    option="a">GRUPOS</div>
-	  <div role="tabpanel"
-	    class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen y considerando los circuitos a los que pueden ser conectados. El grupo azul es diferente, no agrupa electrodomésticos sino los servicios que puede contratar en alectrico.cl.</div>
-
-	</amp-selector>
-        -->
 
 	<section amp-access="loggedIn" 
 	  id= "resumen" 
@@ -2200,53 +2162,7 @@
 		</div>
 	      </template>
           </section>
-
-        <div class="my2">
-	  <button amp-access="NOT loggedIn"
-	    on="tap:amp-access.login-sign-in,resumen.show"
-	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
-	  <button amp-access="loggedIn"
-	    tabindex="0"
-	    on="tap:amp-access.login-sign-out"
-	    class="ampstart-btn ml1 caps"
-	    amp-access-hide>Cerrar Sesión</button>
-	  <span amp-access="NOT loggedIn AND subscriber"
-	    class="inline-block ml1">...para ver los detalles</span>
-	</div>
-
-	<div class="my2">
-	  <div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
-	    <button amp-access="NOT loggedIn" 
-	      amp-access-hide
-	      tabindex="0"
-	      on="tap:amp-access.login-sign-up"
-	      class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
-	    <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
-	  </div>
-	</div>
-
-        <amp-analytics type="googleanalytics">
-          <script type="application/json">{
-            "vars": {
-              "account": "UA-109124551-1"
-            },
-            "triggers": {
-              "default pageview": {
-                "on": "visible",
-                "request": "pageview",
-                "vars": {
-                  "title": "Aléctrico Designer"
-                }
-              }
-            }
-          }
-          </script>
-        </amp-analytics>
-
+        </div>
       </div>
-  
-
-    </div>
-
     </body>
 </html>
