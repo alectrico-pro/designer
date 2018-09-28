@@ -1808,6 +1808,7 @@
 	  <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span>
 	</p>
 
+	<!--
 	<form id="order"
 	  method="POST"
 	  action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
@@ -1833,12 +1834,10 @@
 			})">
 	      <ul class="p0 m1">
 
-		<!--
 		<li>
 		  <div option="blue"
 		    class="square blue"></div>
 		</li>
-                 -->
 		<li>
 		  <div option="green"
 		    selected
@@ -2052,6 +2051,9 @@
 	  </div>
 	</form>
 	  
+
+	-->
+
 	<amp-list 
           class="items m1"
           template = "carrusel-list-template"
@@ -2103,13 +2105,13 @@
 	      <button  type = "submit" > x
 	    </form>
 	  </template>
-
+        <!--
 	<amp-install-serviceworker
 	  src="/sw.js"
 	  data-iframe-src="https://designer.com/sw.js"
 	  layout="nodisplay">
 	</amp-install-serviceworker>
-
+        -->
         <!--
 	<amp-selector role="tablist"
 	  layout="container"
@@ -2200,7 +2202,7 @@
 		</div>
 	      </template>
           </section>
-
+	  <!--
         <div class="my2">
 	  <button amp-access="NOT loggedIn"
 	    on="tap:amp-access.login-sign-in,resumen.show"
@@ -2242,6 +2244,7 @@
           }
           </script>
         </amp-analytics>
+       -->
 
       </div>
   
