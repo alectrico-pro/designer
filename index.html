@@ -2052,14 +2052,31 @@
 	  </div>
 	</form>
 	  
-	<amp-list class="items m1"
+	<amp-list 
+          class="items m1"
+          template = "carrusel-list-template"
 	  width="auto"
 	  height="145"
 	  layout="fixed-height"
 	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 
 	  id="carrusel-list">
-	  <template type="amp-mustache">
+
+          <div overflow = "" 
+               class = "list-overflow">
+           VER MAS
+          </div>
+          <div placeholder>Cargando la lista de electrodomésticos ...</div>
+          <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
+        </amp-list>
+
+
+
+
+	  <template 
+	    type="amp-mustache"
+	    id= "carrusel-list-template"
+	  >
 	  <!--
 	    <a class="text-decoration-none p1"
 	      href="#">
@@ -2086,15 +2103,6 @@
 	      <button  type = "submit" > x
 	    </form>
 	  </template>
-
-	  <div overflow = "" 
-	       class = "list-overflow">
-	   VER MAS
-	  </div>
-          <div placeholder>Cargando la lista de electrodomésticos ...</div>
-          <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
-
-	</amp-list>
 
 	<amp-install-serviceworker
 	  src="/sw.js"
@@ -2130,6 +2138,7 @@
 	  <h3 class="">Resumen de Electromésticos</h3>
 
 	  <amp-list 
+              template= "cart-list-template"
 	      credentials="include"
 	      width="auto"
 	      height="180"
@@ -2138,7 +2147,16 @@
 	      layout="fixed-height"
 	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 	      id="cart-list">
-	      <template type="amp-mustache">
+
+              <div overflow = "" 
+                 class = "list-overflow">
+                 VER MAS
+              </div>
+            </amp-list>
+
+	      <template 
+                type="amp-mustache"
+                id= "cart-list-template">
 		<div class="shopping-cart">
 		  <div class="item header">
 		    <div class="name">
@@ -2181,13 +2199,6 @@
 		  </div>
 		</div>
 	      </template>
-
-	      <div overflow = "" 
-		 class = "list-overflow">
-		 VER MAS
-	      </div>
-
-	    </amp-list>
           </section>
 
         <div class="my2">
