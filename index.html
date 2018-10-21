@@ -1993,6 +1993,14 @@
 		target="_top"
 		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh,cart-list.refresh"
 		class="flex flex-wrap m1">
+
+              <div>
+
+                <input type="submit"
+                  class="ampstart-btn caps"
+                  name=" Agregar "
+                  value="  Agregar  ">
+
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
 		  <amp-selector name="color"
@@ -2051,7 +2059,9 @@
 		    </ul>
 		  </amp-selector>
 		</div>
+              </div>
 
+               <section>
 		<div class="items-center flex">
 		  <amp-selector name="circuito"
 		    layout="container"
@@ -2059,7 +2069,7 @@
 		    [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
 				  ? product.selectedPotencia
 				  : product[product.selectedColor].defaultPotencia">
-		    <label for="size">Circuitos Normales:</label>
+		    <label for="size">Enchufes Normales:</label>
 
 		    <ul class="p0 m1">
 
@@ -2083,6 +2093,7 @@
 				  : 'inadecuado'">N</li>
 
 		      <li option="S"
+                        class = "inadecuado"
 			[class]="(product[product.selectedColor].potencias['S'] != 'inadecuado')
 				  ? ''
 				  : 'inadecuado'">S</li>
@@ -2198,19 +2209,19 @@
 		  </ul>
 		  </amp-selector>
 		</div>
-
-	      <p class="price-description">
-		<span > Circuito: </span>
-		<span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
-		<span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
-	      </p>
-           <!-- fin de Galería de Productos -->
+              </section>
+	    <p class="price-description">
+	      <span > Circuito que recibirá el electrodoméstico: </span>
+	      <span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
+	      <span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
+	    </p>
+	 <!-- fin de Galería de Productos -->
 
 	  <div class="items-center flex my1 ml1">
 	    <input type="submit"
 	      class="ampstart-btn caps"
-	      name="Agregar"
-	      value="Agregar">
+	      name="  Agregar  "
+	      value="  Agregar  ">
 	  </div>
 	  <input type="hidden"
 	    name="carga_id"
@@ -2617,6 +2628,7 @@
 	  </div>
 
 	  {{/cargas_count}}
+          <!---
 	  <div class="item summary">
 	    <div class="name"></div>
 	    <div class="price">
@@ -2626,6 +2638,7 @@
 	      <strong>{{total}}</strong>
 	    </div>
 	  </div>
+          --->
 	</div>
       </template>
 
