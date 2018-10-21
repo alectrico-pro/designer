@@ -2386,7 +2386,7 @@
 
 
       <section amp-access="loggedIn"
-	[hidden] = " NOT presupuesto.remoto"
+	[hidden] = "inicial.invisible"
 	>
        <!--
 	<div class="my2">
@@ -2401,7 +2401,6 @@
 
 
         <template amp-access-template type="amp-mustache"
-           [hidden] = "inicial.invisible"
            id = "access-list-template">
 	   <!--
 	   <hr/>
@@ -2418,7 +2417,6 @@
 	   -->
 	   {{#presupuesto_remoto}}
              <form id="sync"
-	       [hidden] = "inicial.invisible"
                 method="POST"
                 action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
                 target="_top"
