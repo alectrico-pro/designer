@@ -21,6 +21,35 @@
     <meta content='https://designer.alectrico.cl/' property='og:url'>
     <meta content='Aléctrico Designer' property='og:site_name'>
 
+
+
+    <script id="inicial" type='application/ld+json'>
+    { 
+     "invisible" : false
+    }
+    </script>
+
+    <script id="dueno" type='application/ld+json'>
+
+    { 
+      "invisible" : true
+    }
+    </script>
+
+    <script id="presupuesto_local" type = 'application/ld+json'>
+    {
+      "id" : 0
+    }
+    </script>
+
+    <script id="presupuesto_remoto" type = 'application/ld+json'>
+    {
+      "id" : 0
+    }
+    </script>
+
+
+
     <script id='visita_a_domicilio_markup' type='application/ld+json'>
     {
     "@context" : "http://schema.org",
@@ -51,12 +80,12 @@
 
     <script id="amp-access" type="application/json">
     {
-    "authorization": "https://shop-staging.alectrico.cl/amp/accesos/autorizacion/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&clientId=CLIENT_ID(cart)",
-    "noPingback": "true",
+    "authorization": "https://shop-staging.alectrico.cl/amp/accesos/autorizacion/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&clientId=CLIENT_ID(uid)",
+    "pingback": "https://shop-staging.alectrico.cl/amp/accesos/pingback?rid=READER_ID&amp=true&clientId=CLIENT_ID(uid)&url=SOURCE_URL", 
     "login": {
-    "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(cart)",
-    "sign-out": "https://shop-staging.alectrico.cl/amp/accesos/logout",
-    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(cart)"
+    "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
+    "sign-out": "https://shop-staging.alectrico.cl/amp/accesos/logout?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
+    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)"
     },
     "authorizationFallbackResponse": {
       "error": true,
@@ -526,38 +555,8 @@
       align-items: center;
     }
 
-    .ampTabContainer {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .tabButton {
-        list-style: none;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-    }
-
     amp-selector [option][selected] {
       outline: #fff;
-    }
-
-    .tabContent {
-        line-height: 1.5rem;
-        display: none;
-        width: 100%;
-        order: 1;  
-    }
-
-    .tabButton[selected]::after {
-      content: '';
-      display: block;
-      height: 4px;
-      background: linear-gradient(90deg,#94103e 0,#db004d);
-    }
-
-    .tabButton[selected]+.tabContent {
-        display: block;
     }
 
     .items, amp-list.items > div {
@@ -653,10 +652,136 @@
       right: 0;
     }
 
+    .stepper.vertical {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stepper.vertical .step-title {
+      padding: 8px;
+      font-size: 16px;
+      display: block;
+      border: none;
+      line-height: 24px;
+      text-align: left;
+      background-color: #fff;
+    }
+
+    .stepper.vertical .step-title:not([disabled]):active {
+      background-color: #ccc;
+    }
+
+    .stepper.vertical .step-title:not([disabled]) {
+      cursor: pointer;
+    }
+
+    .stepper.vertical .step-title.step-active {
+      background-color: #f2f2f2;
+      font-weight: 700;
+    }
+
+    .stepper.vertical .step-title i {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 8px;
+      background-color: #b60845;
+      border-radius: 100%;
+      color: white;
+      font-size: 14px;
+      font-style: normal;
+      transition: background 0.25s ease-in-out;
+    }
+    .stepper.vertical .step-title[disabled] .step-incomplete {
+      background-color: #ccc;
+    }
+    .stepper.vertical .step-title .step-incomplete:before {
+      content: attr(data-step-nr);
+      display: block;
+      text-align: center;
+      font-weight: 700;
+    }
+    .stepper.vertical .step-title .step-complete:before {
+      content: "✓";
+      display: block;
+      text-align: center;
+      font-weight: 700;
+    }
+    .stepper.vertical .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      margin-left: 36px;
+    }
+
+
+    .stepper.vertical .content > *:nth-child(n+2) {
+      margin-top: 1rem;
+    }
+    .stepper.vertical .content button {
+      color: #fff;
+      background: #b60845;
+      border: 1px solid #fff;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      padding: .5em .8em;
+    }
+    .stepper.vertical .content button[disabled] {
+      opacity: .5;
+      outline: 0;
+      cursor: default;
+    }
+
+
+    /* Survey styling */
+    amp-selector.poll [option][selected] {
+      outline: none;
+    }
+    amp-selector.poll [option] {
+      display: flex;
+      align-items: center;
+    }
+    amp-selector.poll [option]:before {
+      transition: background 0.25s ease-in-out;
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin: 8px;
+      border-radius: 100%;
+      border: solid 1px #b60845;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    amp-selector.poll [option][selected]:before {
+      text-align: center;
+      content: "✓";
+      color: white;
+      background: #b60845;
+    }
+    amp-selector.poll [option][selected]:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+
+
+    borrar-gallery-button {
+      position: absolute;
+      left: 0;
+      z-index: 1
+    }
+
+
     </style>
   </head>
 
   <body>
+    <!--
+    <amp-state
+       id = "remoto"
+       src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM">
+     </amp-state>
+    -->
     <amp-sidebar id="drawermenu" layout="nodisplay">
       <!--
       <a href="https://servicios.alectrico.cl" class="caps text-decoration-none block p1">Servicios</a>
@@ -690,57 +815,49 @@
      </a>
      -->
 
-   <!--
-    <amp-img srcset="/img/logo_flash.png" 
-      width="424" 
-      height="88" 
-      alt="logo flash">
-    </amp-img>
-    -->
-    <amp-img srcset="/safari-pinned-tab.svg" 
-      width="24" 
-      height="24" 
-      alt="logo flash">
-    </amp-img>
-
-     <h1 id="abe-preview-header-title" 
-       class="h3 center truncate caps">
+     <!--
+      <amp-img srcset="/img/logo_flash.png" 
+	width="424" 
+	height="88" 
+	alt="logo flash">
+      </amp-img>
+      -->
+      <amp-img srcset="/safari-pinned-tab.svg" 
+        width="24" 
+        height="24" 
+        alt="logo flash">
+      </amp-img>
+      <h1 id="abe-preview-header-title" 
+        class="h3 center truncate caps">
         Aléctrico
-     </h1>
-
-     <section amp-access="NOT loggedIn">
+      </h1>
+      <section amp-access="NOT loggedIn">
         <template amp-access-template type="amp-mustache">
-	  {{clientId}}
-	  {{suscriber_clientId}}
-          {{subscriber_name}}
+	<!---
+         {{presupuesto_local}}-local
+	 -->
         </template>
-     </section>
-
-
-
-     <section amp-access="loggedIn">
-	<template amp-access-template type="amp-mustache">
-	  {{clientId}}
-	  {{user_clientId}}
-	  {{user_name}}
-	</template>
       </section>
+      <section amp-access="loggedIn">
+        <template amp-access-template type="amp-mustache">
+	<!---
+	{{presupuesto_local}}-local {{dueno_local}} | remoto-{{presupuesto_remoto}}
+	  {{dueno_remoto}} | current_user {{current_user}}
+	  --->
+        </template>
+      </section>
+    </div>
 
-   </div>
-
-   <div id="abe-preview">
-
-     <div class="ampstart-card m1">
-
-       <div class="header">
-	  <a id="sample-menu" on="tap:drawermenu.toggle">
+    <div id="abe-preview">
+      <div class="ampstart-card m1">
+        <div class="header">
+ 	  <a id="sample-menu" on="tap:drawermenu.toggle">
 	    <amp-img srcset="/img/ic_menu_white_1x_web_24dp.png 1x, /img/ic_menu_white_2x_web_24dp.png 2x" 
 	      width="24" 
 	      height="24" 
 	     alt="navigation">
 	    </amp-img>
 	  </a>
-
 	  <form method="GET" action="https://shop.alectrico.cl/productos/10" 
 	    target="_top">
 	    <input name="search" type="search" placeholder="Buscar">
@@ -748,11 +865,8 @@
 	    <input type="submit" value="">
 	  </form>
 	</div>
-
-
         <h2 class="m1">Diseñador Eléctrico Online</h2>
 	<h3 class="m1">Distribuya sus electrodomésticos en circuitos</h3>
-
 	<div class="m1">
 	  <amp-social-share type="twitter" width="30" height="22"></amp-social-share>
 
@@ -767,15 +881,13 @@
 
         <p id="product-description"
           class="m1">
-	  Si su instalación eléctrica fue diseñada para un consumo eléctrico insuficiente tal vez sea la hora de ampliarla.
+	  La calidad de una reparación eléctrica depende de la realización de un levantamiento eléctrico previo que debe ser realizado por un Instalador Eléctrico Autorizado.
        </p>
 
         <p id="product-description"
           class="m1">
           Prepare con anticipación la visita del Electricista a Domicilio organizando sus electrodomésticos en circuitos. 
         </p>
-
-
 
 	<button class="ampstart-btn caps m1 mb3" 
 	  on="tap:watch-video-lightbox">
@@ -800,1235 +912,1305 @@
 	</amp-lightbox>
 
 	<div class="product-gallery">
-	  
-	  <ul 
-	    hidden
-	    [hidden]="product.selectedColor != 'blue'">
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
-		src="/img/alectrico_60_40.png"
-		width="60"
-		height="40"
-		class="selected"
-		[class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 1}})"
-		src="/img/mantencion_electrica_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForBlue == 1 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 2}})"
-		src="/img/atencion_corte_de_luz_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForBlue == 2 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 3}})"
-		src="/img/proyecto_energia_solar_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForBlue == 3 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 4}})"
-		src="/img/instalacion_luminaria_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForBlue == 4 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 5}})"
-		src="/img/instalacion_enchufe_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForBlue == 5 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 6}})"
-		src="/img/instalador_sec_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForBlue == 6 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-
-
-	  </ul>
-	</div>
-
-
-
-	<div class="product-gallery">
-
-	  <ul
-	    [hidden]="product.selectedColor != 'green'">
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
-		src="/img/led_60_40.png"
-		width="60"
-		height="40"
-		class="selected"
-		[class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
-		src="/img/ampolleta_incandescente_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForGreen == 1 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-     
-
-	  </ul>
-	</div>
-
-	<div class="product-gallery">
-
-	  <ul hidden
-	    [hidden]="product.selectedColor != 'golden'">
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
-		src="/img/juguera_60_40.png"
-		width="60"
-		height="40"
-		class= "selected"
-		[class]="product.selectedSlideForGolden == 0 ? 'selected' : '' "
-		tabindex="1"
-		role="button">
-	      </amp-img>
-	   </li>
-	   <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 1}})"
-		src="/img/microondas_60_40.png"
-		width="60"
-		height="40"
-		class="selected fadeIn"
-		[class]="product.selectedSlideForGolden == 1 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	   <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 2}})"
-		src="/img/hornillo_60_40.png"
-		width="60"
-		height="40"
-		class="selected fadeIn"
-		[class]="product.selectedSlideForGolden == 2 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	   <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 3}})"
-		src="/img/hervidor_60_40.png"
-		width="60"
-		height="40"
-		class="selected fadeIn"
-		[class]="product.selectedSlideForGolden == 3 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	   <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 4}})"
-		src="/img/olla_arrocera_60_40.png"
-		width="60"
-		height="40"
-		class="selected fadeIn"
-		[class]="product.selectedSlideForGolden == 4 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	   <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 5}})"
-		src="/img/cafetera_expresso_60_40.png"
-		width="60"
-		height="40"
-		class="selected fadeIn"
-		[class]="product.selectedSlideForGolden == 5 ? 'selected fadeIn' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-	  </ul>
-	</div>
-
-	<div class="product-gallery">
-	  <ul hidden
-	      [hidden]="product.selectedColor != 'coral'">
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
-		src="/img/plancha_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 1}})"
-		src="/img/frigobar_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForCoral == 1 ? 'selected' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 2}})"
-		src="/img/refrigerador_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForCoral == 2 ? 'selected' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 3}})"
-		src="/img/refrigerador_dos_puertas_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForCoral == 3 ? 'selected' : '' "
-		tabindex="0"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 4}})"
-		src="/img/lavadora_de_ropa_60_40.png"
-		width="60"
-		height="40"
-		class= ""
-		[class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
-		tabindex="2"
-		role="button">
-	      </amp-img>
-	    </li>
-
-
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 5}})"
-		src="/img/secadora_de_ropa_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForCoral == 5 ? 'selected fadeIn' : '' "
-		tabindex="2"
-		role="button">
-	      </amp-img>
-	    </li>
-
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 6}})"
-		src="/img/lavaplatos_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForCoral == 6 ? 'selected fadeIn' : '' "
-		tabindex="1"
-		role="button">
-	      </amp-img>
-	    </li>
-
-
-            <li>
-              <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 7}})"
-                src="/img/splitter_60_40.png"
-                width="60"
-                height="40"
-                class=""
-                [class]="product.selectedSlideForCoral == 7 ? 'selected fadeIn' : '' "
-                tabindex="1"
-                role="button">
-              </amp-img>
-            </li>
-
-            <li>
-              <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 8}})"
-                src="/img/pc_60_40.png"
-                width="60"
-                height="40"
-                class=""
-                [class]="product.selectedSlideForCoral == 8 ? 'selected fadeIn' : '' "
-                tabindex="1"
-                role="button">
-              </amp-img>
-            </li>
-
-
-
-
-
-	  </ul>
-	</div>
-
-	<div class="product-gallery">
-	  <ul hidden
-	    [hidden]="product.selectedColor != 'red'">
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
-		src="/img/encimera_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
-		tabindex="1"
-		role="button">
-	      </amp-img>
-	    </li>
-	    <li>
-	      <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
-		src="/img/encimera_induccion_60_40.png"
-		width="60"
-		height="40"
-		class=""
-		[class]="product.selectedSlideForCoral == 1 ? 'selected fadeIn' : '' "
-		tabindex="1"
-		role="button">
-	      </amp-img>
-	    </li>
-	  </ul>
-	</div>
-      <!--
-	Carruseles
-      -->
-
-       <div class="product-gallery">
-	  <amp-carousel id="blue-apple-carousel"
-	    width="1024"
-	    height="682"
-	    layout="responsive"
-	    type="slides"
-	    [slide]="product.selectedSlideForBlue"
-	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
-	    class="fadeIn"
-	    hidden
-	    [hidden]="product.selectedColor != 'blue'">
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>
-
-	      <amp-img src="/img/alectrico.png"
-		width="1024"
-		height="682"
-		layout="responsive"
-		on="tap:gallery-lightbox"
-		role="button"
-		tabindex="0">
-	      </amp-img>
-
-	    </div>
-
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>
-
-	      <amp-img src="/img/mantencion_electrica.png"
-		width="1024"
-		height="682"
-		layout="responsive"
-		on="tap:gallery-lightbox"
-		role="button"
-		tabindex="0">
-	      </amp-img>
-
-	    </div>
-
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>
-
-	      <amp-img src="/img/atencion_corte_de_luz.png"
-		width="1024"
-		height="682"
-		layout="responsive"
-		on="tap:gallery-lightbox"
-		role="button"
-		tabindex="0">
-	      </amp-img>
-
-	    </div>
-
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>
-
-	      <amp-img src="/img/proyecto_energia_solar.png"
-		width="1024"
-		height="682"
-		layout="responsive"
-		on="tap:gallery-lightbox"
-		role="button"
-		tabindex="0">
-	      </amp-img>
-
-	    </div>
-
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>
-
-	      <amp-img src="/img/instalacion_luminaria.png"
-		width="1024"
-		height="682"
-		layout="responsive"
-		on="tap:gallery-lightbox"
-		role="button"
-		tabindex="0">
-	      </amp-img>
-
-	    </div>
-
-
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>
-
-	      <amp-img src="/img/instalacion_enchufe.png"
-		width="1024"
-		height="682"
-		layout="responsive"
-		on="tap:gallery-lightbox"
-		role="button"
-		tabindex="0">
-	      </amp-img>
-
-	    </div>
-
-
-
-
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>
-
-	      <amp-img src="/img/instalador_sec.png"
-		width="1290"
-		height="1290"
-		layout="responsive"
-		on="tap:gallery-lightbox"
-		role="button"
-		tabindex="0">
-	      </amp-img>
-
-	    </div>
-
-
-
-
-	  </amp-carousel>
-
-	  <amp-carousel id="green-apple-carousel"
-	    width="1024"
-	    height="682"
-	    layout="responsive"
-	    type="slides"
-	    [slide]="product.selectedSlideForGreen"
-	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
-	    class="fadeIn"
-	    [hidden]="product.selectedColor != 'green'">
-
-	    <amp-img src="/img/led.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-	    <amp-img src="/img/ampolleta_incandescente.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-	  </amp-carousel>
-
-	  <amp-carousel id="golden-apple-carousel"
-	    width="1024"
-	    height="682"
-	    layout="responsive"
-	    type="slides"
-	    [slide]="product.selectedSlideForGolden"
-	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
-	    hidden
-	    class="fadeIn"
-	    [hidden]="product.selectedColor != 'golden'">
-	
-	    <amp-img src="/img/juguera.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-	    <amp-img src="/img/microondas.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-	    <amp-img src="/img/hornillo.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-	    <amp-img src="/img/hervidor.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-	    <amp-img src="/img/olla_arrocera.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-	    <amp-img src="/img/cafetera_expresso.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-	  </amp-carousel>
-
-	  <amp-carousel id="coral-apple-carousel"
-	    width="1024"
-	    height="682"
-	    layout="responsive"
-	    type="slides"
-	    [slide]="product.selectedSlideForCoral"
-	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForCoral: event.index}})"
-	    hidden
-	    class="fadeIn"
-	    [hidden]="product.selectedColor != 'coral'">
-	    <amp-img src="/img/plancha.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-
-	    <amp-img src="/img/frigobar.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-
-	    <amp-img src="/img/refrigerador.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-
-	    <amp-img src="/img/refrigerador_dos_puertas.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-
-	    <amp-img src="/img/lavadora_de_ropa.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-
-
-
-	    <amp-img src="/img/secadora_de_ropa.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="0">
-	    </amp-img>
-
-
-	    <amp-img src="/img/lavaplatos.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="1">
-	    </amp-img>
-
-            <amp-img src="/img/splitter.png"
-              width="1024"
-              height="682"
-              layout="responsive"
-              on="tap:gallery-lightbox"
-              role="button"
-              tabindex="1">
-            </amp-img>
-
-            <amp-img src="/img/pc.png"
-              width="1024"
-              height="682"
-              layout="responsive"
-              on="tap:gallery-lightbox"
-              role="button"
-              tabindex="1">
-            </amp-img>
-
-
-
-
-	</amp-carousel>
-
-	<amp-carousel id="red-apple-carousel"
-	    width="1024"
-	    height="682"
-	    layout="responsive"
-	    type="slides"
-	    [slide]="product.selectedSlideForRed"
-	    on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
-	    hidden
-	    class="fadeIn"
-	    [hidden]="product.selectedColor != 'red'">
-	    <amp-img src="/img/encimera.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="1">
-	    </amp-img>
-
-	    <amp-img src="/img/encimera_induccion.png"
-	      width="1024"
-	      height="682"
-	      layout="responsive"
-	      on="tap:gallery-lightbox"
-	      role="button"
-	      tabindex="1">
-	    </amp-img>
-	  </amp-carousel>
-
-
-	  <amp-image-lightbox id="llamar-lightbox"
-	    layout="nodisplay">
-	    <div 
-	      role="button"
-	      tabindex="0">
-	      <a class="ampstart-btn caps m2 close-gallery-button"
-		href = "tel:+56962000921">
-		Llamar
-	      </a>	
-	    </div>
-	  </amp-image-lightbox>
-
-
-
-
-
-	    
-	  <amp-image-lightbox id="gallery-lightbox"
-	    layout="nodisplay">
-	    <div on="tap:gallery-lightbox.close"
-	      role="button"
-	      tabindex="0">
-	      <button class="ampstart-btn caps m2 close-gallery-button"
-		on="tap:gallery-lightbox.close"
-		role="button"
-		tabindex="0">
-		Cerrar
-	      </button>
-	    </div>
-	  </amp-image-lightbox>
-	</div>
-
-		
-	<amp-state id="product">
-	  <script type="application/json">
-	    {
-	      "selectedColor": "green",
-	      "selectedPotencia": "I",
-	      "selectedSlide": 0,
-	      "selectedSlideForBlue": 0,
-	      "selectedSlideForCoral": 0,
-	      "selectedSlideForRed": 0,
-	      "selectedSlideForGolden": 0,
-	      "selectedSlideForGreen": 0,
-	      "moreItemsPageIndex": 0,
-	      "hasMorePages": false,
-		"circuitos": {
-		  "C": "C: Exclusivo de Calefacción",
-		  "D": "D: Dormitorios",
-		  "E": "E: Encimera",
-		  "N": "N: Enchufes Normales",
-		  "Z": "Z: Exclusivo de Lavavajillas",
-		  "A": "A: Exclusivo de Aire Acondicionado",
-		  "M": "M: Mesón de Cocina",
-		  "L": "L: Loggia",
-		  "H": "H: Horno Eléctrico",
-		  "I": "I: Iluminación",
-		  "R": "R: Refrigeradores",
-		  "S": "S: Sala"
-		  },
-
-	     "blue": {
-		"ids" : {
-		  "0": "",
-		  "1": "",
-		  "2": "",
-		  "3": "",
-		  "4": "",
-		  "5": "",
-		  "6": ""
-
-		  },
-		"nombres": {
-		  "0": "Visita a Domicilio de Instalador Eléctrico Autorizado SEC.",
-		  "1": "Mantención Eléctrica.",
-		  "2": "Reparación de CortoCircuito.",
-		  "3": "Proyecto de Energía Solar OffGrid.",
-		  "4": "Instalación de Luminarias.",
-		  "5": "Instalación de Enchufes.",
-		  "6": "Certificación TE1 de Instalaciones Eléctricas."
-		},
-		"circuitos": {
-		  "0": "I",
-		  "1": "I",
-		  "2": "I",
-		  "3": "I",
-		  "4": "I",
-		  "5": "I",
-		  "6": "I"
-		},
-		"potencias": {
-		  "C": "4400 W",
-		  "D": "3520 W",
-		  "E": "8800 W",
-		  "N": "3520 W",
-		  "Z": "3520 W",
-		  "A": "3520 W",
-		  "S": "3520 W",
-		  "M": "3520 W",
-		  "L": "3520 W",
-		  "H": "3520 W",
-		  "I": "2200 W",
-		  "R": "2200 W"
-		},
-	       "defaultPotencia": "I"
-	      },
-
-	      "green": {
-		"ids" : {
-		  "0": "844",
-		  "1": "99"
-		  },
-		"nombres": {
-		  "0": "Ampolleta Led.",
-		  "1": "Ampolleta Incandescente."
-		},
-		"circuitos": {
-		  "0": "I",
-		  "1": "I"
-		},
-		"potencias": {
-		  "C": "inadecuado",
-		  "D": "inadecuado",
-		  "E": "inadecuado",
-		  "N": "inadecuado",
-		  "Z": "inadecuado",
-		  "A": "inadecuado",
-		  "S": "inadecuado",
-		  "M": "inadecuado",
-		  "L": "inadecuado",
-		  "H": "inadecuado",
-		  "I": "2200 W",
-		  "R": "inadecuado"
-		},
-		"defaultPotencia": "I"
-	      },
-
-	      "golden": {
-		"ids" :{
-		  "0": "1363",
-		  "1": "1692",
-		  "2": "124",
-		  "3": "236",
-		  "4": "211",
-		  "5": "579"
-		},	
-		"nombres" : {
-		  "0": "Licuadora.",
-		  "1": "Microondas.",
-		  "2": "Hornillo.",
-		  "3": "Hervidor.",
-		  "4": "Olla Arrocera.",
-		  "5": "Cafetera Expresso"
-
-		},
-		"circuitos":{
-		  "0": "M",
-		  "1": "M",
-		  "2": "M",
-		  "3": "M",
-		  "4": "M",
-		  "5": "M"
-
-		},
-		"potencias": {
-		  "C": "inadecuado",
-		  "D": "inadecuado",
-		  "E": "inadecuado",
-		  "N": "3520 W",
-		  "Z": "inadecuado",
-		  "A": "inadecuado",
-		  "S": "inadecuado",
-		  "M": "3520 W",
-		  "L": "inadecuado",
-		  "H": "inadecuado",
-		  "I": "inadecuado",
-		  "R": "inadecuado"
-
-		},
-		"defaultPotencia": "M"
-	      },
-
-	      "coral": {
-		"ids": {
-		  "0": "140",
-		  "1": "843",
-		  "2": "252",
-		  "3": "921",
-		  "4": "7",
-		  "5": "276",
-		  "6": "101",
-		  "7": "36",
-		  "8": "138"
-		},
-		"nombres": {
-		  "0": "Plancha.",
-		  "1": "Frigobar.",
-		  "2": "Refrigerador.",
-		  "3": "Refrigerador de dos puertas.",
-		  "4": "Lavadora de ropas.",
-		  "5": "Secadora de ropas.",
-		  "6": "Lavalozas.",
-		  "7": "Splitter.",
-		  "8": "Computador"
-		},
-		"circuitos": {
-		  "0": "N",
-		  "1": "R",
-		  "2": "R",
-		  "3": "R",
-		  "4": "L",
-		  "5": "L",
-		  "6": "Z",
-		  "7": "A",
-		  "8": "D"
-
-		},
-		"potencias": {
-		  "I": "inadecuado",
-		  "C": "3520 W",
-		  "D": "3520 W",
-		  "E": "inadecuado",
-		  "N": "3520 W",
-		  "Z": "inadecuado",
-		  "A": "3520 W",
-		  "S": "3520 W",
-		  "M": "3520 W",
-		  "L": "3520 W",
-		  "H": "inadecuado",
-		  "R": "2200 W"
-		},
-		"defaultPotencia": "R"
-	      },
-
-	      "red": {
-		"ids": {
-		  "0": "71",
-		  "1": "76"
-		},
-		"nombres": {
-		  "0": "Cocina Encimera Vitrocerámica.",
-		  "1": "Cocina Encimera Inducción."
-		},
-		"circuitos": {
-		  "0": "E",
-		  "1": "E"
-
-		},
-		"potencias": {
-		  "I": "inadecuado",
-		  "C": "inadecuado",
-		  "D": "inadecuado",
-		  "E": "8800 W",
-		  "N": "inadecuado",
-		  "Z": "3520 W",
-		  "A": "inadecuado",
-		  "S": "inadecuado",
-		  "M": "inadecuado",
-		  "L": "3520 W",
-		  "H": "3520 W",
-		  "R": "inadecuado"
-		},
-		"defaultPotencia": "E"
-	      }
-
-	    }
-	  </script>
-	</amp-state>
-
-	<p class="price-description"> Seleccionado:
-	  <span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span>
-	</p>
-
-	<form id="order"
-	  method="POST"
-	  action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
-	  target="_top"
-	  on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh"
-	  class="flex flex-wrap m1">
-	  <div class="items-center flex">
-	    <label for="color">Grupo:</label>
-	    <amp-selector name="color"
-	      layout="container"
-	      [selected]="product.selectedColor"
-	      on="select:AMP.setState({
-			  product: {
-			    selectedColor: event.targetOption,
-			    selectedSlide: 0,
-			    selectedSlideForBlue: 0,
-			    selectedSlideForCoral: 0,
-			    selectedSlideForRed: 0,
-			    selectedSlideForGreen: 0,
-			    selectedSlideForYellow: 0,
-			    selectedPotencia: product[event.targetOption].sizes[product.selectedPotencia] != 'inadecuado' ? product.selectedPotencia : product[event.targetOption].defaultPotencia
-			  }
-			})">
-	      <ul class="p0 m1">
-
-		<li>
-		  <div option="blue"
-		    class="square blue"></div>
-		</li>
-		<li>
-		  <div option="green"
-		    selected
-		    class="square green"></div>
-		</li>
-		<li>
-		  <div option="golden"
-		    class="square golden"></div>
-		</li>
-		<li>
-		  <div option="coral"
-		    class="square coral"></div>
-		</li>
-		<li>
-		  <div option="red"
-		    class="square red"></div>
-		</li>
-	      </ul>
-	    </amp-selector>
-	  </div>
-
-	  <div class="items-center flex">
-	    <label for="quantity">Cantidad:</label>
-	    <amp-selector name="quantity"
-	      layout="container">
-	      <ul class="p0 m1">
-		<li option="1"
-		  selected>1</li>
-		<li option="2">2</li>
-		<li option="3">3</li>
-	      </ul>
-	    </amp-selector>
-	  </div>
-
-	  <div class="items-center flex">
-	    <amp-selector name="circuito"
-	      layout="container"
-	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
-			    ? product.selectedPotencia
-			    : product[product.selectedColor].defaultPotencia">
-	      <label for="size">Circuitos Normales:</label>
-
-	      <ul class="p0 m1">
-
-		<li option="I"
-		  class=""
-		  selected
-		  [class]="(product[product.selectedColor].potencias['I'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">I</li>
-		</li>
-		<li option="D"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['D'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">D</li>
-
-		<li option="N"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['N'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">N</li>
-
-		<li option="S"
-		  [class]="(product[product.selectedColor].potencias['S'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">S</li>
-
-
-
-	      </ul>
-	    </amp-selector>
-	  </div>
-
-
-	  <div class="items-center flex">
-	    <amp-selector name="circuito"
-	      layout="container"
-	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
-			    ? product.selectedPotencia
-			    : product[product.selectedColor].defaultPotencia">
-
-
-
-	      <label for="size">Climatización:</label>
-
-	      <ul class= "p0 m1">
-		<li option="C"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['C'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">C</li>
-
-		<li option="A"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['A'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">A</li>
-		  
-	      </ul>
-	    </amp-selector>
-	  </div>
-
-	  <div class="items-center flex">
-	    <amp-selector name="circuito"
-	      layout="container"
-	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
-			    ? product.selectedPotencia
-			    : product[product.selectedColor].defaultPotencia">
-
-
-
-
-	      <label for="size">Cocina:</label>
-
-	      <ul class= "p0 m1">
-
-		<li option="M"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['M'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">M</li>
-
-		<li option="R"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['R'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">R</li>
-
-
-	      </ul>
-
-	    </amp-selector>
-	  </div>
-
-	  <div class="items-center flex">
-	    <amp-selector name="circuito"
-	      layout="container"
-	      on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
-	      [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
-			    ? product.selectedPotencia
-			    : product[product.selectedColor].defaultPotencia">
-
-
-
-	      <label for="size">Circuitos Exclusivos:</label>
-
-	      <ul class = "p0 m1">
-
-		<li option="L"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['L'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">L</li>
-
-		<li option="E"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['E'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">E</li>
-
-		<li option="H"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['H'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">H</li>
-
-		<li option="Z"
-		  class="inadecuado"
-		  [class]="(product[product.selectedColor].potencias['Z'] != 'inadecuado')
-			    ? ''
-			    : 'inadecuado'">Z</li>
-
-
-	    </ul>
-	    </amp-selector>
-	  </div>
-
-	<p class="price-description">
-	  <span > Circuito: </span>
-	  <span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
-	  <span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
-	</p>
-
-	  <div class="items-center flex my1">
+		<ul 
+		  hidden
+		  [hidden]="product.selectedColor != 'blue'">
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+		      src="/img/alectrico_60_40.png"
+		      width="60"
+		      height="40"
+		      class="selected"
+		      [class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 1}})"
+		      src="/img/mantencion_electrica_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForBlue == 1 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 2}})"
+		      src="/img/atencion_corte_de_luz_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForBlue == 2 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 3}})"
+		      src="/img/proyecto_energia_solar_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForBlue == 3 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 4}})"
+		      src="/img/instalacion_luminaria_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForBlue == 4 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 5}})"
+		      src="/img/instalacion_enchufe_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForBlue == 5 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 6}})"
+		      src="/img/instalador_sec_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForBlue == 6 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+
+
+		</ul>
+	      </div>
+
+
+
+	      <div class="product-gallery">
+
+		<ul
+		  [hidden]="product.selectedColor != 'green'">
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
+		      src="/img/led_60_40.png"
+		      width="60"
+		      height="40"
+		      class="selected"
+		      [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
+		      src="/img/ampolleta_incandescente_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForGreen == 1 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+	   
+
+		</ul>
+	      </div>
+
+	      <div class="product-gallery">
+
+		<ul hidden
+		  [hidden]="product.selectedColor != 'golden'">
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
+		      src="/img/juguera_60_40.png"
+		      width="60"
+		      height="40"
+		      class= "selected"
+		      [class]="product.selectedSlideForGolden == 0 ? 'selected' : '' "
+		      tabindex="1"
+		      role="button">
+		    </amp-img>
+		 </li>
+		 <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 1}})"
+		      src="/img/microondas_60_40.png"
+		      width="60"
+		      height="40"
+		      class="selected fadeIn"
+		      [class]="product.selectedSlideForGolden == 1 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+		 <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 2}})"
+		      src="/img/hornillo_60_40.png"
+		      width="60"
+		      height="40"
+		      class="selected fadeIn"
+		      [class]="product.selectedSlideForGolden == 2 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+		 <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 3}})"
+		      src="/img/hervidor_60_40.png"
+		      width="60"
+		      height="40"
+		      class="selected fadeIn"
+		      [class]="product.selectedSlideForGolden == 3 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		 <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 4}})"
+		      src="/img/olla_arrocera_60_40.png"
+		      width="60"
+		      height="40"
+		      class="selected fadeIn"
+		      [class]="product.selectedSlideForGolden == 4 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		 <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 5}})"
+		      src="/img/cafetera_expresso_60_40.png"
+		      width="60"
+		      height="40"
+		      class="selected fadeIn"
+		      [class]="product.selectedSlideForGolden == 5 ? 'selected fadeIn' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+		</ul>
+	      </div>
+
+	      <div class="product-gallery">
+		<ul hidden
+		    [hidden]="product.selectedColor != 'coral'">
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 0}})"
+		      src="/img/plancha_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 1}})"
+		      src="/img/frigobar_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 1 ? 'selected' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 2}})"
+		      src="/img/refrigerador_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 2 ? 'selected' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 3}})"
+		      src="/img/refrigerador_dos_puertas_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 3 ? 'selected' : '' "
+		      tabindex="0"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 4}})"
+		      src="/img/lavadora_de_ropa_60_40.png"
+		      width="60"
+		      height="40"
+		      class= ""
+		      [class]="product.selectedSlideForCoral == 4 ? 'selected fadeIn' : '' "
+		      tabindex="2"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({product: {selectedSlideForCoral: 5}})"
+		      src="/img/secadora_de_ropa_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 5 ? 'selected fadeIn' : '' "
+		      tabindex="2"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 6}})"
+		      src="/img/lavaplatos_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 6 ? 'selected fadeIn' : '' "
+		      tabindex="1"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 7}})"
+		      src="/img/splitter_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 7 ? 'selected fadeIn' : '' "
+		      tabindex="1"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForCoral : 8}})"
+		      src="/img/pc_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 8 ? 'selected fadeIn' : '' "
+		      tabindex="1"
+		      role="button">
+		    </amp-img>
+		  </li>
+
+
+
+
+
+		</ul>
+	      </div>
+
+	      <div class="product-gallery">
+		<ul hidden
+		  [hidden]="product.selectedColor != 'red'">
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
+		      src="/img/encimera_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
+		      tabindex="1"
+		      role="button">
+		    </amp-img>
+		  </li>
+		  <li>
+		    <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
+		      src="/img/encimera_induccion_60_40.png"
+		      width="60"
+		      height="40"
+		      class=""
+		      [class]="product.selectedSlideForCoral == 1 ? 'selected fadeIn' : '' "
+		      tabindex="1"
+		      role="button">
+		    </amp-img>
+		  </li>
+		</ul>
+	      </div>
+	    <!--
+	      Carruseles
+	    -->
+
+	     <div class="product-gallery">
+		<amp-carousel id="blue-apple-carousel"
+		  width="1024"
+		  height="682"
+		  layout="responsive"
+		  type="slides"
+		  [slide]="product.selectedSlideForBlue"
+		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
+		  class="fadeIn"
+		  hidden
+		  [hidden]="product.selectedColor != 'blue'">
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>
+
+		    <amp-img src="/img/alectrico.png"
+		      width="1024"
+		      height="682"
+		      layout="responsive"
+		      on="tap:gallery-lightbox"
+		      role="button"
+		      tabindex="0">
+		    </amp-img>
+
+		  </div>
+
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>
+
+		    <amp-img src="/img/mantencion_electrica.png"
+		      width="1024"
+		      height="682"
+		      layout="responsive"
+		      on="tap:gallery-lightbox"
+		      role="button"
+		      tabindex="0">
+		    </amp-img>
+
+		  </div>
+
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>
+
+		    <amp-img src="/img/atencion_corte_de_luz.png"
+		      width="1024"
+		      height="682"
+		      layout="responsive"
+		      on="tap:gallery-lightbox"
+		      role="button"
+		      tabindex="0">
+		    </amp-img>
+
+		  </div>
+
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>
+
+		    <amp-img src="/img/proyecto_energia_solar.png"
+		      width="1024"
+		      height="682"
+		      layout="responsive"
+		      on="tap:gallery-lightbox"
+		      role="button"
+		      tabindex="0">
+		    </amp-img>
+
+		  </div>
+
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>
+
+		    <amp-img src="/img/instalacion_luminaria.png"
+		      width="1024"
+		      height="682"
+		      layout="responsive"
+		      on="tap:gallery-lightbox"
+		      role="button"
+		      tabindex="0">
+		    </amp-img>
+
+		  </div>
+
+
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>
+
+		    <amp-img src="/img/instalacion_enchufe.png"
+		      width="1024"
+		      height="682"
+		      layout="responsive"
+		      on="tap:gallery-lightbox"
+		      role="button"
+		      tabindex="0">
+		    </amp-img>
+
+		  </div>
+
+
+
+
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>
+
+		    <amp-img src="/img/instalador_sec.png"
+		      width="1290"
+		      height="1290"
+		      layout="responsive"
+		      on="tap:gallery-lightbox"
+		      role="button"
+		      tabindex="0">
+		    </amp-img>
+
+		  </div>
+
+
+
+
+		</amp-carousel>
+
+		<amp-carousel id="green-apple-carousel"
+		  width="1024"
+		  height="682"
+		  layout="responsive"
+		  type="slides"
+		  [slide]="product.selectedSlideForGreen"
+		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGreen: event.index}})"
+		  class="fadeIn"
+		  [hidden]="product.selectedColor != 'green'">
+
+		  <amp-img src="/img/led.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+		  <amp-img src="/img/ampolleta_incandescente.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+		</amp-carousel>
+
+		<amp-carousel id="golden-apple-carousel"
+		  width="1024"
+		  height="682"
+		  layout="responsive"
+		  type="slides"
+		  [slide]="product.selectedSlideForGolden"
+		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForGolden: event.index}})"
+		  hidden
+		  class="fadeIn"
+		  [hidden]="product.selectedColor != 'golden'">
+	      
+		  <amp-img src="/img/juguera.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+		  <amp-img src="/img/microondas.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+		  <amp-img src="/img/hornillo.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+		  <amp-img src="/img/hervidor.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+		  <amp-img src="/img/olla_arrocera.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+		  <amp-img src="/img/cafetera_expresso.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+		</amp-carousel>
+
+		<amp-carousel id="coral-apple-carousel"
+		  width="1024"
+		  height="682"
+		  layout="responsive"
+		  type="slides"
+		  [slide]="product.selectedSlideForCoral"
+		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForCoral: event.index}})"
+		  hidden
+		  class="fadeIn"
+		  [hidden]="product.selectedColor != 'coral'">
+		  <amp-img src="/img/plancha.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+
+		  <amp-img src="/img/frigobar.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+
+		  <amp-img src="/img/refrigerador.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+
+		  <amp-img src="/img/refrigerador_dos_puertas.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+
+		  <amp-img src="/img/lavadora_de_ropa.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+
+
+
+		  <amp-img src="/img/secadora_de_ropa.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="0">
+		  </amp-img>
+
+
+		  <amp-img src="/img/lavaplatos.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="1">
+		  </amp-img>
+
+		  <amp-img src="/img/splitter.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="1">
+		  </amp-img>
+
+		  <amp-img src="/img/pc.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="1">
+		  </amp-img>
+
+
+
+
+	      </amp-carousel>
+
+	      <amp-carousel id="red-apple-carousel"
+		  width="1024"
+		  height="682"
+		  layout="responsive"
+		  type="slides"
+		  [slide]="product.selectedSlideForRed"
+		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForRed: event.index}})"
+		  hidden
+		  class="fadeIn"
+		  [hidden]="product.selectedColor != 'red'">
+		  <amp-img src="/img/encimera.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="1">
+		  </amp-img>
+
+		  <amp-img src="/img/encimera_induccion.png"
+		    width="1024"
+		    height="682"
+		    layout="responsive"
+		    on="tap:gallery-lightbox"
+		    role="button"
+		    tabindex="1">
+		  </amp-img>
+		</amp-carousel>
+
+
+		<amp-image-lightbox id="llamar-lightbox"
+		  layout="nodisplay">
+		  <div 
+		    role="button"
+		    tabindex="0">
+		    <a class="ampstart-btn caps m2 close-gallery-button"
+		      href = "tel:+56962000921">
+		      Llamar
+		    </a>	
+		  </div>
+		</amp-image-lightbox>
+
+		<amp-image-lightbox 
+		  id="gallery-lightbox"
+		  layout="nodisplay">
+                 <!--
+                  <div
+		   id = "zoom"
+		   class = "clearfix" >
+		     <div 
+		       class = "left" >
+		       <div
+			  role="button"
+			  tabindex="0" >
+			  <form method   = "POST"
+			    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
+			      target    = "_top"
+			      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+			     <input name = "clientId" 
+				 type = "hidden" 
+				 value = "CLIENT_ID(uid)" 
+				 data-amp-replace = "CLIENT_ID">
+			     <input 
+                             hidden
+			     name = "id" 
+			     [value] = "id" > 
+			     <button 
+				class="ampstart-btn caps m2 borrar-gallery-button"
+				type = "submit" > Borrar
+			     </button>
+			  </form>
+                        </div>
+                     </div>
+		     <div
+		       class = "right" >
+			<div on="tap:gallery-lightbox.close"
+			  role="button"
+			  tabindex="0">
+			  <button class="ampstart-btn caps m2 close-gallery-button"
+			    on="tap:gallery-lightbox.close"
+			    role="button"
+			    tabindex="0">
+			    Cerrar
+			  </button>
+			</div>
+		     </div>
+                  -->
+                    <div class = "right close-gallery-button" >
+
+		      <button class="ampstart-btn caps m2"
+			on="tap:gallery-lightbox.close"
+			role="button"
+			tabindex="0">
+			Cerrar
+		      </button>
+
+		      <form method   = "POST"
+			action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
+			  target    = "_top"
+			  on = "submit-success:carrusel-list.refresh,cart-list-dueno.refresh">
+			 <input name = "clientId" 
+			     type = "hidden" 
+			     value = "CLIENT_ID(uid)" 
+			     data-amp-replace = "CLIENT_ID">
+			 <input 
+			 hidden
+			 name = "id" 
+			 [value] = "id" > 
+		     
+			 <button 
+			    class="ampstart-btn caps mtx5 mb2 ml2 mr2"
+			    type = "submit" > Borrar
+			 </button>
+
+		      </form>
+		    </div>
+		 </amp-image-lightbox>
+	      </div>
+
+		     
+	      <amp-state id="presupuesto">
+	        <script type="application/json">
+                  {
+		    "Iniciado" : 0
+		  }
+                </script>
+	      </amp-state> 
+
+	      <amp-state id="product">
+		<script type="application/json">
+		  {
+		    "selectedColor": "green",
+		    "selectedPotencia": "I",
+		    "selectedSlide": 0,
+		    "selectedSlideForBlue": 0,
+		    "selectedSlideForCoral": 0,
+		    "selectedSlideForRed": 0,
+		    "selectedSlideForGolden": 0,
+		    "selectedSlideForGreen": 0,
+		    "moreItemsPageIndex": 0,
+		    "hasMorePages": false,
+		      "circuitos": {
+			"C": "C: Exclusivo de Calefacción",
+			"D": "D: Dormitorios",
+			"E": "E: Encimera",
+			"N": "N: Enchufes Normales",
+			"Z": "Z: Exclusivo de Lavavajillas",
+			"A": "A: Exclusivo de Aire Acondicionado",
+			"M": "M: Mesón de Cocina",
+			"L": "L: Loggia",
+			"H": "H: Horno Eléctrico",
+			"I": "I: Iluminación",
+			"R": "R: Refrigeradores",
+			"S": "S: Sala"
+			},
+
+		   "blue": {
+		      "ids" : {
+			"0": "",
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": ""
+
+			},
+		      "nombres": {
+			"0": "Visita a Domicilio de Instalador Eléctrico Autorizado SEC.",
+			"1": "Mantención Eléctrica.",
+			"2": "Reparación de CortoCircuito.",
+			"3": "Proyecto de Energía Solar OffGrid.",
+			"4": "Instalación de Luminarias.",
+			"5": "Instalación de Enchufes.",
+			"6": "Certificación TE1 de Instalaciones Eléctricas."
+		      },
+		      "circuitos": {
+			"0": "I",
+			"1": "I",
+			"2": "I",
+			"3": "I",
+			"4": "I",
+			"5": "I",
+			"6": "I"
+		      },
+		      "potencias": {
+			"C": "4400 W",
+			"D": "3520 W",
+			"E": "8800 W",
+			"N": "3520 W",
+			"Z": "3520 W",
+			"A": "3520 W",
+			"S": "3520 W",
+			"M": "3520 W",
+			"L": "3520 W",
+			"H": "3520 W",
+			"I": "2200 W",
+			"R": "2200 W"
+		      },
+		     "defaultPotencia": "I"
+		    },
+
+		    "green": {
+		      "ids" : {
+			"0": "844",
+			"1": "99"
+			},
+		      "nombres": {
+			"0": "Ampolleta Led.",
+			"1": "Ampolleta Incandescente."
+		      },
+		      "circuitos": {
+			"0": "I",
+			"1": "I"
+		      },
+		      "potencias": {
+			"C": "inadecuado",
+			"D": "inadecuado",
+			"E": "inadecuado",
+			"N": "inadecuado",
+			"Z": "inadecuado",
+			"A": "inadecuado",
+			"S": "inadecuado",
+			"M": "inadecuado",
+			"L": "inadecuado",
+			"H": "inadecuado",
+			"I": "2200 W",
+			"R": "inadecuado"
+		      },
+		      "defaultPotencia": "I"
+		    },
+
+		    "golden": {
+		      "ids" :{
+			"0": "1363",
+			"1": "1692",
+			"2": "124",
+			"3": "236",
+			"4": "211",
+			"5": "579"
+		      },	
+		      "nombres" : {
+			"0": "Licuadora.",
+			"1": "Microondas.",
+			"2": "Hornillo.",
+			"3": "Hervidor.",
+			"4": "Olla Arrocera.",
+			"5": "Cafetera Expresso"
+
+		      },
+		      "circuitos":{
+			"0": "M",
+			"1": "M",
+			"2": "M",
+			"3": "M",
+			"4": "M",
+			"5": "M"
+
+		      },
+		      "potencias": {
+			"C": "inadecuado",
+			"D": "inadecuado",
+			"E": "inadecuado",
+			"N": "3520 W",
+			"Z": "inadecuado",
+			"A": "inadecuado",
+			"S": "inadecuado",
+			"M": "3520 W",
+			"L": "inadecuado",
+			"H": "inadecuado",
+			"I": "inadecuado",
+			"R": "inadecuado"
+
+		      },
+		      "defaultPotencia": "M"
+		    },
+
+		    "coral": {
+		      "ids": {
+			"0": "140",
+			"1": "843",
+			"2": "252",
+			"3": "921",
+			"4": "7",
+			"5": "276",
+			"6": "101",
+			"7": "36",
+			"8": "138"
+		      },
+		      "nombres": {
+			"0": "Plancha.",
+			"1": "Frigobar.",
+			"2": "Refrigerador.",
+			"3": "Refrigerador de dos puertas.",
+			"4": "Lavadora de ropas.",
+			"5": "Secadora de ropas.",
+			"6": "Lavalozas.",
+			"7": "Splitter.",
+			"8": "Computador"
+		      },
+		      "circuitos": {
+			"0": "N",
+			"1": "R",
+			"2": "R",
+			"3": "R",
+			"4": "L",
+			"5": "L",
+			"6": "Z",
+			"7": "A",
+			"8": "D"
+
+		      },
+		      "potencias": {
+			"I": "inadecuado",
+			"C": "3520 W",
+			"D": "3520 W",
+			"E": "inadecuado",
+			"N": "3520 W",
+			"Z": "inadecuado",
+			"A": "3520 W",
+			"S": "3520 W",
+			"M": "3520 W",
+			"L": "3520 W",
+			"H": "inadecuado",
+			"R": "2200 W"
+		      },
+		      "defaultPotencia": "R"
+		    },
+
+		    "red": {
+		      "ids": {
+			"0": "71",
+			"1": "76"
+		      },
+		      "nombres": {
+			"0": "Cocina Encimera Vitrocerámica.",
+			"1": "Cocina Encimera Inducción."
+		      },
+		      "circuitos": {
+			"0": "E",
+			"1": "E"
+
+		      },
+		      "potencias": {
+			"I": "inadecuado",
+			"C": "inadecuado",
+			"D": "inadecuado",
+			"E": "8800 W",
+			"N": "inadecuado",
+			"Z": "3520 W",
+			"A": "inadecuado",
+			"S": "inadecuado",
+			"M": "inadecuado",
+			"L": "3520 W",
+			"H": "3520 W",
+			"R": "inadecuado"
+		      },
+		      "defaultPotencia": "E"
+		    }
+
+		  }
+		</script>
+	      </amp-state>
+
+	      <p class="price-description"> Seleccionado:
+		<span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span> </p>
+
+	      <!--
+                on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show,boton-login.show"
+
+	      -->
+	      <form id="order"
+		method="POST"
+		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
+		target="_top"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh,cart-list.refresh"
+		class="flex flex-wrap m1">
+		<div class="items-center flex">
+		  <label for="color">Grupo:</label>
+		  <amp-selector name="color"
+		    layout="container"
+		    [selected]="product.selectedColor"
+		    on="select:AMP.setState({
+				product: {
+				  selectedColor: event.targetOption,
+				  selectedSlide: 0,
+				  selectedSlideForBlue: 0,
+				  selectedSlideForCoral: 0,
+				  selectedSlideForRed: 0,
+				  selectedSlideForGreen: 0,
+				  selectedSlideForYellow: 0,
+				  selectedPotencia: product[event.targetOption].sizes[product.selectedPotencia] != 'inadecuado' ? product.selectedPotencia : product[event.targetOption].defaultPotencia
+				}
+			      })">
+		    <ul class="p0 m1">
+
+		      <!--
+		      <li>
+			<div option="blue"
+			  class="square blue"></div>
+		      </li>
+		       -->
+		      <li>
+			<div option="green"
+			  selected
+			  class="square green"></div>
+		      </li>
+		      <li>
+			<div option="golden"
+			  class="square golden"></div>
+		      </li>
+		      <li>
+			<div option="coral"
+			  class="square coral"></div>
+		      </li>
+		      <li>
+			<div option="red"
+			  class="square red"></div>
+		      </li>
+		    </ul>
+		  </amp-selector>
+		</div>
+
+		<div class="items-center flex">
+		  <label for="quantity">Cantidad:</label>
+		  <amp-selector name="quantity"
+		    layout="container">
+		    <ul class="p0 m1">
+		      <li option="1"
+			selected>1</li>
+		      <li option="2">2</li>
+		      <li option="3">3</li>
+		    </ul>
+		  </amp-selector>
+		</div>
+
+		<div class="items-center flex">
+		  <amp-selector name="circuito"
+		    layout="container"
+		    on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+		    [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
+				  ? product.selectedPotencia
+				  : product[product.selectedColor].defaultPotencia">
+		    <label for="size">Circuitos Normales:</label>
+
+		    <ul class="p0 m1">
+
+		      <li option="I"
+			class=""
+			selected
+			[class]="(product[product.selectedColor].potencias['I'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">I</li>
+		      </li>
+		      <li option="D"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['D'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">D</li>
+
+		      <li option="N"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['N'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">N</li>
+
+		      <li option="S"
+			[class]="(product[product.selectedColor].potencias['S'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">S</li>
+
+
+
+		    </ul>
+		  </amp-selector>
+		</div>
+
+
+		<div class="items-center flex">
+		  <amp-selector name="circuito"
+		    layout="container"
+		    on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+		    [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
+				  ? product.selectedPotencia
+				  : product[product.selectedColor].defaultPotencia">
+
+
+
+		    <label for="size">Climatización:</label>
+
+		    <ul class= "p0 m1">
+		      <li option="C"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['C'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">C</li>
+
+		      <li option="A"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['A'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">A</li>
+			
+		    </ul>
+		  </amp-selector>
+		</div>
+
+		<div class="items-center flex">
+		  <amp-selector name="circuito"
+		    layout="container"
+		    on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+		    [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
+				  ? product.selectedPotencia
+				  : product[product.selectedColor].defaultPotencia">
+
+
+
+
+		    <label for="size">Cocina:</label>
+
+		    <ul class= "p0 m1">
+
+		      <li option="M"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['M'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">M</li>
+
+		      <li option="R"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['R'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">R</li>
+
+
+		    </ul>
+
+		  </amp-selector>
+		</div>
+
+		<div class="items-center flex">
+		  <amp-selector name="circuito"
+		    layout="container"
+		    on="select:AMP.setState({ product: {selectedPotencia: event.targetOption}})"
+		    [selected]="(product[product.selectedColor].potencias[product.selectedPotencia] != 'inadecuado')
+				  ? product.selectedPotencia
+				  : product[product.selectedColor].defaultPotencia">
+
+
+
+		    <label for="size">Circuitos Exclusivos:</label>
+
+		    <ul class = "p0 m1">
+
+		      <li option="L"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['L'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">L</li>
+
+		      <li option="E"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['E'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">E</li>
+
+		      <li option="H"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['H'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">H</li>
+
+		      <li option="Z"
+			class="inadecuado"
+			[class]="(product[product.selectedColor].potencias['Z'] != 'inadecuado')
+				  ? ''
+				  : 'inadecuado'">Z</li>
+
+
+		  </ul>
+		  </amp-selector>
+		</div>
+
+	      <p class="price-description">
+		<span > Circuito: </span>
+		<span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
+		<span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
+	      </p>
+           <!-- fin de Galería de Productos -->
+
+	  <div class="items-center flex my1 ml1">
 	    <input type="submit"
 	      class="ampstart-btn caps"
-	      name="Agregar al Circuito"
-	      value="Agregar al Circuito">
+	      name="Agregar"
+	      value="Agregar">
 	  </div>
 	  <input type="hidden"
 	    name="carga_id"
@@ -2036,11 +2218,11 @@
 	    [value] ="product[product.selectedColor].ids[product.selectedSlide]">
 	  <input name="clientId"
 	    type="hidden"
-	    value="CLIENT_ID(cart)"
+	    value="CLIENT_ID(uid)"
 	    data-amp-replace="CLIENT_ID">
 	  <div submit-success>
 	    <template type="amp-mustache">
-	       {{error}}
+	      {{error}}
 	    </template>
 	  </div>
 	  <div submit-error>
@@ -2049,66 +2231,129 @@
 	    </template>
 	  </div>
 	</form>
-	  
+	<!--
+	checkout-section
+	-->
+        <section>	
+	  <amp-list 
+	    template = "carrusel-list-template"
+	    credentials="include"
+	    class="items m1"
+	    width="auto"
+	    height="145"
+	    items = "."
+	    single-item
+	    layout="fixed-height"
+	    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get/?clientId=CLIENT_ID(uid)&_=RANDOM"
+	    id="carrusel-list">
+	    <div>
+            </div>
+            <div overflow = ""  class = "list-overflow">VER MÁS </div>
+            <div placeholder>Cargando la lista de electrodomésticos ...</div>
+            <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
+            <div overflow = "" class = "list-overflow">VER MÁS</div>
 
-
-	<amp-list 
-          class="items m1"
-          template = "carrusel-list-template"
-	  width="auto"
-	  height="145"
-	  layout="fixed-height"
-	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
-
-	  id="carrusel-list">
-
-          <div overflow = "" 
-               class = "list-overflow">
-           VER MAS
-          </div>
-          <div placeholder>Cargando la lista de electrodomésticos ...</div>
-          <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
-        </amp-list>
-
+          </amp-list>
 
 	  <template 
-	    type="amp-mustache"
-	    id= "carrusel-list-template"
-	  >
-	  <!--
+	  id = "carrusel-list-template"
+	  type="amp-mustache">
+	    <!--
+	    Electrodomésticos en este dispositivo
+	    <br/>
+	    Presupuesto en este dispositivo es {{presupuesto_local}}
+	    {{time_stamp}}
+	    <hr/>
+	    -->
+	    {{^items}}
+	    Presione AGREGAR para agregar electrodomésticos.
+	    {{/items}}
+	    
+            {{#items}}
+<!--
 	    <a class="text-decoration-none p1"
 	      href="#">
+            </a>
+-->
 	      <amp-img width="70.31"
+	      on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
+		role = "button"
+		tabindex = 0
 		height="46.8"
 		layout="fixed"
+		aria-describedby = "caption"
 		alt="{{cantidad}}"
-		src="{{img}}"></amp-img>
-	    </a>
-	   -->
-	  <!--
-	    <form method   = "POST"
-	      action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
-	      target    = "_top"
-	      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-	      <amp-img width="170.31"
-		height="146.8"
-		layout="fixed"
-		alt="{{cantidad}}"
-		src="{{img}}"></amp-img>
-	      <input name = "clientId" 
-		 type = "hidden" 
-		 value = "CLIENT_ID(cart)" 
-		 data-amp-replace = "CLIENT_ID">
-	      <button  type = "submit" > x
-	    </form>
-	    -->
-	  </template>
+		src="{{img}}">
+	      </amp-img>
+
+	      <div
+		id = "caption"
+		hidden>
+		{{nombre}}. Potencia: {{potencia}} W. Circuito: {{circuito}}.
+
+		<form method   = "POST"
+		    class = "close-gallery-button"
+		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+		    target    = "_top"
+		    on = "submit-success:carrusel-list.refresh">
+		   <input name = "clientId" 
+		       type = "hidden" 
+		       value = "CLIENT_ID(uid)" 
+		       data-amp-replace = "CLIENT_ID">
+		   <button  type = "submit" > x </button>
+
+		</form>
+	      </div>
+            {{/items}}
+<!--
+            <form method   = "POST"
+              action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+              target    = "_top"
+              on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+              <input name = "clientId" 
+                 type = "hidden" 
+                 value = "CLIENT_ID(uid)" 
+                 data-amp-replace = "CLIENT_ID">
+              <button  type = "submit" > x
+              </button>
+            </form>
+          <hr/>
+	  <button
+	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueno.refresh"> Refrescar
+	  </button>
+	  -->
+	 </template>
+        </section>
+
 	<amp-install-serviceworker
 	  src="/sw.js"
 	  data-iframe-src="https://designer.com/sw.js"
 	  layout="nodisplay">
 	</amp-install-serviceworker>
+
         <!--
+
+    .tabContent {
+        line-height: 1.5rem;
+        display: none;
+        width: 100%;
+        order: 1;
+    }
+
+    .tabButton[selected]::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(90deg,#94103e 0,#db004d);
+    }
+
+    .tabButton[selected]+.tabContent {
+        display: block;
+    }
+
+
+
+
 	<amp-selector role="tablist"
 	  layout="container"
 	  class="ampTabContainer ampstart-headerbar-nav"
@@ -2124,123 +2369,744 @@
 	    option="a">GRUPOS</div>
 	  <div role="tabpanel"
 	    class="tabContent p1 p">Los electrodomésticos están agrupados de acuerdo a la potencia máxima que consumen y considerando los circuitos a los que pueden ser conectados. El grupo azul es diferente, no agrupa electrodomésticos sino los servicios que puede contratar en alectrico.cl.</div>
-        -->
+
 	</amp-selector>
-	<section amp-access="loggedIn" 
-	  id= "resumen" 
-	  class= "checkout-section"
-	  amp-access-hide = ""
-	  >
-	  <h3 class="">Resumen de Electromésticos</h3>
-	  <amp-list 
-              template= "cart-list-template"
-	      credentials="include"
-	      width="auto"
-	      height="180"
-	      items="."
-	      single-item
-	      layout="fixed-height"
-	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
-	      id="cart-list">
+        -->
 
-              <div overflow = "" 
-                 class = "list-overflow">
-                 VER MAS
-              </div>
-            </amp-list>
 
-	      <template 
-                type="amp-mustache"
-                id= "cart-list-template">
-		<div class="shopping-cart">
-		  <div class="item header">
-		    <div class="name">
-		       <strong>Nombre</strong>
-		    </div>
-		    <div class="price">
-		       <strong>Pot</strong>
-		    </div>
-		    <div class="quantity">
-		       <strong>Cto</strong>
+      <section amp-access="NOT loggedIn"
+	amp-access-hide >
+        <template amp-access-template type="amp-mustache">
+	<!--
+	 No hay ninguna sesión abierta. Los electrodomésticos del dispositivo están agrupados en un presupuesto con id: {{presupuesto_local}}.
+         <hr/>
+	 -->
+        </template>
+      </section>
+
+
+      <section amp-access="loggedIn">
+       <!--
+	<div class="my2">
+	    <button amp-access="loggedIn" 
+	      on= "tap:cart-list.refresh,cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+	      amp-access-hide
+	      tabindex="0"
+	      class="ampstart-btn ml1 caps" >Sincronizar</button>
+	    <span amp-access= "loggedIn">... desde otro dispositivo</span>
+	</div>
+        -->
+
+
+        <template amp-access-template type="amp-mustache"
+           [hidden] = "inicial.invisible and presupuesto.Iniciado = 0"
+           id = "access-list-template">
+	   <!--
+	   <hr/>
+	   {{time_stamp}}
+	   Lista de electrodomésticos inicial del usuario logado
+	   <br/>
+           El id de presupuesto de este usuario es:
+	   {{presupuesto_dispositivo}}
+	   <br/>
+           El dueño del presupuesto en el dispositivo es:
+	   {{dueño}}
+	   <br/>
+           El usuario logado en el backend es: {{current_user}}
+	   -->
+	   {{#presupuesto_remoto}}
+             <form id="sync"
+                method="POST"
+                action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
+                target="_top"
+                on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh"
+                class="flex flex-wrap m1">
+
+		 <input type="hidden"
+		    name  = "syncFromRemote"
+		    value = true
+		    [value] = true>
+                <input data-amp-replace='CLIENT_ID' 
+		    name='clientId' 
+		    type='hidden' 
+		    value='CLIENT_ID(uid)'>
+
+		<div class="my2">
+		    <button amp-access="loggedIn" 
+		      on= "tap:cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+		      amp-access-hide
+		      tabindex="0"
+		      type = "submit"
+		      class="ampstart-btn ml1 caps" >Importar</button>
+		    <span amp-access= "loggedIn">... desde otro dispositivo</span>
+		</div>
+
+             </form>
+         {{/presupuesto_remoto}}
+	 {{#items}}
+             <amp-img width="70.31"
+              on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
+                role = "button"
+                tabindex = 0
+                height="46.8"
+                layout="fixed"
+                aria-describedby = "caption"
+                alt="{{cantidad}}"
+                src="{{img}}">
+              </amp-img>
+
+          {{/items}}
+	  {{^items}}
+	    <section amp-access="loggedIn" 
+	      id= "resumen" 
+	      class= "checkout-section"
+	      amp-access-hide = "" >
+	       <amp-list 
+		  template="cart-list-template"
+		  credentials="include"
+		  width="auto"
+		  height="180"
+		  items="."
+		  single-item
+		  layout="fixed-height"
+		  src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+		  id="cart-list">
+		  <div overflow = "" class = "list-overflow">VER MÁS</div>
+		</amp-list>
+	     </section>
+	  {{/items}}
+        </template>
+      </section>
+
+
+      <section>
+
+       <!---
+        <div class="my2">
+            <button amp-access="loggedIn" 
+              on= "tap:cart-list.refresh,cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+              amp-access-hide
+              tabindex="0"
+              class="ampstart-btn ml1 caps" >Sincronizar</button>
+            <span amp-access= "loggedIn">... desde otro dispositivo</span>
+        </div>
+        --->
+
+        <amp-list
+         hidden
+         [hidden] = "dueno.invisible"
+	 amp-access = "loggedIn"
+	 template="cart-list-dueno-template"
+	 id = "cart-list-dueno"
+	 amp-access-hide
+	 credentials = "include"
+	 items = "."
+	 single-item
+	 height = "180"
+	 width = "auto"
+	 layout = "fixed-height"
+         src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	 >
+        <div overflow = "" class = "list-overflow">VER MÁS</div>
+	</amp-list>
+      </section>
+
+      <template type="amp-mustache"
+      id = "cart-list-dueno-template">
+
+	  <hr/>
+	  {{time_stamp}}
+	  <!--
+	  cart-list-dueno  loggedIn y amp-access-hide - no debe ser mostrado al inicio- porque tiene una versión atrasada de los datos, mostrando
+	  un current_user que ya no lo es. Responde a un código de
+	  refresh. Debe intercambiarse con otro cart-list que usa una fuente de autorización. La que a la inversa de esta. No cambia ni se refresca.
+	  <br/>
+	  El presupuesto del usuario es {{presupuesto}}
+          <br/>
+          El usuario logado en el backend es {{current_user}}
+          <br/>
+          El usuario dueño del presupuesto en el dispositivo es {{dueño}}
+          <br/>
+	  -->
+          {{#items}}
+             <amp-img width="70.31"
+              on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
+                role = "button"
+                tabindex = 0
+                height="46.8"
+                layout="fixed"
+                aria-describedby = "caption"
+                alt="{{cantidad}}"
+                src="{{img}}">
+              </amp-img>
+          {{/items}}
+
+	  {{^items}}
+	    Ud. no tiene presupuestos en otros dispositivos.
+	  {{/items}}
+          <hr/>
+      </template>
+
+      <!---
+      <section amp-access="loggedIn" 
+        id= "resumen" 
+        class= "checkout-section"
+        amp-access-hide = "" >
+        <amp-list 
+          template="cart-list-template"
+	  credentials="include"
+	  width="auto"
+	  height="180"
+	  items="."
+	  single-item
+	  layout="fixed-height"
+	  src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	  id="cart-list">
+          <div overflow = "" class = "list-overflow">VER MÁS</div>
+        </amp-list>
+      </section>	
+      -->
+
+      <template type="amp-mustache"
+	id = "cart-list-template">
+	<!---
+	<hr/>
+	{{time_stamp}}
+	Electrodomésticos de este dispositivo
+	<br/>
+	El presupuesto de este dispositivo es {{presupuesto_local}}
+	<br/>
+	Current_user {{current_user}}
+	<br/>
+	Dueño del presupuesto {{dueño}}
+	<hr/>
+	-->
+	<div class="shopping-cart">
+	  <div class="item header">
+	    <div class="name">
+	       <strong>Nombre</strong>
+	    </div>
+	    <div class="price">
+	       <strong>Pot</strong>
+	    </div>
+	    <div class="quantity">
+	       <strong>Cto</strong>
+	    </div>
+	  </div>
+	  {{#items}}
+	  <div class="item">
+	     <div class="name">{{nombre}}</div>
+	     <div class="price">{{potencia}}W</div>
+	     <div class="quantity">{{circuito}}</div>
+	  </div>
+
+	  {{/items}} {{#cargas_count}}
+	  <div class= "item summary">
+	     <div class="name"></div>
+	     <div class="price">
+		<strong>Total:</strong>
+	     </div>
+	     <div class="quantity">
+		<strong>{{.}}</strong>
+	     </div>
+	  </div>
+
+	  {{/cargas_count}}
+	  <div class="item summary">
+	    <div class="name"></div>
+	    <div class="price">
+	       <strong>Sum:</strong>
+	    </div>
+	    <div class="quantity">
+	      <strong>{{total}}</strong>
+	    </div>
+	  </div>
+	</div>
+      </template>
+
+      <div class="my2">
+	<!--
+        <button 
+	  hidden
+	  [hidden] = "presupuesto.Iniciado == 1 ? false : true"
+	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
+	  id="boton-login"
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie Sesión
+	</button>
+	<span 
+          hidden
+          [hidden] = "presupuesto.Iniciado == 1 ? false : true">... para ver los detalles
+        </span>
+        <span 
+          hidden
+          [hidden] = "presupuesto.Iniciado == 1 ? false : true">   -- o --    
+        </span> 
+	-->
+        <button amp-access="NOT loggedIn" 
+	  on="tap:amp-access.login-sign-up,AMP.setState({registro_usuario: {iniciado: 1}})"
+	  amp-access-hide
+	  tabindex="0"
+	  class="ampstart-btn ml1 caps" >Cree una Cuenta
+	</button>
+	<span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo
+	</span>
+      </div>
+      <!---
+      <div class="my2">
+        <div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
+          <button amp-access="NOT loggedIn" 
+            amp-access-hide
+            tabindex="0"
+            class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
+          <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
+        </div>
+      </div>
+      -->
+
+      <div class="my2">
+	<button amp-access="NOT loggedIn" 
+	  on="tap:amp-access.login-sign-in, carrusel-list.refresh"
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Iniciar sesión</button>
+	<!--
+	  <span amp-access="NOT loggedIn AND presupuesto_local"
+			class="inline-block ml1">...para ver el análisis de factibilidad</span>
+	-->
+
+	<button amp-access="loggedIn"
+	  tabindex="0"
+	  on="tap:AMP.setState({ dueno: { invisible: true },  presupuesto: { iniciado: 0 }  }), amp-access.login-sign-out "
+	  class="ampstart-btn ml1 caps"
+	  amp-access-hide>Cierre la Sesión</button>
+      </div>
+
+
+      <div class='stepper vertical'
+	hidden
+	>
+	<button [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
+	  class='step-title step-active' 
+	  on='tap:AMP.pushState({ currentStep: 0})'>
+	  <i [class]="contactoSelected ? 'step-complete' : 'step-incomplete'" 
+	    class='step-incomplete' 
+	    data-step-nr='1'></i>
+	    Contacto
+	  </button>
+	<section [hidden]='currentStep > 0'>
+	  <div class='content'>
+	    <span amp-access-hide='' 
+	      amp-access='loggedIn'
+	      role='button' 
+	      tabindex='0'>
+	      <button 
+		[hidden]='contactoSelected' 
+		class='ampstart-btn mx1 mt1 caps' 
+		on='tap:amp-access.login-sign-out'>Desbloquear
+	      </button>
+	      <hr>
+	      <p>Aléctrico guardará en sus servidores sus datos de contacto y de su proyecto eléctrico por el tiempo que sea necesario para la ejecución de la obra. En cualquier momento puede cerrar su cuenta, solicitándolo a Aléctrico.</p>
+	      <p>Proporcionamos acceso SSL, procesamos las sesiones de usuario con la gema Devise y no entregamos esos datos a nadie. Los datos de proyecto eléctrico podrían estar con acceso público porque es una de las maneras que usamos para darnos a conocer a otros clientes potenciales.</p>
+	      <hr>
+	      <p>¿Ud. acepta estas condiciones de servicio de Aléctrico?</p>
+
+	      <amp-selector 
+		class='poll' 
+		name='animal-poll' 
+		on='select:AMP.setState({contactoSelected: true})'>
+		  <div option='cat'>Acepto</div>
+	      </amp-selector>
+	    </span>
+
+	    <form [hidden]='contactoSelected' action-xhr='https://shop-staging.alectrico.cl/amp/accesos/create' amp-access='NOT loggedIn' class='' custom-validation-reporting='show-first-on-submit' method='post' on='submit-success:AMP.setState({contactoSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/accesos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <p>Ingrese sus datos de contacto</p>
+	      <div class='px2 mt4 md-mt3'>
+		<div class='flex flex-wrap mxn2'>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='verification-email' name='email' on='select:AMP.setState({ contactoSelected: true})' placeholder='email' required='' type='email'>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='email'>Email</label>
+		      <span validation-for='verification-email' visible-when-invalid='customError'>Email protegido con contraseña.
+			<button amp-access-hide='' amp-access='NOT loggedIn' class='ampstart-btn mx1 mt1 caps' on='tap:amp-access.login-sign-in' tabindex='0'>Usar</button>
+		      </span>
+		      <span validation-for='verification-email' visible-when-invalid='valueMissing'></span>
+		      <span validation-for='verification-email' visible-when-invalid='typeMismatch'></span>
 		    </div>
 		  </div>
-		  {{#items}}
-		  <div class="item">
-		     <div class="name">{{nombre}}</div>
-		     <div class="price">{{potencia}}W</div>
-		     <div class="quantity">{{circuito}}</div>
-		  </div>
-
-		  {{/items}} {{#cargas_count}}
-		  <div class= "item summary">
-		     <div class="name"></div>
-		     <div class="price">
-			<strong>Total:</strong>
-		     </div>
-		     <div class="quantity">
-			<strong>{{.}}</strong>
-		     </div>
-		  </div>
-
-		  {{/cargas_count}}
-		  <div class="item summary">
-		    <div class="name"></div>
-		    <div class="price">
-		       <strong>Sum:</strong>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='name' name='name' placeholder='Nombre' required type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='name'>Nombre</label>
+		      <span validation-for='name' visible-when-invalid='valueMissing'></span>
 		    </div>
-		    <div class="quantity">
-		      <strong>{{total}}</strong>
+		  </div>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='verification-fono' name='fono' pattern='(\+56|56|)\W*(2|9)\W*[0-9]{8}' placeholder='Fono' required='' type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='fono'>Fono</label>
+		      <span validation-for='verification-fono' visible-when-invalid='valueMissing'></span>
+		      <span validation-for='verification-fono' visible-when-invalid='typeMismatch'></span>
+		      <span validation-for='verification-fono' visible-when-invalid='patternMismatch'>Debe tener 9 dígitos y puede ingresar el código de país. Ejemplos: 987654321,+56987654321, 227654321, +56227654321</span>
 		    </div>
 		  </div>
 		</div>
-	      </template>
-          </section>
-        <div class="my2">
-	  <button amp-access="NOT loggedIn"
-	    on="tap:amp-access.login-sign-in,resumen.show"
-	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
-	  <button amp-access="loggedIn"
-	    tabindex="0"
-	    on="tap:amp-access.login-sign-out"
-	    class="ampstart-btn ml1 caps"
-	    amp-access-hide>Cerrar Sesión</button>
-	  <span amp-access="NOT loggedIn AND subscriber"
-	    class="inline-block ml1">...para ver los detalles</span>
-	</div>
+	      </div>
 
-	<div class="my2">
-	  <div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
-	    <button amp-access="NOT loggedIn" 
-	      amp-access-hide
-	      tabindex="0"
-	      on="tap:amp-access.login-sign-up"
-	      class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
-	    <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
+	      <div class='flex flex-wrap mxn2'>
+		<button [disabled]='!contactoSelected' type='submit'>Registrar</button>
+	      </div>
+
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		Correcto!
+		</template>
+	      </div>
+
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente.</p>
+		  {{/verifyErrors}}
+		  
+		  {{#error}}
+		  <p>{{message}}</p>
+		  {{/error}}
+
+		</template>
+	      </div>
+
+	    </form>
+	    <button [disabled]='!contactoSelected' [hidden]='!contactoSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>continuar
+	    </button>
 	  </div>
-	</div>
+	</section>
+	<!--- ----- --->
 
-        <amp-analytics type="googleanalytics">
-          <script type="application/json">{
-            "vars": {
-              "account": "UA-109124551-1"
-            },
-            "triggers": {
-              "default pageview": {
-                "on": "visible",
-                "request": "pageview",
-                "vars": {
-                  "title": "Aléctrico Designer"
-                }
-              }
-            }
-          }
-          </script>
-        </amp-analytics>
+	<button [class]="currentStep != 1 ? 'step-title' : 'step-title step-active'" [disabled]='!contactoSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 1})'>
+	  <i [class]="problemaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='2'></i> Descripción del Problema
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep !=1' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='problema'>
+	      <div class='px2 mt4 md-mt3'>
+		<div class='flex flex-wrap mxn2'>
 
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <textarea class='block border-none p0 m0' cols='40' id='descripcion' name='descripcion' on='tap:AMP.setState({ problemaSelected: true})' placeholder='Describa lo que necesita' required role='' rows='5' tabindex=''></textarea>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='descripcion'>Problema</label>
+		      <span validation-for='descripcion' visible-when-invalid='valueMissing'></span>
+		    </div>
+		  </div>
+
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='flex flex-wrap mxn2'>
+		      <button [disabled]='!problemaSelected' type='submit'>Registrar
+		      </button>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		  Correcto!
+		</template>
+	      </div>
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
+	      </div>
+	    </form>
+	  </div>
+	</section>
+	<!-- --- --- --->
+	<button [class]="currentStep != 2 ? 'step-title' : 'step-title step-active'" [disabled]='!problemaSelected' class='step-active step-title' disabled='' on='tap:AMP.pushState({ currentStep: 2})'>
+	  <i [class]="tipo_trabajoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='3'></i>
+	  Tipo de Trabajo
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 2' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-first-on-submit' id='tipo_trabajo' method='post' on='submit-success:AMP.setState({tipo_trabajoSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/accesos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='tipo_trabajo'>
+	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		<p>¿Qué tipo de trabajos necesita?</p>
+		<amp-selector [selected]='atencion.selectedServicio' class='poll' name='tipo_trabajo-poll' on='select:AMP.setState({ atencion: {selectedServicio: event.targetOption}}),tipo_trabajo.submit'>
+		  <div option='ampliación'>Ampliación</div>
+		  <div option='reparación'>Reparación</div>
+		  <div option='normalización'>Normalización</div>
+		  <div option='certificación'>Certificación</div>
+		  <div option='instalación'>Instalación de lámparas y/o Enchufes</div>
+		</amp-selector>
+	      </div>
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		Correcto!
+		</template>
+	      </div>
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
+	      </div>
+	    </form>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 3 ? 'step-title' : 'step-title step-active'" [disabled]='!tipo_trabajoSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 3})'>
+	  <i [class]="direccionSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='4'></i>Dirección
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep !=3' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({direccionSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='direccion'>
+	      <div class='px2 mt4 md-mt3'>
+		<div class='flex flex-wrap mxn2'>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='direccion' name='direccion' on='select:AMP.setState({ direccionSelected: true})' placeholder='Dirección' required type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='name'>Dirección</label>
+		      <span validation-for='direccion' visible-when-invalid='valueMissing'></span>
+		    </div>
+		    <!-- Start Input -->
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='comuna' name='comuna' on='select:AMP.setState({ direccionSelected: true})' placeholder='Comuna' required type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='comuna'>Comuna</label>
+		      <span validation-for='comuna' visible-when-invalid='valueMissing'></span>
+		    </div>
+		  </div>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='flex flex-wrap mxn2'>
+		      <button [disabled]='!direccionSelected' type='submit'>
+		      Registrar
+		      </button>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		Correcto!
+		</template>
+	      </div>
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
+	      </div>
+	    </form>
+	  </div>
+	</section>
+	<!--- -->
+	<form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' id='data' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	  <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	  <input name='etapa' type='hidden' value='visita'>
+	</form>
+	<button [class]="currentStep != 4 ? 'step-title' : 'step-title step-active'" [disabled]='!direccionSelected' class='step-title step-active' disabled='' on='tap:AMP.pushState({ currentStep: 4})'>
+	  <i [class]="semanaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='5'></i>Día de la semana
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep !=4' hidden=''>
+	  <div class='content'>
+	    <p>¿Qué día de la semana le resulta más conveniente para una visita eléctrica?</p>
+	    <amp-selector class='poll' name='semana-poll' on='select:AMP.setState({semanaSelected: true}),data.submit'>
+	      <div option='lunes'>lunes</div>
+	      <div option='martes'>martes</div>
+	      <div option='miércoles'>miércoles</div>
+	      <div option='jueves'>jueves</div>
+	      <div option='viernes'>viernes</div>
+	      <div option='sábado'>sábado</div>
+	      <div option='domingo'>domingo</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep !=5 ? 'step-title' : 'step-title step-active'" [disabled]='!semanaSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 5})'>
+	  <i [class]="horaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='6'></i>Hora del día
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 5' hidden=''>
+	  <div class='content'>
+	    <p>¿Qué horario del día le resulta más conveniente para una visita eléctrica?</p>
+	    <amp-selector class='poll' name='hora-poll' on='select:AMP.setState({horaSelected: true}),data.submit'>
+	      <div option='mañana'>En la mañana</div>
+	      <div option='tarde'>En la tarde</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
+	  <i [class]="destinoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='7'></i>
+	  Destino de la Propiedad
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 6' hidden=''>
+	  <div class='content'>
+	    <p></p>
+	    <amp-selector class='poll' name='destino-poll' on='select:AMP.setState({ destinoSelected: true}),data.submit'>
+	      <div option='vivienda'>La propiedad está destinada a ser usada como vivienda</div>
+	      <div option='local'>La propiedad está destinada a ser usada como local comercial</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 7 ? 'step-title' : 'step-title step-active'" [disabled]='!destinoSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 7})'>
+	  <i [class]="reunionSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='8'></i>Lugar de Reunión de Personas
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 7' hidden=''>
+	  <div class='content'>
+	    <p>¿En la propiedad se observa la permanencia de 25 personas por más de 15 minutos?</p>
+	    <amp-selector class='poll' name='reunion-poll' on='select:AMP.setState({ reunionSelected: true}),data.submit'>
+	      <div option='reunión_sí'>Sí</div>
+	      <div option='reunión_no'>No</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!--- -->
+	<button [class]="currentStep != 8 ?  'step-title' : 'step-title step-active'" [disabled]='!reunionSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 8})'>
+	  <i [class]="croquisSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='9'></i>Planos Eléctricos
+	</button>
+	<!--- -->
+	<section [hidden]='currentStep != 8' hidden=''>
+	  <div class='content'>
+	    <p>¿Posee los planos de la Instalación Eléctrica?</p>
+	    <amp-selector class='poll' name='croquis-poll' on='select:AMP.setState({ croquisSelected: true}),data.submit'>
+	      <div option='croquis_sí'>Sí</div>
+	      <div option='croquis_no'>No</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 9 ?  'step-title' : 'step-title step-active'" [disabled]='!croquisSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 9})'>
+	  <i [class]="titularidadSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='10'></i>Titularidad
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 9' hidden=''>
+	  <div class='content'>
+	    <p>¿Ud. es el actual dueño o dueña de la propiedad?</p>
+	    <amp-selector class='poll' name='titularidad-poll' on='select:AMP.setState({ titularidadSelected: true}),data.submit'>
+	      <div option='titularidad_sí'>Sí</div>
+	      <div option='titularidad_no'>No</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 10 ?  'step-title' : 'step-title step-active'" [disabled]='!titularidadSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 10})'>
+	  <i [class]="rolSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='11'></i>ROL y RUT
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 10' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({rolSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='rol'>
+	      <div class='px2 mt4 md-mt3'>
+	      <div class='flex flex-wrap mxn2'>
+	      <div class='col-12 md-col-12 px2'>
+	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
+	      <input class='block border-none p0 m0' id='rol' name='rol' pattern='(\d{1}|\d{2}|\d{3}|\d{4}|\d{5})-(\d{1}|\d{2}|\d{3}|\d{4}|\d{5})' placeholder='ROL' required type='text' value=''>
+	      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='rol'>ROL</label>
+	      <span validation-for='rol' visible-when-invalid='valueMissing'></span>
+	      <span validation-for='rol' visible-when-invalid='patternMismatch'>Ingrese el ROL con un guión intermedio: xxxxx-xxxxx</span>
+	      </div>
+	      <!-- Start Input -->
+	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		<input class='block border-none p0 m0' id='rut' name='rut' pattern='(\d{1}|\d{2})\.\d{3}\.\d{3}-(k|\d{1})' placeholder='RUT' required type='text' value=''>
+		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='rut'>RUT</label>
+		<span validation-for='rut' visible-when-invalid='valueMissing'></span>
+		<span validation-for='rut' visible-when-invalid='patternMismatch'>Ingrese el RUT con puntos y guión: xx.xxx.xxx-v</span>
+		</div>
+		  </div>
+		    <div class='col-12 md-col-12 px2'>
+		      <div class='flex flex-wrap mxn2'>
+			<button [disabled]='!rolSelected' type='submit'>
+			Registrar
+			</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div submit-success=''>
+		  <template type='amp-mustache'>
+		  Correcto!
+		  </template>
+		</div>
+		<div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
+	      </div>
+	    </form>
+	    <button [disabled]='!rolSelected' [hidden]='!rolSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>
+	    continuar
+	    </button>
+	    </div>
+	</section>
       </div>
-  
+      <!--googleon: all-->
 
+
+      <!--
+      <div class="my2">
+	<div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
+	  <button amp-access="NOT loggedIn" 
+	    amp-access-hide
+	    tabindex="0"
+	    class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
+	  <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
+	</div>
+      </div>
+      -->
+
+      <amp-analytics type="googleanalytics">
+	<script type="application/json">{
+	  "vars": {
+	    "account": "UA-109124551-1"
+	  },
+	  "triggers": {
+	    "default pageview": {
+	      "on": "visible",
+	      "request": "pageview",
+	      "vars": {
+		"title": "Aléctrico Designer"
+	      }
+	    }
+	  }
+	}
+	</script>
+      </amp-analytics>
     </div>
-
-    </body>
+  </body>
 </html>
