@@ -844,7 +844,7 @@
 	{{presupuesto_local}}-local {{dueno_local}} | remoto-{{presupuesto_remoto}}
 	  {{dueno_remoto}} | current_user {{current_user}}
 	  -->
-	 {{current_user}}
+	  {{current_user}}
         </template>
       </section>
     </div>
@@ -2289,22 +2289,33 @@
 	      href="#">
             </a>
 -->
-	      <amp-img width="70.31"
-	      on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
-		role = "button"
+	      <amp-img width="100"
 		tabindex = 0
-		height="46.8"
+		height="90"
 		layout="fixed"
 		aria-describedby = "caption"
 		alt="{{cantidad}}"
 		src="{{img}}">
-	      </amp-img>
+
+		<form method   = "POST"
+		   class = "close-gallery-button"
+		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+		    target    = "_top"
+		    on = "submit-success:carrusel-list.refresh">
+		   <input name = "clientId" 
+		       type = "hidden" 
+		       value = "CLIENT_ID(uid)" 
+		       data-amp-replace = "CLIENT_ID">
+		   <button  type = "submit" > x </button>
+		</form>
+              </amp-img>
+
 
 	      <div
 		id = "caption"
 		hidden>
 		{{nombre}}. Potencia: {{potencia}} W. Circuito: {{circuito}}.
-
+		<!---
 		<form method   = "POST"
 		    class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
@@ -2317,9 +2328,11 @@
 		   <button  type = "submit" > x </button>
 
 		</form>
+		-->
+
 	      </div>
             {{/items}}
-<!--
+	    <!--
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
