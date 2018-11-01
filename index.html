@@ -771,6 +771,11 @@
       z-index: 1
     }
 
+    progress.ocupacion {
+      width: 25em;
+      height: 2em;
+    }
+
 
     </style>
   </head>
@@ -1718,7 +1723,7 @@
 		      <form method   = "POST"
 			action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			  target    = "_top"
-			  on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
 			 <input name = "clientId" 
 			     type = "hidden" 
 			     value = "CLIENT_ID(uid)" 
@@ -1994,7 +1999,7 @@
 		method="POST"
 		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh,cart-list.refresh"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh,cart-list.refresh,ocupacion-list.refresh"
 		class="flex flex-wrap m1">
 
               <div>
@@ -2301,7 +2306,7 @@
 		   class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		    target    = "_top"
-		    on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+		    on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
 		   <input name = "clientId" 
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
@@ -2415,10 +2420,6 @@
       <section amp-access="loggedIn"
 	[hidden] = "inicial.invisible"
 	>
-	<progress 
-	  value = "22" 
-	  max = "100">
-	</progress>
        <!--
 	<div class="my2">
 	    <button amp-access="loggedIn" 
@@ -2585,10 +2586,83 @@
           <hr/>
       </template>
 
+
+
       <section amp-access="loggedIn" 
         id= "resumen" 
-        class= "checkout-section"
+	class = "my2"
         amp-access-hide = "" >
+
+
+	  <amp-list
+	    template    = "ocupacion-list-template"
+	    credentials = "include"
+	    width       = "auto"
+	    height      = "180"
+	    items       = "."
+	    single-item
+	    layout      = "fixed-height"
+	    src         = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	    id          = "ocupacion-list">
+	    <div overflow = "" class = "list-overflow">VER MÁS</div>
+	  </amp-list>
+
+	  <template type = "amp-mustache"
+	    id = "ocupacion-list-template">
+            <div class = "max-width-4 mx-auto" >
+	      <div class = "clearfix p2">
+		<h2
+		  class = "xs-hide my2" >
+		  Ocupación de los circuitos
+		</h2>
+
+		<h3
+		  class = "sm-hide md-hide lg-hide p2">
+                  Ocupación de los circuitos
+		</h3>
+		{{#items}}
+		  <div class = "xs-hide flex justify-between">
+                    
+                    
+
+
+		    <h3>
+		       {{tipo_circuito.letras}}-{{nombre}}
+		    </h3>
+		    <div>
+			<progress 
+			  class = "ocupacion"
+			  value = "{{corriente_servicio}}" 
+			  max = "{{tipo_circuito.capacidad}}">
+			</progress>
+		    </div>
+		  </div>
+
+		  <br/>
+
+		  <div class = "flex justify-between sm-hide md-hide lg-hide">
+		    <progress 
+		      value = "{{corriente_servicio}}" 
+		      max = "{{tipo_circuito.capacidad}}">
+		    </progress>
+
+		     <div>
+		      <small>
+		        {{nombre_abreviado}}
+		      </small>
+		    </div>
+		  </div>
+		{{/items}}
+		{{^items}}
+		  No se han ingresado electrodomésticos, intente con el botón AGREGAR.
+                  - Si realizó una importación desde otro dispositivo, pruebe a refrescar la página.
+		{{/items}}
+	      </div>
+            </div>
+	  </template>
+
+
+        <!-- Funciona bien,pero lo eliminé para ofrecer mayor simplicidad al cliente
         <amp-list 
           template="cart-list-template"
 	  credentials="include"
@@ -2601,7 +2675,9 @@
 	  id="cart-list">
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
+	-->
       </section>	
+
 
       <template type="amp-mustache"
 	id = "cart-list-template">
