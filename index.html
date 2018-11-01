@@ -2301,7 +2301,7 @@
 		   class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		    target    = "_top"
-		    on = "submit-success:carrusel-list.refresh">
+		    on = "submit-success:carrusel-list.refresh,cart-list.refresh">
 		   <input name = "clientId" 
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
@@ -2415,6 +2415,10 @@
       <section amp-access="loggedIn"
 	[hidden] = "inicial.invisible"
 	>
+	<progress 
+	  value = "22" 
+	  max = "100">
+	</progress>
        <!--
 	<div class="my2">
 	    <button amp-access="loggedIn" 
@@ -2510,7 +2514,7 @@
         </template>
       </section>
 
-
+      
       <section>
 
        <!---
