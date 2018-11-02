@@ -104,6 +104,7 @@
     <meta name="amp-experiment-token" content="HfmyLgNLmblRg3Alqy164Vywr">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
+    <script async custom-element="amp-bodymovin-animation" src="https://cdn.ampproject.org/v0/amp-bodymovin-animation-0.1.js"></script>
     <script async custom-element="amp-access"   src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
@@ -2405,7 +2406,6 @@
 	</amp-selector>
         -->
 
-
       <section amp-access="NOT loggedIn"
 	amp-access-hide >
         <template amp-access-template type="amp-mustache">
@@ -2630,6 +2630,13 @@
 		       {{tipo_circuito.letras}}-{{nombre}}
 		    </h3>
 		    <div>
+
+                        <amp-bodymovin-animation
+                          [hidden] = "{{seguro}}"
+                          layout="fixed"
+                          width="15" height="15"
+                          src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
+                        </amp-bodymovin-animation>
 			<progress 
 			  class = "ocupacion"
 			  value = "{{corriente_servicio}}" 
@@ -2641,10 +2648,19 @@
 		  <br/>
 
 		  <div class = "flex justify-between sm-hide md-hide lg-hide">
+
 		    <progress 
 		      value = "{{corriente_servicio}}" 
 		      max = "{{tipo_circuito.capacidad}}">
 		    </progress>
+
+
+                    <amp-bodymovin-animation
+                      [hidden] = "{{seguro}}"
+                      layout="fixed"
+                      width="10" height="10"
+                      src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
+                    </amp-bodymovin-animation>
 
 		     <div>
 		      <small>
@@ -2795,8 +2811,13 @@
 
 
       <div class='stepper vertical'
-	hidden
-	>
+        hidden
+        >
+	<h3 class = "m1">
+	  O solicite la Visita a Domicilio de un Instalador Autorizado SEC
+	</h3>
+
+
 	<button [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
 	  class='step-title step-active' 
 	  on='tap:AMP.pushState({ currentStep: 0})'>
@@ -3005,14 +3026,16 @@
 		    </div>
 		    <!-- Start Input -->
 		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
-		      <input class='block border-none p0 m0' id='comuna' name='comuna' on='select:AMP.setState({ direccionSelected: true})' placeholder='Comuna' required type='text' value=''>
+		      <input class='block border-none p0 m0' id='comuna' name='comuna' on='select:AMP.setState({ direccionSelected: true})' placeholder='Comuna' required type='text' value='' pattern = "(providencia|PROVIDENCIA|Providencia|ñuñoa|Ñuñoa|ÑUÑOA)" on = "select:AMP.setState({ direccionSelected: true})">
 		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='comuna'>Comuna</label>
-		      <span validation-for='comuna' visible-when-invalid='valueMissing'></span>
+		      <span validation-for='comuna' visible-when-invalid= 'valueMissing'></span>
+                      <span validation-for='comuna' visible-when-invalid= 'patternMismatch'>Por el momento solo atendemos a Providencia y Ñuñoa</span>
+
 		    </div>
 		  </div>
 		  <div class='col-12 md-col-12 px2'>
 		    <div class='flex flex-wrap mxn2'>
-		      <button [disabled]='!direccionSelected' type='submit'>
+		      <button [disabled]='direccionSelected' type='submit'>
 		      Registrar
 		      </button>
 		    </div>
@@ -3074,6 +3097,7 @@
 	    </amp-selector>
 	  </div>
 	</section>
+
 	<!-- -->
 	<button [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
 	  <i [class]="destinoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='7'></i>
@@ -3160,7 +3184,7 @@
 		  </div>
 		    <div class='col-12 md-col-12 px2'>
 		      <div class='flex flex-wrap mxn2'>
-			<button [disabled]='!rolSelected' type='submit'>
+			<button [disabled]='rolSelected' type='submit'>
 			Registrar
 			</button>
 		      </div>
@@ -3183,11 +3207,26 @@
 		</template>
 	      </div>
 	    </form>
+            <!---
 	    <button [disabled]='!rolSelected' [hidden]='!rolSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>
 	    continuar
 	    </button>
+            -->
 	    </div>
 	</section>
+        <!-- -->
+        <button [class]="currentStep != 11 ?  'step-title' : 'step-title step-active'" hidden [disabled]='!rolSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 11})'>
+          <i [class]="rolSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='.'></i>Fin del Pedido
+        </button>
+        <!-- -->
+
+        <!-- -->
+        <button [class]="currentStep != 11 ?  'step-title' : 'step-title step-active'" hidden [disabled]='!horaSelected' [hidden]="atencion.selectedServicio == 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 11})'>
+          <i [class]="horaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='.'></i>Fin del Pedido
+        </button>
+        <!-- -->
+
+
       </div>
       <!--googleon: all-->
 
