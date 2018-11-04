@@ -2313,7 +2313,7 @@
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
 		       data-amp-replace = "CLIENT_ID">
-		   <button  type = "submit" > x </button>
+		       <button  type = "submit" > {{equipo}} x </button>
 		</form>
               </amp-img>
 
@@ -2638,6 +2638,7 @@
                           width="15" height="15"
                           src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
                         </amp-bodymovin-animation>
+			<strong>{{tipo_circuito.capacidad}} Amperes </strong>
 			<progress 
 			  class = "ocupacion"
 			  value = "{{corriente_servicio}}" 
