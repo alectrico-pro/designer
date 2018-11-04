@@ -2678,8 +2678,9 @@
             </div>
 	  </template>
 
+       </section>
 
-        <!-- Funciona bien,pero lo eliminé para ofrecer mayor simplicidad al cliente
+       <section class = 'checkout-section'>
         <amp-list 
           template="cart-list-template"
 	  credentials="include"
@@ -2692,7 +2693,6 @@
 	  id="cart-list">
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
-	-->
       </section>	
 
 
@@ -2729,18 +2729,46 @@
 	     <div class="quantity">{{circuito}}</div>
 	  </div>
 
-	  {{/items}} {{#cargas_count}}
+	  {{/items}} 
+
+	  <hr/>
+
+
+	  <!---
+	  {{#potencia_total_industrial}}
+
 	  <div class= "item summary">
-	     <div class="name"></div>
+	     <div class="name">
+	       <strong> Potencia Total Cliente Industrial:</strong>
+	     </div>
 	     <div class="price">
-		<strong>Total:</strong>
+	       <strong>{{.}} W</strong>
 	     </div>
 	     <div class="quantity">
-		<strong>{{.}}</strong>
 	     </div>
 	  </div>
 
-	  {{/cargas_count}}
+	  {{/potencia_total_industrial}}
+          -->
+
+
+          {{#potencia_total_domiciliaria}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong> Potencia Total del Empalme:</strong>
+             </div>
+             <div class="price">
+               <strong>{{.}} W</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+
+          {{/potencia_total_domiciliaria}}
+
+
+
           <!---
 	  <div class="item summary">
 	    <div class="name"></div>
