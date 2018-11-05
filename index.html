@@ -374,8 +374,11 @@
       margin: 0;
       padding: 0;
       float: left;
-      list-style: none;
       line-height: 0;
+      list-style: none;
+    }
+    .empalme-gallery > ul {
+     list-style-type: none;
     }
     .product-gallery > ul > li {
       cursor: pointer;
@@ -1754,6 +1757,14 @@
                 </script>
 	      </amp-state> 
 
+              <amp-state id="empalme">
+                <script type="application/json">
+                  {
+                    "medio": "aereo"
+                  }
+                </script>
+              </amp-state>
+
 	      <amp-state id="product">
 		<script type="application/json">
 		  {
@@ -2313,7 +2324,7 @@
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
 		       data-amp-replace = "CLIENT_ID">
-		       <button  type = "submit" > {{equipo}} x </button>
+		       <button  type = "submit" >X</button>
 		</form>
               </amp-img>
 
@@ -2734,8 +2745,7 @@
 
 	  <hr/>
 
-
-	  <!---
+         <!--
 	  {{#potencia_total_industrial}}
 
 	  <div class= "item summary">
@@ -2750,14 +2760,14 @@
 	  </div>
 
 	  {{/potencia_total_industrial}}
-          -->
-
 
           {{#potencia_total_domiciliaria}}
 
           <div class= "item summary">
              <div class="name">
                <strong> Potencia Total del Empalme:</strong>
+               <small>Solo es válido para viviendas</small>
+               <small>No se usa para locales comerciales ni industriales</small>
              </div>
              <div class="price">
                <strong>{{.}} W</strong>
@@ -2767,6 +2777,120 @@
           </div>
 
           {{/potencia_total_domiciliaria}}
+
+          -->
+
+          {{#is_total}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong>Corriente de Servicio:</strong>
+               <small>Para Casa-Habitación</small>
+             </div>
+             <div class="price">
+               <strong>{{is_total}} A</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+
+	  {{/is_total}}
+
+
+          {{#potencia_instalada}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong>Potencia Instalada:</strong>
+               <small>Para Casa-Habitación</small>
+             </div>
+             <div class="price">
+               <strong>{{potencia_instalada}} W</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+
+          {{/potencia_instalada}}
+
+          <!--
+          {{#fp_minimo}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong>Factor de Potencia Mínimo:</strong>
+               <small>Solo para viviendas</small>
+             </div>
+             <div class="price">
+               <strong>{{fp_minimo}}</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+	  {{/fp_minimo}}
+	  -->
+
+	{{#empalme_sugerido}}
+          <div class= "item summary">
+             <div class="name">
+               <strong>Empalme Sugerido:</strong>
+		<div class="empalme-gallery">
+		  <ul>
+		    <li>
+		      <amp-img on="tap:AMP.setState({empalme: {medio: 'soterrado'}})"
+			src="/img/edificio.png"
+			width="60"
+			height="40"
+			class=""
+			[class]="empalme.medio == 'soterrado' ? 'selected' : '' "
+			tabindex="0"
+			role="button">
+		      </amp-img>
+		    </li>
+                    <li>
+                      <amp-img on="tap:AMP.setState({empalme: {medio: 'aereo'}})"
+                        src="/img/casita.png"
+                        width="60"
+                        height="40"
+                        class="selected"
+                        [class]="empalme.medio == 'aereo' ? 'selected' : '' "
+                        tabindex="0"
+                        role="button">
+                      </amp-img>
+                    </li>
+                  </ul>
+                </div>
+             </div>
+
+	     <div class = " flex items-strecht"
+              [hidden] = "empalme.medio == 'aereo'" >
+	      <h1>{{empalme_soterrado_sugerido.tipo_de_empalme}}</h1>
+	       <div>
+		 <small>{{empalme_soterrado_sugerido.potencia_nominal}} kW</small>
+		 <small>{{empalme_soterrado_sugerido.interruptor}} A </small>
+		 <small class = "xs-hide">{{empalme_soterrado_sugerido.medio}} </small>
+		 <small class = "xs-hide">{{empalme_soterrado_sugerido.no_fases}} </small>
+		 <small class = "xs-hide">Medición {{empalme_soterrado_sugerido.tipo_de_medicion}}</small>
+
+	       </div>
+	     </div>
+             <div class = " flex items-strecht"
+              [hidden] = "empalme.medio == 'soterrado'" >
+	      <h1>{{empalme_aereo_sugerido.tipo_de_empalme}}</h1>
+               <div>
+                 <small>{{empalme_aereo_sugerido.potencia_nominal}} kW</small>
+                 <small>{{empalme_aereo_sugerido.interruptor}} A </small>
+                 <small class = "xs-hide">{{empalme_aereo_sugerido.medio}} </small>
+                 <small class = "xs-hide">{{empalme_aereo_sugerido.no_fases}} </small>
+                 <small class = "xs-hide">Medición {{empalme_aereo_sugerido.tipo_de_medicion}}</small>
+
+               </div>
+             </div>
+	    </div>
+          </div>
+
+          {{/empalme_sugerido}}
+
 
 
 
