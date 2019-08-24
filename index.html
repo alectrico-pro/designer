@@ -799,29 +799,60 @@
       height: 2em;
     }
 
+    .amp-web-push button {
+      border-radius: 2px;
+      border: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 10px 15px;
+      cursor: pointer;
+      outline: none;
+      font-size: inherit;
+      font-weight: inherit;
+      background: #2196F3;
+      color: white;
+      display: inline-block;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+      text-align: center;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
 
-    </style>
-  </head>
+    .amp-web-push button:hover {
+      background: #269BF8;
+    }
 
-  <body>
-    <!--
-    <amp-state
-       id = "remoto"
-       src="https://www.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM">
-     </amp-state>
-    -->
-    <amp-sidebar id="drawermenu" layout="nodisplay">
+    .amp-web-push button:active {
+      background: #1C91EE;
+      transform: scale(0.99);
+    }
+
+
+
+
+
+
+      </style>
+    </head>
+
+    <body>
       <!--
-      <a href="https://servicios.alectrico.cl" class="caps text-decoration-none block p1">Servicios</a>
-      <a href="https://shop.alectrico.cl" class="caps text-decoration-none block p1">Shop</a>
+      <amp-state
+	 id = "remoto"
+	 src="https://www.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM">
+       </amp-state>
+      -->
+      <amp-sidebar id="drawermenu" layout="nodisplay">
+	<!--
+	<a href="https://servicios.alectrico.cl" class="caps text-decoration-none block p1">Servicios</a>
+	<a href="https://shop.alectrico.cl" class="caps text-decoration-none block p1">Shop</a>
 
-      <hr>
-      <a class="caps text-decoration-none block p1" 
-        href="https://alectrico.cl/santiago">Santiago</a> 
+	<hr>
+	<a class="caps text-decoration-none block p1" 
+	  href="https://alectrico.cl/santiago">Santiago</a> 
 
-      <a class="caps text-decoration-none block p1" 
-        href="https://alectrico.cl/providencia">Providencia</a> 
-      <a class="caps text-decoration-none block p1"
+	<a class="caps text-decoration-none block p1" 
+	  href="https://alectrico.cl/providencia">Providencia</a> 
+	<a class="caps text-decoration-none block p1"
         href="https://alectrico.cl/ñuñoa">Ñuñoa</a>
       -->
       <a class="caps text-decoration-none block p1"
