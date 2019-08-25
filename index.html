@@ -783,6 +783,10 @@
        </amp-state>
       -->
       <amp-sidebar id="drawermenu" layout="nodisplay">
+
+      <a href="#" on = "tap:amp-web-push.subscribe"  class="caps text-decoration-none block p1">Notificar Sí</a>
+      <a href="#" on = "tap:amp-web-push.unsubscribe"  class="caps text-decoration-none block p1">Notificar No</a>
+
 	<!--
 	<a href="https://servicios.alectrico.cl" class="caps text-decoration-none block p1">Servicios</a>
 	<a href="https://shop.alectrico.cl" class="caps text-decoration-none block p1">Shop</a>
@@ -840,6 +844,7 @@
       </section>
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
+
         <!---
 	{{presupuesto_local}}-local {{dueno_local}} | remoto-{{presupuesto_remoto}}
 	  {{dueno_remoto}} | current_user {{current_user}}
@@ -858,6 +863,7 @@
 	      height="24" 
 	     alt="navigation">
 	    </amp-img>
+
 	  </a>
 	  <!---
 	  <form method="GET" action="https://shop.alectrico.cl/productos/10" 
