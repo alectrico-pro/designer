@@ -99,12 +99,12 @@
 
     <script id="amp-access" type="application/json">
     {
-    "authorization": "https://www.alectrico.cl/amp/accesos/autorizacion/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&clientId=CLIENT_ID(uid)",
-    "pingback": "https://www.alectrico.cl/amp/accesos/pingback?rid=READER_ID&amp=true&clientId=CLIENT_ID(uid)&url=SOURCE_URL", 
+    "authorization": "https://www.alectrico.cl/amp/accesos/autorizacion/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&amp_cliente_id=CLIENT_ID(uid)",
+    "pingback": "https://www.alectrico.cl/amp/accesos/pingback?rid=READER_ID&amp=true&amp_cliente_id=CLIENT_ID(uid)&url=SOURCE_URL", 
     "login": {
-    "sign-in": "https://www.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
-    "sign-out": "https://www.alectrico.cl/amp/accesos/logout?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
-    "sign-up":  "https://www.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)"
+    "sign-in": "https://www.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&amp_cliente_id=CLIENT_ID(uid)",
+    "sign-out": "https://www.alectrico.cl/amp/accesos/logout?rid=READER_ID&return=RETURN_URL&amp=true&amp_cliente_id=CLIENT_ID(uid)",
+    "sign-up":  "https://www.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&amp_cliente_id=CLIENT_ID(uid)"
     },
     "authorizationFallbackResponse": {
       "error": true,
@@ -782,7 +782,7 @@
       <!--
       <amp-state
 	 id = "remoto"
-	 src="https://www.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM">
+	 src="https://www.alectrico.cl/api/v1/electrico/circuitos/cart.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM">
        </amp-state>
       -->
       <amp-sidebar id="drawermenu" layout="nodisplay">
@@ -1690,7 +1690,7 @@
 			    action-xhr = "https://www.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			      target    = "_top"
 			      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-			     <input name = "clientId" 
+			     <input name = "amp_cliente_id" 
 				 type = "hidden" 
 				 value = "CLIENT_ID(uid)" 
 				 data-amp-replace = "CLIENT_ID">
@@ -1732,7 +1732,7 @@
 			action-xhr = "https://www.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			  target    = "_top"
 			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
-			 <input name = "clientId" 
+			 <input name = "amp_cliente_id" 
 			     type = "hidden" 
 			     value = "CLIENT_ID(uid)" 
 			     data-amp-replace = "CLIENT_ID">
@@ -2252,7 +2252,7 @@
 	    name="carga_id"
 	    value = "844"
 	    [value] ="product[product.selectedColor].ids[product.selectedSlide]">
-	  <input name="clientId"
+	  <input name="amp_cliente_id"
 	    type="hidden"
 	    value="CLIENT_ID(uid)"
 	    data-amp-replace="CLIENT_ID">
@@ -2280,7 +2280,7 @@
 	    items = "."
 	    single-item
 	    layout="fixed-height"
-	    src="https://www.alectrico.cl/api/v1/electrico/circuitos/get/?clientId=CLIENT_ID(uid)&_=RANDOM"
+	    src="https://www.alectrico.cl/api/v1/electrico/circuitos/get/?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
 	    id="carrusel-list">
 	    <div>
             </div>
@@ -2324,7 +2324,7 @@
 		    action-xhr = "https://www.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		    target    = "_top"
 		    on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
-		   <input name = "clientId" 
+		   <input name = "amp_cliente_id" 
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
 		       data-amp-replace = "CLIENT_ID">
@@ -2343,7 +2343,7 @@
 		    action-xhr = "https://www.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		    target    = "_top"
 		    on = "submit-success:carrusel-list.refresh">
-		   <input name = "clientId" 
+		   <input name = "amp_cliente_id" 
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
 		       data-amp-replace = "CLIENT_ID">
@@ -2359,7 +2359,7 @@
               action-xhr = "https://www.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
               on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-              <input name = "clientId" 
+              <input name = "amp_cliente_id" 
                  type = "hidden" 
                  value = "CLIENT_ID(uid)" 
                  data-amp-replace = "CLIENT_ID">
@@ -2476,7 +2476,7 @@
 		    value = true
 		    [value] = true>
                 <input data-amp-replace='CLIENT_ID' 
-		    name='clientId' 
+		    name='amp_cliente_id' 
 		    type='hidden' 
 		    value='CLIENT_ID(uid)'>
 
@@ -2520,7 +2520,7 @@
 		  items="."
 		  single-item
 		  layout="fixed-height"
-		  src="https://www.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+		  src="https://www.alectrico.cl/api/v1/electrico/circuitos/get.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
 		  id="cart-list">
 		  <div overflow = "" class = "list-overflow">VER MÁS</div>
 		</amp-list>
@@ -2559,7 +2559,7 @@
 	 height = "180"
 	 width = "auto"
 	 layout = "fixed-height"
-         src="https://www.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+         src="https://www.alectrico.cl/api/v1/electrico/circuitos/cart.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
 	 >
         <div overflow = "" class = "list-overflow">VER MÁS</div>
 	</amp-list>
@@ -2618,7 +2618,7 @@
 	    items       = "."
 	    single-item
 	    layout      = "fixed-height"
-	    src         = "https://www.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	    src         = "https://www.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
 	    id          = "ocupacion-list">
 	    <div overflow = "" class = "list-overflow">VER MÁS</div>
 	  </amp-list>
@@ -2705,7 +2705,7 @@
 	  items="."
 	  single-item
 	  layout="fixed-height"
-	  src="https://www.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	  src="https://www.alectrico.cl/api/v1/electrico/circuitos/get.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
 	  id="cart-list">
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
@@ -3014,7 +3014,7 @@
 	    </span>
 
 	    <form [hidden]='contactoSelected' action-xhr='https://www.alectrico.cl/amp/accesos/create' amp-access='NOT loggedIn' class='' custom-validation-reporting='show-first-on-submit' method='post' on='submit-success:AMP.setState({contactoSelected: true})' target='_top' verify-xhr='https://www.alectrico.cl/amp/accesos/verify'>
-	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input data-amp-replace='CLIENT_ID' name='amp_cliente_id' type='hidden' value='CLIENT_ID(uid)'>
 	      <p>Ingrese sus datos de contacto</p>
 	      <div class='px2 mt4 md-mt3'>
 		<div class='flex flex-wrap mxn2'>
@@ -3090,7 +3090,7 @@
 	<section [hidden]='currentStep !=1' hidden=''>
 	  <div class='content'>
 	    <form action-xhr='https://www.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://www.alectrico.cl/amp/presupuestos/verify'>
-	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input data-amp-replace='CLIENT_ID' name='amp_cliente_id' type='hidden' value='CLIENT_ID(uid)'>
 	      <input name='etapa' type='hidden' value='problema'>
 	      <div class='px2 mt4 md-mt3'>
 		<div class='flex flex-wrap mxn2'>
@@ -3138,7 +3138,7 @@
 	<section [hidden]='currentStep != 2' hidden=''>
 	  <div class='content'>
 	    <form action-xhr='https://www.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-first-on-submit' id='tipo_trabajo' method='post' on='submit-success:AMP.setState({tipo_trabajoSelected: true})' target='_top' verify-xhr='https://www.alectrico.cl/amp/accesos/verify'>
-	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input data-amp-replace='CLIENT_ID' name='amp_cliente_id' type='hidden' value='CLIENT_ID(uid)'>
 	      <input name='etapa' type='hidden' value='tipo_trabajo'>
 	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
 		<p>¿Qué tipo de trabajos necesita?</p>
@@ -3176,7 +3176,7 @@
 	<section [hidden]='currentStep !=3' hidden=''>
 	  <div class='content'>
 	    <form action-xhr='https://www.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({direccionSelected: true})' target='_top' verify-xhr='https://www.alectrico.cl/amp/presupuestos/verify'>
-	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input data-amp-replace='CLIENT_ID' name='amp_cliente_id' type='hidden' value='CLIENT_ID(uid)'>
 	      <input name='etapa' type='hidden' value='direccion'>
 	      <div class='px2 mt4 md-mt3'>
 		<div class='flex flex-wrap mxn2'>
@@ -3224,7 +3224,7 @@
 	</section>
 	<!--- -->
 	<form action-xhr='https://www.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' id='data' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://www.alectrico.cl/amp/presupuestos/verify'>
-	  <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	  <input data-amp-replace='CLIENT_ID' name='amp_cliente_id' type='hidden' value='CLIENT_ID(uid)'>
 	  <input name='etapa' type='hidden' value='visita'>
 	</form>
 	<button [class]="currentStep != 4 ? 'step-title' : 'step-title step-active'" [disabled]='!direccionSelected' class='step-title step-active' disabled='' on='tap:AMP.pushState({ currentStep: 4})'>
@@ -3325,7 +3325,7 @@
 	<section [hidden]='currentStep != 10' hidden=''>
 	  <div class='content'>
 	    <form action-xhr='https://www.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({rolSelected: true})' target='_top' verify-xhr='https://www.alectrico.cl/amp/presupuestos/verify'>
-	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input data-amp-replace='CLIENT_ID' name='amp_cliente_id' type='hidden' value='CLIENT_ID(uid)'>
 	      <input name='etapa' type='hidden' value='rol'>
 	      <div class='px2 mt4 md-mt3'>
 	      <div class='flex flex-wrap mxn2'>
