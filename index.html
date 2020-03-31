@@ -925,7 +925,6 @@
 
 	<div class="product-gallery">
 		<ul 
-		  hidden
 		  [hidden]="product.selectedColor != 'blue'">
 		  <li>
 		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
@@ -1253,7 +1252,7 @@
 		      src="/img/encimera_60_40.png"
 		      width="60"
 		      height="40"
-		      class="selected"
+		      class=""
 		      [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
 		      tabindex="1"
 		      role="button">
@@ -3101,7 +3100,7 @@
 
 		  <div class='col-12 md-col-12 px2'>
 		    <div class='flex flex-wrap mxn2'>
-		      <button [disabled]='!problemaSelected' type='submit'>Registrar
+		      <button value='' [disabled]='!problemaSelected' type='submit'>Registrar
 		      </button>
 		    </div>
 		  </div>
@@ -3257,7 +3256,7 @@
 	</section>
 
 	<!-- -->
-	<button class='step-title' [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
+	<button value='' class='step-title' [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
 	  <i [class]="destinoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='7'></i>
 	  Destino de la Propiedad
 	</button>
@@ -3272,7 +3271,7 @@
 	  </div>
 	</section>
 	<!-- -->
-	<button [class]="currentStep != 7 ? 'step-title' : 'step-title step-active'" [disabled]='!destinoSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 7})'>
+	<button value='' [class]="currentStep != 7 ? 'step-title' : 'step-title step-active'" [disabled]='!destinoSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 7})'>
 	  <i [class]="reunionSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='8'></i>Lugar de Reunión de Personas
 	</button>
 	<!-- -->
