@@ -1026,7 +1026,7 @@
 		      src="/img/led_60_40.png"
 		      width="60"
 		      height="40"
-		      class=""
+		      class="selected"
 		      [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
 		      tabindex="0"
 		      role="button">
@@ -1057,7 +1057,7 @@
 		      src="/img/juguera_60_40.png"
 		      width="60"
 		      height="40"
-		      class= ""
+		      class= "selected"
 		      [class]="product.selectedSlideForGolden == 0 ? 'selected' : '' "
 		      tabindex="1"
 		      role="button">
@@ -1131,7 +1131,7 @@
 		      src="/img/plancha_60_40.png"
 		      width="60"
 		      height="40"
-		      class=""
+		      class="selected"
 		      [class]="product.selectedSlideForCoral == 0 ? 'selected' : '' "
 		      tabindex="0"
 		      role="button">
@@ -1253,7 +1253,7 @@
 		      src="/img/encimera_60_40.png"
 		      width="60"
 		      height="40"
-		      class=""
+		      class="selected"
 		      [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
 		      tabindex="1"
 		      role="button">
@@ -2002,7 +2002,7 @@
 	      </amp-state>
 
 	      <p class="price-description"> Seleccionado:
-		<span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span> </p>
+		<span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta Led.</span> </p>
 
 	      <!--
                 on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show,boton-login.show"
@@ -2234,7 +2234,7 @@
 	    <p class="price-description">
 	      <span > Circuito que recibirá el electrodoméstico: </span>
 	      <span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
-	      <span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
+	      <span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">2200 W</span>
 	    </p>
 	 <!-- fin de Galería de Productos -->
 
@@ -3125,8 +3125,8 @@
 	    </form>
 	  </div>
 	</section>
-	<!-- --- --- --->
-	<button [class]="currentStep != 2 ? 'step-title' : 'step-title step-active'" [disabled]='!problemaSelected' class='step-active step-title' disabled='' on='tap:AMP.pushState({ currentStep: 2})'>
+	 
+	<button class='step-title' [class]="currentStep != 2 ? 'step-title' : 'step-title step-active'" [disabled]='!problemaSelected' class='step-active step-title' disabled='' on='tap:AMP.pushState({ currentStep: 2})'>
 	  <i [class]="tipo_trabajoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='3'></i>
 	  Tipo de Trabajo
 	</button>
@@ -3223,7 +3223,7 @@
 	  <input data-amp-replace='CLIENT_ID' name='amp_cliente_id' type='hidden' value='CLIENT_ID(uid)'>
 	  <input name='etapa' type='hidden' value='visita'>
 	</form>
-	<button [class]="currentStep != 4 ? 'step-title' : 'step-title step-active'" [disabled]='!direccionSelected' class='step-title step-active' disabled='' on='tap:AMP.pushState({ currentStep: 4})'>
+	<button class='step-title' [class]="currentStep != 4 ? 'step-title' : 'step-title step-active'" [disabled]='!direccionSelected' class='step-title step-active' disabled='' on='tap:AMP.pushState({ currentStep: 4})'>
 	  <i [class]="semanaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='5'></i>Día de la semana
 	</button>
 	<!-- -->
@@ -3257,7 +3257,7 @@
 	</section>
 
 	<!-- -->
-	<button [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
+	<button class='step-title' [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
 	  <i [class]="destinoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='7'></i>
 	  Destino de la Propiedad
 	</button>
