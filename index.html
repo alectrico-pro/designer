@@ -2481,7 +2481,7 @@
 
 		<div class="my2">
 		    <button amp-access="loggedIn" 
-		      on= "tap:AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } }),carrusel-list.refresh,ocupacion-list.refresh, cart-list.refresh"
+		      on= "tap:ocupacion-list.refresh, AMP.setState({  dueno: {invisible: false}, inicial: { invisible: true } }),carrusel-list.refresh, cart-list.refresh"
 		      amp-access-hide
 		      [hidden] = "inicial.invisible"
 		      tabindex="0"
@@ -2617,7 +2617,8 @@
 	    items       = "."
 	    single-item
 	    layout      = "fixed-height"
-	    src         = "https://www.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
+	    [src]       = "https://www.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
+
 	    id          = "ocupacion-list">
 	    <div overflow = "" class = "list-overflow">VER MÁS</div>
 	  </amp-list>
