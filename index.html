@@ -2696,6 +2696,11 @@
 		{{^items}}
 		  No se han ingresado electrodomésticos, intente con el botón AGREGAR.
                   - Si realizó una importación desde otro dispositivo, pruebe a refrescar la página.
+                  <button 
+                    tabindex="0"
+                    on="tap:ocupacion-list.refresh"
+                    class="ampstart-btn ml1 caps"
+                    amp-access-hide>Refrescar</button>
 		{{/items}}
 	      </div>
             </div>
