@@ -657,6 +657,16 @@
       bottom: 0;
       left: 0;
       right: 0;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 8px;
+      background-color: #b60845;
+      border-radius: 100%;
+      color: white;
+      font-size: 14px;
+      font-style: normal;
+      transition: background 0.25s ease-in-out
     }
 
     .stepper.vertical {
@@ -2276,7 +2286,7 @@
 	    id="carrusel-list">
 	    <div>
             </div>
-            <div overflow = ""  class = "list-overflow">VER MÁS </div>
+            <div overflow = ""  class = "list-overflow/">VER MÁS </div>
             <div placeholder>Cargando la lista de electrodomésticos ...</div>
             <div fallback> -0- </div>
             <div overflow = "" class = "list-overflow">VER MÁS</div>
@@ -2612,7 +2622,7 @@
 	    layout      = "fixed-height"
 	    src         = "https://www.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
 	    id          = "ocupacion-list">
-	    <div overflow = "" class = "list-overflow max-width-4 mx-auto ampstart-btn ml1 caps">VER MÁS</div>
+	    <div overflow = "" class = "list-overflow">VER MÁS</div>
 	  </amp-list>
 
 	  <template type = "amp-mustache"
