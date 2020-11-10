@@ -2467,13 +2467,14 @@
                 method="POST"
                 action-xhr="https://www.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
                 target="_top"
-		on="submit-success:AMP.setState({inicial: { invisible: true}, presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh,cart-list.refresh"
+		on="submit-success:AMP.setState({inicial: { invisible: true}, presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh"
                 class="flex flex-wrap m1">
 
 		 <input type="hidden"
 		    name  = "syncFromRemote"
 		    value = true
 		    [value] = true>
+
                 <input data-amp-replace='CLIENT_ID' 
 		    name='amp_cliente_id' 
 		    type='hidden' 
@@ -2481,7 +2482,7 @@
 
 		<div class="my2">
 		    <button amp-access="loggedIn" 
-		      on= "tap:ocupacion-list.refresh, AMP.setState({  dueno: {invisible: false}, inicial: { invisible: true } }),carrusel-list.refresh, cart-list.refresh"
+		      on= "tap:AMP.setState({  dueno: {invisible: false}, inicial: { invisible: true } })"
 		      amp-access-hide
 		      [hidden] = "inicial.invisible"
 		      tabindex="0"
