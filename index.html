@@ -2617,10 +2617,18 @@
 	    items       = "."
 	    single-item
 	    layout      = "fixed-height"
-	    src       = "https://www.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
+	    src         = "https://www.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?amp_cliente_id=CLIENT_ID(uid)&_=RANDOM"
 	    id          = "ocupacion-list">
+
 	    <div overflow = "" class = "list-overflow">VER MÁS</div>
+            <div placeholder>Cargando ...</div>
+            <div fallback>El servidor no ha suministrado los datos, intente más tarde.</div>
+
 	  </amp-list>
+
+
+
+
 
 	  <template type = "amp-mustache"
 	    id = "ocupacion-list-template">
